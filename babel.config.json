@@ -1,0 +1,25 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "bugfixes": true,
+        "shippedProposals": true
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["@babel/plugin-transform-runtime", {
+      "absoluteRuntime": false,
+      "corejs": false,
+      "helpers": false,
+      "regenerator": true,
+      "useESModules": false
+    }],
+    "babel-plugin-replace-ts-export-assignment",
+    ["@babel/plugin-transform-modules-commonjs", { "allowTopLevelThis": true }],
+    "@babel/plugin-transform-strict-mode",
+    "@babel/plugin-proposal-class-properties"
+  ]
+}
