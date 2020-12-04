@@ -5,3 +5,4 @@ export * as func from './utils/function';
 export * as event from './utils/event';
 export * as cookie from './utils/cookie';
 export * as localStorage from './utils/localStorage';
+export * as data from './utils/data';
