@@ -4,7 +4,7 @@
 
 <!-- div -->
 
-## `Methods`
+## `export const encode`
 * <a href="#exportconstencodeinput">`export const encode`</a>
 
 <!-- /div -->
@@ -15,7 +15,7 @@
 
 <!-- div -->
 
-## `Methods`
+## `export const encode`
 
 <!-- div -->
 
@@ -35,14 +35,14 @@ base64 加密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const encode "Jump back to the TOC."
 # encode.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `base64`
+## `export const decode`
 * <a href="#exportconstdecodeinput">`export const decode`</a>
 
 <!-- /div -->
@@ -53,7 +53,7 @@ base64 加密
 
 <!-- div -->
 
-## `“base64” Methods`
+## `export const decode`
 
 <!-- div -->
 
@@ -73,7 +73,7 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #base64 "Jump back to the TOC."
+ [1]: #export const decode "Jump back to the TOC."
 # getCookie.ts
 
 <!-- div class="toc-container" -->
@@ -113,7 +113,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const blobToDataURL`
 * <a href="#exportconstblobtodataurlblob">`export const blobToDataURL`</a>
 
 <!-- /div -->
@@ -124,7 +124,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const blobToDataURL`
 
 <!-- div -->
 
@@ -147,14 +147,14 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const blobtodataurl "Jump back to the TOC."
 # dataURLtoBlob.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `Methods`
+## `export const dataURLtoBlob`
 * <a href="#exportconstdataurltoblobdataurl">`export const dataURLtoBlob`</a>
 
 <!-- /div -->
@@ -165,7 +165,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const dataURLtoBlob`
 
 <!-- div -->
 
@@ -185,7 +185,7 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const dataurltoblob "Jump back to the TOC."
 # downloadFile.ts
 
 <!-- div class="toc-container" -->
@@ -203,7 +203,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const getImgToBase64`
 * <a href="#exportconstgetimgtobase64url">`export const getImgToBase64`</a>
 
 <!-- /div -->
@@ -214,7 +214,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const getImgToBase64`
 
 <!-- div -->
 
@@ -237,14 +237,14 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const getimgtobase64 "Jump back to the TOC."
 # getImgToBlob.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `Methods`
+## `export const getImgToBlob`
 * <a href="#exportconstgetimgtobloburl">`export const getImgToBlob`</a>
 
 <!-- /div -->
@@ -255,7 +255,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const getImgToBlob`
 
 <!-- div -->
 
@@ -278,14 +278,14 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const getimgtoblob "Jump back to the TOC."
 # setClipboardData.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `Methods`
+## `export const setClipboardData`
 * <a href="#exportconstsetclipboarddatavalue">`export const setClipboardData`</a>
 
 <!-- /div -->
@@ -296,7 +296,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export const setClipboardData`
 
 <!-- div -->
 
@@ -316,7 +316,7 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export const setclipboarddata "Jump back to the TOC."
 # debounce.ts
 
 <!-- div class="toc-container" -->
@@ -400,7 +400,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export function isTrue`
 * <a href="#exportfunctionistruevaluevalue">`export function isTrue`</a>
 
 <!-- /div -->
@@ -411,7 +411,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export function isTrue`
 
 <!-- div -->
 
@@ -434,18 +434,48 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export function istrue "Jump back to the TOC."
 # getUrlParam.ts
 
 <!-- div class="toc-container" -->
+
+<!-- div -->
+
+## `export const getUrlParam`
+* <a href="#exportconstgeturlparamkey">`export const getUrlParam`</a>
+
+<!-- /div -->
 
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
+<!-- div -->
+
+## `export const getUrlParam`
+
+<!-- div -->
+
+<h3 id="exportconstgeturlparamkey"><code>export const getUrlParam(key)</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/getUrlParam.ts#L7 "View in source") [&#x24C3;](https://www.npmjs.com/package/lodash.export const geturlparam "See the npm package") [&#x24C9;][1]
+
+Get the current value on the url
+
+#### Arguments
+1. `key` *(string)*: The current url parameter name
+
+#### Returns
+*(&#42;)*: the current url parameter value with the key
+
+---
+
 <!-- /div -->
 
- [1]: # "Jump back to the TOC."
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #export const geturlparam "Jump back to the TOC."
 # parseUrl.ts
 
 <!-- div class="toc-container" -->
@@ -463,7 +493,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export function replaceUrlParams`
 * <a href="#exportfunctionreplaceurlparamsnewparamsnewparams">`export function replaceUrlParams`</a>
 
 <!-- /div -->
@@ -474,7 +504,7 @@ base64 解密
 
 <!-- div -->
 
-## `Methods`
+## `export function replaceUrlParams`
 
 <!-- div -->
 
@@ -497,7 +527,7 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #methods "Jump back to the TOC."
+ [1]: #export function replaceurlparams "Jump back to the TOC."
 # stringifyUrl.ts
 
 <!-- div class="toc-container" -->

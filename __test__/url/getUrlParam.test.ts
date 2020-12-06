@@ -6,7 +6,7 @@ import { url } from '../../src/index';
 
 const { getUrlParam } = url;
 
-let windowSpy;
+let windowSpy: jest.SpyInstance;
 
 beforeEach(() => {
   windowSpy = jest.spyOn(window, 'window', 'get');
@@ -17,12 +17,35 @@ afterEach(() => {
 });
 
 describe('getUrlParam', () => {
-  test('should return name when url.query = ?q=antd&rlz=1C5CHFA_enUS907US908&oq=antd&aqs=chrome.0.69i59j35i39j0j69i60j69i65l3j69i60.5789j0j4&sourceid=chrome&ie=UTF-8', () => {
+  test('should return the value of the key ', () => {
     windowSpy.mockImplementation(() => ({
       location: {
-        search: '?q=antd&rlz=1C5CHFA_enUS907US908&oq=antd&aqs=chrome.0.69i59j35i39j0j69i60j69i65l3j69i60.5789j0j4&sourceid=chrome&ie=UTF-8',
+        search: '?q=antd',
       },
     }));
     expect(getUrlParam('q')).toBe('antd');
+  });
+
+  test('should return first value when the url have the same params', () => {
+    windowSpy.mockImplementation(() => ({
+      location: {
+        search: '?q=antd&q=test',
+      },
+    }));
+    expect(getUrlParam('q')).toEqual('antd');
+  });
+
+  test('should return `null` when env is not in browser', () => {
+    windowSpy.mockImplementation(() => (null));
+    expect(getUrlParam('test')).toBeNull();
+  });
+
+  test('should return not decoded value of the key', () => {
+    windowSpy.mockImplementation(() => ({
+      location: {
+        search: '?url=https%3A%2F%2Fgithub.com%2Fjef%2Fstreetmerchant%3Futm_source%3Dgold_browser_extension%3Fkey%3Dtest&key=value',
+      },
+    }));
+    expect(getUrlParam('key')).toEqual('value');
   });
 });
