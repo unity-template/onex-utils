@@ -20,19 +20,19 @@ describe('getUrlParam', () => {
   test('should return the value of the key ', () => {
     windowSpy.mockImplementation(() => ({
       location: {
-        search: '?q=antd',
+        search: '?key=antd',
       },
     }));
-    expect(getUrlParam('q')).toBe('antd');
+    expect(getUrlParam('key')).toBe('antd');
   });
 
   test('should return first value when the url have the same params', () => {
     windowSpy.mockImplementation(() => ({
       location: {
-        search: '?q=antd&q=test',
+        search: '?key=antd&key=test',
       },
     }));
-    expect(getUrlParam('q')).toEqual('antd');
+    expect(getUrlParam('key')).toEqual('antd');
   });
 
   test('should return `null` when env is not in browser', () => {
