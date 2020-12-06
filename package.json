@@ -15,13 +15,14 @@
   ],
   "scripts": {
     "commit": "git-cz",
+    "doc": "ts-node ./script/doc/build.ts github && npm run test:doc",
+    "test:doc": "markdown-doctest doc/*.md",
     "build": "build-scripts build",
     "test": "jest",
     "start": "build-scripts start",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
     "eslint-fix": "npm run eslint -- --fix",
-    "stylelint": "stylelint ./**/*.css",
-    "lint": "npm run eslint && npm run stylelint",
+    "lint": "npm run eslint",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -32,10 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@gitlab.alibaba-inc.com:varbee/utils.git"
-  },
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
+    "url": "git@github.com:unity-template/utils.git"
   },
   "author": {
     "name": "lg208143"
@@ -53,24 +51,31 @@
     "@iceworks/spec": "^1.0.0",
     "@types/babel-core": "^6.25.6",
     "@types/jest": "^26.0.14",
-    "@types/lodash.debounce": "^4.0.6",
-    "@types/lodash.throttle": "^4.1.6",
+    "@types/lodash.defaults": "^4.2.6",
+    "@types/lodash.last": "^3.0.6",
+    "@types/node": "^14.14.10",
     "@types/rax": "^1.0.0",
     "babel-core": "^6.26.3",
     "babel-jest": "^26.1.0",
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "babel-preset-env": "^1.7.0",
     "build-plugin-component": "^1.0.0",
+    "current-git-branch": "^1.1.0",
+    "docdown": "^0.7.3",
     "driver-universal": "^3.1.0",
     "eslint": "^6.8.0",
+    "fs-extra": "^9.0.1",
     "git-cz": "^4.7.1",
     "husky": "^4.3.0",
     "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
+    "lodash.defaults": "^4.2.0",
+    "lodash.last": "^3.0.0",
+    "markdown-doctest": "^1.1.0",
     "prettier": "^2.1.2",
     "rax": "^1.1.0",
     "rax-test-renderer": "^1.0.0",
-    "stylelint": "^13.7.2",
+    "stats-filelist": "^1.0.1",
     "ts-jest": "^26.4.4",
     "typescript": "^4.0.3"
   },
@@ -85,10 +90,6 @@
     "./src/**/*.{ts,tsx}": [
       "prettier --write",
       "eslint --cache --fix",
-      "git add"
-    ],
-    "./src/**/*.{css,less}": [
-      "stylelint --fix",
       "git add"
     ]
   },

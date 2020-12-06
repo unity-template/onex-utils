@@ -4,6 +4,7 @@ const _keyStr =
 
 /**
  * base64 解密
+ * @category base64
  * @param {string} input
  */
 export const decode = (input = '') => {
