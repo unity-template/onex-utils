@@ -14,6 +14,9 @@ const defaultAttribute = {
   path: '/',
 };
 
+/**
+ * 设置cookie
+ */
 export function setCookie(key, value, attributes) {
   if (typeof document === 'undefined') {
     return undefined;
