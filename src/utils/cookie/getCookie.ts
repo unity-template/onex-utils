@@ -13,9 +13,9 @@ const converter = {
 /**
  * 从当前cookies中获取单个cookie
  */
-export function getCookie(name?: string) {
+export function getCookie(name?: string): string | Record<string, string> {
   if (typeof document === 'undefined' || (arguments.length && !name)) {
-    return;
+    return '';
   }
 
   // To prevent the for loop in the first place assign an empty array

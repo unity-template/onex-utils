@@ -17,7 +17,7 @@ const defaultAttribute = {
 /**
  * 设置cookie
  */
-export function setCookie(key, value, attributes) {
+export function setCookie(key: string, value: string, attributes: any) {
   if (typeof document === 'undefined') {
     return undefined;
   }

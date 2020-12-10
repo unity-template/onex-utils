@@ -4,7 +4,6 @@ const _keyStr =
 
 /**
  * base64 加密
- * @param {string} input
  */
 export const encode = (input = '') => {
   let output = '';
