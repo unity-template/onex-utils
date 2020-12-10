@@ -1,14 +1,17 @@
 /**
  * 将 file、blob、stream 格式 转 DateURL
- * @param {Blob | File } blob
- * @returns {Promise<any>}
+ *
+ * @remarks
+ * 将blob对象转为DataUrl类型的数据
  */
-export const blobToDataURL = (blob) => {
-  return new Promise((succ, fail) => {
+export const blobToDataURL = (
+  blob: Blob | File,
+): Promise<string | ArrayBuffer> => {
+  return new Promise((success, fail) => {
     const reader = new FileReader();
     reader.readAsDataURL(blob);
     reader.onload = () => {
-      succ(reader.result);
+      success(reader.result);
     };
     reader.onerror = (err) => {
       fail(err);

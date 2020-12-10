@@ -1,8 +1,7 @@
 /**
  * 将文本数据放置在剪贴板上
- * @param {String} value
  */
-export const setClipboardData = (value) => {
+export const setClipboardData = (value: string) => {
   const aux = document.createElement('input');
   aux.setAttribute('value', value);
   document.body.appendChild(aux);

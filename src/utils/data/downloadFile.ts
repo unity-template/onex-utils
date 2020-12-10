@@ -1,10 +1,17 @@
-export const downloadFile = (fileName, content, type = 'text/plain') => {
-  const el = document.createElement('a');
+/**
+ *触发设备的文件下载功能
+ */
+export function downloadFile(
+  fileName: string,
+  content: BlobPart,
+  type = 'text/plain',
+) {
+  const element = document.createElement('a');
   const blob = new Blob([content], { type });
-  el.href = URL.createObjectURL(blob);
-  el.download = fileName;
-  el.addEventListener('click', (e) => e.stopImmediatePropagation());
-  document.body.appendChild(el);
-  el.click();
-  document.body.removeChild(el);
-};
+  element.href = URL.createObjectURL(blob);
+  element.download = fileName;
+  element.addEventListener('click', (e) => e.stopImmediatePropagation());
+  document.body.appendChild(element);
+  element.click();
+  document.body.removeChild(element);
+}

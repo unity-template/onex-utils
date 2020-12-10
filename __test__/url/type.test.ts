@@ -13,7 +13,7 @@ describe('url.type', () => {
   });
 
   test('should return the url response content type', async () => {
-    const urlType = type('https://avatars2.githubusercontent.com/u/46585516?s=40&u=c963a9d6b2260fe04fb0d5248825654a362bdbc8&v=4');
+    const urlType = type('https://gw.alicdn.com/tfs/TB15tJ5nggP7K4jSZFqXXamhVXa-500-500.jpg');
     const contentType = await urlType.contentType;
     expect(contentType).toEqual('image/jpeg');
   });
