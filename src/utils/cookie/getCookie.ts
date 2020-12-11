@@ -18,8 +18,6 @@ export function getCookie(name?: string): string | Record<string, string> {
     return '';
   }
 
-  // To prevent the for loop in the first place assign an empty array
-  // in case there are no cookies at all.
   const cookies = document?.cookie.split('; ') || [];
   const cookiesObj = {};
   for (const cookieStr of cookies) {

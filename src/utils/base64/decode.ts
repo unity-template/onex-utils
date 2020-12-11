@@ -5,7 +5,8 @@ const _keyStr =
 /**
  * base64 加密
  */
-export const encode = (input = '') => {
+export const encode = (content = '') => {
+  let input = content;
   let output = '';
   let chr1;
   let chr2;
@@ -15,6 +16,7 @@ export const encode = (input = '') => {
   let enc3;
   let enc4;
   let i = 0;
+
   input = _utf8_encode(input);
   while (i < input.length) {
     chr1 = input.charCodeAt(i++);
@@ -39,22 +41,22 @@ export const encode = (input = '') => {
   }
   return output;
 };
-// private method for UTF-8 encoding
-function _utf8_encode(string) {
-  string = string.replace(/\r\n/g, '\n');
-  let utftext = '';
-  for (let n = 0; n < string.length; n++) {
-    const c = string.charCodeAt(n);
+
+function _utf8_encode(content: string) {
+  const decode = content.replace(/\r\n/g, '\n');
+  let code = '';
+  for (let n = 0; n < decode.length; n++) {
+    const c = decode.charCodeAt(n);
     if (c < 128) {
-      utftext += String.fromCharCode(c);
+      code += String.fromCharCode(c);
     } else if (c > 127 && c < 2048) {
-      utftext += String.fromCharCode((c >> 6) | 192);
-      utftext += String.fromCharCode((c & 63) | 128);
+      code += String.fromCharCode((c >> 6) | 192);
+      code += String.fromCharCode((c & 63) | 128);
     } else {
-      utftext += String.fromCharCode((c >> 12) | 224);
-      utftext += String.fromCharCode(((c >> 6) & 63) | 128);
-      utftext += String.fromCharCode((c & 63) | 128);
+      code += String.fromCharCode((c >> 12) | 224);
+      code += String.fromCharCode(((c >> 6) & 63) | 128);
+      code += String.fromCharCode((c & 63) | 128);
     }
   }
-  return utftext;
+  return code;
 }
