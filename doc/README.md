@@ -2,78 +2,24 @@
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
-
-## `export const encode`
-* <a href="#exportconstencodeinput">`export const encode`</a>
-
-<!-- /div -->
-
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const encode`
-
-<!-- div -->
-
-<h3 id="exportconstencodeinput"><code>export const encode(input)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/base64/decode.ts#L9 "View in source") [&#x24C9;][1]
-
-base64 加密
-
-#### Arguments
-1. `input` *(string)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const encode "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # encode.ts
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
-
-## `export const decode`
-* <a href="#exportconstdecodeinput">`export const decode`</a>
-
-<!-- /div -->
-
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const decode`
-
-<!-- div -->
-
-<h3 id="exportconstdecodeinput"><code>export const decode(input)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/base64/encode.ts#L10 "View in source") [&#x24C3;](https://www.npmjs.com/package/lodash.export const decode "See the npm package") [&#x24C9;][1]
-
-base64 解密
-
-#### Arguments
-1. `input` *(string)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const decode "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # getCookie.ts
 
 <!-- div class="toc-container" -->
@@ -113,8 +59,8 @@ base64 解密
 
 <!-- div -->
 
-## `export const blobToDataURL`
-* <a href="#exportconstblobtodataurlblob">`export const blobToDataURL`</a>
+## `Properties`
+* <a href="#exportconstblobtodataurl">`export const blobToDataURL`</a>
 
 <!-- /div -->
 
@@ -124,20 +70,14 @@ base64 解密
 
 <!-- div -->
 
-## `export const blobToDataURL`
+## `Properties`
 
 <!-- div -->
 
-<h3 id="exportconstblobtodataurlblob"><code>export const blobToDataURL(blob)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/blobToDataURL.ts#L6 "View in source") [&#x24C9;][1]
+<h3 id="exportconstblobtodataurl"><code>export const blobToDataURL</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/blobToDataURL.ts#L7 "View in source") [&#x24C9;][1]
 
 将 file、blob、stream 格式 转 DateURL
-
-#### Arguments
-1. `blob` *(Blob|File)*:
-
-#### Returns
-*(&#42;)*:
 
 ---
 
@@ -147,45 +87,29 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #export const blobtodataurl "Jump back to the TOC."
+ [1]: #properties "Jump back to the TOC."
 # dataURLtoBlob.ts
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
+<!-- /div -->
 
-## `export const dataURLtoBlob`
-* <a href="#exportconstdataurltoblobdataurl">`export const dataURLtoBlob`</a>
+<!-- div class="doc-container" -->
 
 <!-- /div -->
+
+ [1]: # "Jump back to the TOC."
+# dataURLtoFile.ts
+
+<!-- div class="toc-container" -->
 
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const dataURLtoBlob`
-
-<!-- div -->
-
-<h3 id="exportconstdataurltoblobdataurl"><code>export const dataURLtoBlob(dataURL)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/dataURLtoBlob.ts#L6 "View in source") [&#x24C9;][1]
-
-将图片的 dataURL 转为 Blob 格式
-
-#### Arguments
-1. `dataURL` *(String)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const dataurltoblob "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # downloadFile.ts
 
 <!-- div class="toc-container" -->
@@ -201,122 +125,35 @@ base64 解密
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
-
-## `export const getImgToBase64`
-* <a href="#exportconstgetimgtobase64url">`export const getImgToBase64`</a>
-
-<!-- /div -->
-
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const getImgToBase64`
-
-<!-- div -->
-
-<h3 id="exportconstgetimgtobase64url"><code>export const getImgToBase64(url)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/getImgToBase64.ts#L6 "View in source") [&#x24C9;][1]
-
-将图片的 url 转为 base64 格式
-
-#### Arguments
-1. `url` *(URL)*:
-
-#### Returns
-*(&#42;)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const getimgtobase64 "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # getImgToBlob.ts
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
-
-## `export const getImgToBlob`
-* <a href="#exportconstgetimgtobloburl">`export const getImgToBlob`</a>
-
-<!-- /div -->
-
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const getImgToBlob`
-
-<!-- div -->
-
-<h3 id="exportconstgetimgtobloburl"><code>export const getImgToBlob(url)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/getImgToBlob.ts#L9 "View in source") [&#x24C9;][1]
-
-将图片的 url 转为 Blob 格式
-
-#### Arguments
-1. `url` *(URL)*:
-
-#### Returns
-*(&#42;)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const getimgtoblob "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # setClipboardData.ts
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
-
-## `export const setClipboardData`
-* <a href="#exportconstsetclipboarddatavalue">`export const setClipboardData`</a>
-
-<!-- /div -->
-
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
-<!-- div -->
-
-## `export const setClipboardData`
-
-<!-- div -->
-
-<h3 id="exportconstsetclipboarddatavalue"><code>export const setClipboardData(value)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/data/setClipboardData.ts#L5 "View in source") [&#x24C9;][1]
-
-将文本数据放置在剪贴板上
-
-#### Arguments
-1. `value` *(String)*:
-
----
-
 <!-- /div -->
 
-<!-- /div -->
-
-<!-- /div -->
-
- [1]: #export const setclipboarddata "Jump back to the TOC."
+ [1]: # "Jump back to the TOC."
 # debounce.ts
 
 <!-- div class="toc-container" -->
@@ -354,35 +191,107 @@ base64 解密
 
 <!-- div class="toc-container" -->
 
+<!-- div -->
+
+## `Properties`
+* <a href="#exportfunctiongetitemname">`export function getItem`</a>
+
+<!-- /div -->
+
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportfunctiongetitemname"><code>export function getItem(name</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/localStorage/getItem.ts#L7 "View in source") [&#x24C9;][1]
+
+
+
+---
+
 <!-- /div -->
 
- [1]: # "Jump back to the TOC."
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
 # removeItem.ts
 
 <!-- div class="toc-container" -->
 
+<!-- div -->
+
+## `Properties`
+* <a href="#exportfunctionremoveitemname">`export function removeItem`</a>
+
+<!-- /div -->
+
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportfunctionremoveitemname"><code>export function removeItem(name</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/localStorage/removeItem.ts#L7 "View in source") [&#x24C9;][1]
+
+
+
+---
+
 <!-- /div -->
 
- [1]: # "Jump back to the TOC."
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
 # setItem.ts
 
 <!-- div class="toc-container" -->
 
+<!-- div -->
+
+## `Properties`
+* <a href="#exportfunctionsetitemname">`export function setItem`</a>
+
+<!-- /div -->
+
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportfunctionsetitemname"><code>export function setItem(name</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/localStorage/setItem.ts#L6 "View in source") [&#x24C9;][1]
+
+
+
+---
+
 <!-- /div -->
 
- [1]: # "Jump back to the TOC."
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
 # day.ts
 
 <!-- div class="toc-container" -->
@@ -400,8 +309,8 @@ base64 解密
 
 <!-- div -->
 
-## `export function isTrue`
-* <a href="#exportfunctionistruevaluevalue">`export function isTrue`</a>
+## `Properties`
+* <a href="#exportfunctionistruevalue">`export function isTrue`</a>
 
 <!-- /div -->
 
@@ -411,20 +320,14 @@ base64 解密
 
 <!-- div -->
 
-## `export function isTrue`
+## `Properties`
 
 <!-- div -->
 
-<h3 id="exportfunctionistruevaluevalue"><code>export function isTrue(value(value)</code></h3>
+<h3 id="exportfunctionistruevalue"><code>export function isTrue(value</code></h3>
 [&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/type/isTrue.ts#L8 "View in source") [&#x24C9;][1]
 
 
-
-#### Arguments
-1. `value` *(boolean|string)*:
-
-#### Returns
-*(&#42;)*:
 
 ---
 
@@ -434,14 +337,14 @@ base64 解密
 
 <!-- /div -->
 
- [1]: #export function istrue "Jump back to the TOC."
-# getUrlParam.ts
+ [1]: #properties "Jump back to the TOC."
+# getParam.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `export const getUrlParam`
+## `Methods`
 * <a href="#exportconstgeturlparamkey">`export const getUrlParam`</a>
 
 <!-- /div -->
@@ -452,12 +355,12 @@ base64 解密
 
 <!-- div -->
 
-## `export const getUrlParam`
+## `Methods`
 
 <!-- div -->
 
 <h3 id="exportconstgeturlparamkey"><code>export const getUrlParam(key)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/getUrlParam.ts#L7 "View in source") [&#x24C3;](https://www.npmjs.com/package/lodash.export const geturlparam "See the npm package") [&#x24C9;][1]
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/getParam.ts#L10 "View in source") [&#x24C9;][1]
 
 Get the current value on the url
 
@@ -475,25 +378,49 @@ Get the current value on the url
 
 <!-- /div -->
 
- [1]: #export const geturlparam "Jump back to the TOC."
-# parseUrl.ts
-
-<!-- div class="toc-container" -->
-
-<!-- /div -->
-
-<!-- div class="doc-container" -->
-
-<!-- /div -->
-
- [1]: # "Jump back to the TOC."
-# replaceUrlParams.ts
+ [1]: #methods "Jump back to the TOC."
+# parse.ts
 
 <!-- div class="toc-container" -->
 
 <!-- div -->
 
-## `export function replaceUrlParams`
+## `Properties`
+* <a href="#exportconstparseurl">`export const parseUrl`</a>
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div class="doc-container" -->
+
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportconstparseurl"><code>export const parseUrl</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/parse.ts#L10 "View in source") [&#x24C9;][1]
+
+parse the url
+
+---
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
+# replaceParams.ts
+
+<!-- div class="toc-container" -->
+
+<!-- div -->
+
+## `Methods`
 * <a href="#exportfunctionreplaceurlparamsnewparamsnewparams">`export function replaceUrlParams`</a>
 
 <!-- /div -->
@@ -504,14 +431,14 @@ Get the current value on the url
 
 <!-- div -->
 
-## `export function replaceUrlParams`
+## `Methods`
 
 <!-- div -->
 
 <h3 id="exportfunctionreplaceurlparamsnewparamsnewparams"><code>export function replaceUrlParams(newParams(newParams)</code></h3>
-[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/replaceUrlParams.ts#L11 "View in source") [&#x24C9;][1]
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/replaceParams.ts#L18 "View in source") [&#x24C9;][1]
 
-
+替换当前URL上的参数生成新的链接
 
 #### Arguments
 1. `newParams` *(any&#91;&#93;|string&#91;&#93;)*:
@@ -527,15 +454,74 @@ Get the current value on the url
 
 <!-- /div -->
 
- [1]: #export function replaceurlparams "Jump back to the TOC."
-# stringifyUrl.ts
+ [1]: #methods "Jump back to the TOC."
+# stringify.ts
 
 <!-- div class="toc-container" -->
+
+<!-- div -->
+
+## `Properties`
+* <a href="#exportconststringifyurl">`export const stringifyUrl`</a>
+
+<!-- /div -->
 
 <!-- /div -->
 
 <!-- div class="doc-container" -->
 
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportconststringifyurl"><code>export const stringifyUrl</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/stringify.ts#L10 "View in source") [&#x24C9;][1]
+
+stringify the url
+
+---
+
 <!-- /div -->
 
- [1]: # "Jump back to the TOC."
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
+# type.ts
+
+<!-- div class="toc-container" -->
+
+<!-- div -->
+
+## `Properties`
+* <a href="#exportfunctiontypeurl">`export function type`</a>
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div class="doc-container" -->
+
+<!-- div -->
+
+## `Properties`
+
+<!-- div -->
+
+<h3 id="exportfunctiontypeurl"><code>export function type(url</code></h3>
+[&#x24C8;](https://github.com/unity-template/utils/blob/master/src/utils/url/type.ts#L10 "View in source") [&#x24C9;][1]
+
+判断图片链接对应资源的类型
+
+---
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- /div -->
+
+ [1]: #properties "Jump back to the TOC."
