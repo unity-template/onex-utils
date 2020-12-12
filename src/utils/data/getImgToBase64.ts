@@ -16,7 +16,9 @@ export const getImgToBase64 = (url: string): Promise<string> => {
       success(dataURL);
       canvas = null;
     };
-    img.onerror = (err) => fail(err);
+    img.onerror = (err) => {
+      fail(err);
+    };
     img.src = url;
   });
 };
