@@ -4,12 +4,15 @@
       "@babel/preset-env",
       {
         "bugfixes": true,
-        "shippedProposals": true
+        "shippedProposals": true,
+        "loose": true
       }
     ],
     "@babel/preset-typescript"
   ],
   "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
     ["@babel/plugin-transform-runtime", {
       "absoluteRuntime": false,
       "corejs": false,
@@ -19,7 +22,6 @@
     }],
     "babel-plugin-replace-ts-export-assignment",
     ["@babel/plugin-transform-modules-commonjs", { "allowTopLevelThis": true }],
-    "@babel/plugin-transform-strict-mode",
-    "@babel/plugin-proposal-class-properties"
+    "@babel/plugin-transform-strict-mode"
   ]
 }
