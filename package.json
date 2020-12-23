@@ -1,12 +1,17 @@
 {
   "name": "onex-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "业务工具库，提供通用的能力",
   "main": "lib/index.js",
   "module": "es/index.js",
   "miniappConfig": {
     "main": "lib/miniapp/index",
     "main:wechat": "lib/wechat-miniprogram/index"
+  },
+  "browser": {
+    "fs": false,
+    "net": false,
+    "tls": false
   },
   "files": [
     "dist",
