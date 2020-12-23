@@ -1,6 +1,6 @@
 {
   "name": "onex-utils",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "业务工具库，提供通用的能力",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -44,6 +44,7 @@
     "name": "lg208143"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "dayjs": "^1.9.6",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
@@ -87,7 +88,6 @@
     "prettier": "^2.1.2",
     "rax": "^1.1.0",
     "rax-test-renderer": "^1.0.0",
-    "request-promise-native": "^1.0.9",
     "sinon": "^9.2.1",
     "stats-filelist": "^1.0.1",
     "ts-jest": "^26.4.4",
@@ -109,5 +109,5 @@
       "git add"
     ]
   },
-  "homepage": "https://unpkg.com/onex-utils@0.0.2/build/index.html"
+  "homepage": "https://unpkg.com/onex-utils@0.0.3/build/index.html"
 }

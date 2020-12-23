@@ -1,4 +1,4 @@
-import request from 'request-promise-native';
+import axios, { AxiosResponse } from 'axios';
 
 /**
  *判断图片链接对应资源的类型
@@ -106,21 +106,13 @@ class UrlType {
 
   private async getUrlResponseContentType(): Promise<string> {
     try {
-      let res;
+      let res: AxiosResponse<any>;
       try {
-        res = await request({
-          method: 'HEAD',
-          uri: this.url,
-          resolveWithFullResponse: true,
-        });
+        res = await axios.head(this.url);
       } catch (e) {
-        res = await request({
-          method: 'GET',
-          uri: this.url,
-          resolveWithFullResponse: true,
-        });
+        res = await axios.get(this.url);
       }
-      if (res && res.statusCode >= 200 && res.statusCode < 300) {
+      if (res && res.status >= 200 && res.status < 300) {
         const { headers } = res;
         const contentType = headers?.['content-type'];
         return contentType;
