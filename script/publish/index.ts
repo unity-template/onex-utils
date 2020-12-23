@@ -2,7 +2,6 @@ import fs from 'fs';
 import { execSync } from 'child_process';
 import packageInfo from '../../package.json';
 
-
 function cmd(command) {
   try {
     const output = execSync(command);
