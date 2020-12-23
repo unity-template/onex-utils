@@ -1,7 +1,6 @@
 node_modules/
 build/
 miniapp-build/
-.travis.yml
 *.swp
 .sass-cache/
 .DS_Store

@@ -1,0 +1,21 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+node_js:
+- lts/*
+install:
+- npm install
+script:
+- npm run build
+deploy:
+  provider: npm
+  email: isgenluo@gmail.com
+  api_key:
+    secure: ZVQ7TQp6tk+C9nO3KgE0xPOWaohlVoiWY+jr2Iem82pT5TZ3WrBfXWV4KTEOO6WaTDXBYAsYkHuuBc8x5I1sUe1bXA6RZEdTfcBUd+5A3cNI1e4o+SVO5OI8UA3622Dw86K7Y05+KCsKTawJjuYxVBfccYMEPscRWtoDHMZfvzzkqt63FXuEOlyKRscwC2q30ZtjeaVi3XphgE776bHESRZR1LkRRZfqWH0/xRAwvB0U5mRFhRGIfMc5MMMFUgO06lgpOXT6l3JD4IAARaqLDTUnZ98asrIUlE3gIdIc+xkxH6mEiSyh+tI9n/ZdyNSqSMvOKeaueOJ81eFk0jAx/RmE44pjCJqwwIhxC+feNEsS5NU7lhEf8+rM6OK5bWr5opvyCfEU7TEq3Afrtdbu0TPoR98tqzCZWRhBUSLllzX9z64KVcjhl+z4Bs7tumdWU1t0zty2+oZB9ymYfog8vCIx7YGGYnyjfKwlJ1RQJa21o8j/NclP963cuyOxIamJ8aSTJu7aSrNjq845H7LCKlmq5gIlcQOXm15aiIVS9LkWFUpba8Gbcxg+6guodlmdppUG6sKXEU04zb45hRh4tKs7P/Ylw8nRg15+lhinYR2p5GgNUvKivTjIC+JyXLbeVYQTjufoLGPy9MX1QETQ2NBysR7QJFagxyO00bBh06k=
+  on:
+    tags: true
+    branch: master
+  tag: latest
+  skip-cleanup: true
+  condition: "$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$"

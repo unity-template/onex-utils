@@ -11,6 +11,8 @@
     <img src="https://img.shields.io/npm/dt/onex-utils" alt="npm download" />
     <img src="https://img.shields.io/npm/l/onex-utils" alt="npm license" />
     <img src="https://img.shields.io/npm/types/onex-utils" alt="types" />
+    <img src="https://travis-ci.org/unity-template/utils.svg?branch=master" alt="build" />
+    <img src="https://codecov.io/github/unity-template/utils/coverage.svg?branch=master" alt="coverage" />
 </p>
 
 ## 综述

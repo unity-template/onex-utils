@@ -28,7 +28,7 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
     "eslint-fix": "npm run eslint -- --fix",
     "lint": "npm run eslint",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build && ts-node ./script/publish/index.ts"
   },
   "peerDependencies": {
     "rax": "^1.1.0"
@@ -98,7 +98,7 @@
   "defaultLanguage": "zh-cn",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged",
+      "pre-commit": "lint-staged && npm run prepublishOnly",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
