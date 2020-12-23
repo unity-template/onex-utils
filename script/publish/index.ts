@@ -15,7 +15,8 @@ function getVersion() {
   try {
     const tag = cmd('git describe --tags')
       .split('-')
-      .filter(Boolean)[0];
+      .filter(Boolean)[0]
+      .trim();
     if (tag && /^v\d+.\d+.\d+$/.test(tag)) {
       return tag.slice(1);
     }
