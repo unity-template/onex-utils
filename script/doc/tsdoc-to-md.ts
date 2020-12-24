@@ -156,6 +156,7 @@ function getJSDocCommentRanges(node: ts.Node, text: string): ts.CommentRange[] {
         ...(ts.getTrailingCommentRanges(text, node.pos) || []),
       );
       break;
+    default: break;
   }
   commentRanges.push(...(ts.getLeadingCommentRanges(text, node.pos) || []));
 
