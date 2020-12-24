@@ -92,6 +92,7 @@
     "stats-filelist": "^1.0.1",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
+    "ts-node": "^9.1.1",
     "tsutils": "^3.17.1",
     "typescript": "^4.0.3"
   },
@@ -109,5 +110,5 @@
       "git add"
     ]
   },
-  "homepage": "https://unpkg.com/onex-utils@0.0.5/build/index.html"
-}
+  "homepage": "https://unpkg.com/onex-utils@0.0.6/build/index.html"
+}
