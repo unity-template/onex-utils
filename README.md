@@ -34,3 +34,17 @@
 
 ### 4. 函数文档
  TODO
+
+### 5. roadmap
+  
+#### Already completed
+* 基础的工具函数
+* 测试用例编写
+* CI/CD流程接入
+
+
+
+#### What’s next
+* 添加eslint-plugin-tsdoc 校验代码的注释格式
+* 深入typedoc 生成utils专属文档
+
