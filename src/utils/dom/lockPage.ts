@@ -1,3 +1,9 @@
+/**
+ * lock page
+ *
+ * @remarks
+ * 锁住当前页面，不让其滚动
+ */
 export const pageLock = () => {
   if (!document) return;
   if (document.getElementById('recyclerview')) {
