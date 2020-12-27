@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { url } from '../../src';
 
 const { replaceUrlParams } = url;

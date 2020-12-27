@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { base64 } from '../../src/index';
 
 const { decode } = base64;

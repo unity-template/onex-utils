@@ -1,6 +1,3 @@
-/**
- * @jest-environment jsdom
- */
 import { data } from '../../src/index';
 
 const { blobToDataURL } = data;

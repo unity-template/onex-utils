@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import dayjs from 'dayjs';
 import { time } from '../../src/index';
 

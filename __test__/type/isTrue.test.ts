@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { type } from '../../src/index';
 
 const { isTrue } = type;
