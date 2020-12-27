@@ -12,7 +12,7 @@ script:
   - npm run build
   - npm install codecov -g
 after_success:
-  - codecov
+  - codecov -f coverage/*.json
 deploy:
   provider: npm
   email: 1461304646@qq.com
