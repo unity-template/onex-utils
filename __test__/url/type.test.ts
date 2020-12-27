@@ -1,3 +1,6 @@
+/**
+ * @jest-environment node
+*/
 import { url } from '../../src/index';
 
 const { type } = url;
