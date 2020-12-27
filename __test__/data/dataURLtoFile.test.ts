@@ -5,7 +5,6 @@ const { dataURLtoFile, blobToDataURL } = data;
 
 describe('dataURLtoFile', () => {
   test('should return File', async () => {
-    expect.assertions(3);
     const debug = {
       hello: 'world',
     };
@@ -14,8 +13,8 @@ describe('dataURLtoFile', () => {
     });
     const dataUrl = await blobToDataURL(blob) as string;
     const file = await dataURLtoFile(dataUrl, 'test');
-    expect(file.name).toBe('test');
-    expect(file.size).toEqual(22);
-    expect(file.type).toEqual('application/json');
+    expect(file).toHaveProperty('name', 'test');
+    expect(file).toHaveProperty('size', 22);
+    expect(file).toHaveProperty('type', 'application/json');
   });
 });
