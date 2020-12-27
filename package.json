@@ -22,7 +22,7 @@
     "commit": "git-cz",
     "tsdoc": "typedoc",
     "build": "build-scripts build",
-    "test": "jest",
+    "test": "jest --coverage",
     "start": "build-scripts start",
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
     "eslint-fix": "npm run eslint -- --fix",

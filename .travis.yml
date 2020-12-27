@@ -6,6 +6,8 @@ node_js:
   - lts/*
 install:
   - npm install
+test:
+  - npm run test
 script:
   - npm run build
   - npm install codecov -g
