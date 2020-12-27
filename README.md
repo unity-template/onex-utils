@@ -23,7 +23,8 @@
 
 ### 2. 模板命令
 * npm run start 项目启动命令
-* npm run build 项目构建命令
+* npm run build
+*  项目构建命令
 * npm run commit 统一使用这个命令提交代码
 * npm run lint 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
 
@@ -35,16 +36,16 @@
 ### 4. 函数文档
  TODO
 
-### 5. roadmap
+### 5. 路线图
   
-#### Already completed
 * 基础的工具函数
 * 测试用例编写
+* 代码格式
+  * 添加eslint-plugin-tsdoc校验代码注释格式
 * CI/CD流程接入
-
-
-
-#### What’s next
-* 添加eslint-plugin-tsdoc 校验代码的注释格式
-* 深入typedoc 生成utils专属文档
-
+  * 依据tag发布
+  * 自动运行测试用例并上传至codecov进行统计
+* 文档
+  * 文档生成
+  * 文档自动部署
+  * 深入typedoc生成utils专属文档
