@@ -1,25 +1,21 @@
 language: node_js
 cache:
   directories:
-    - node_modules
+  - node_modules
 node_js:
-  - lts/*
-
+- lts/*
 install:
-  - npm install
-  - npm install codecov -g
-
+- npm install
+- npm install codecov -g
 script:
-  - npm run test # 执行测试脚本
-
+- npm run test
 after_success:
-  - codecov -f coverage/*.json # 推送代码覆盖度
-
+- codecov -f coverage/*.json
 deploy:
   provider: npm
-  email: '1461304646@qq.com'
+  email: 1461304646@qq.com
   api_key:
-    secure: BPoWM7PQcQx/9lAAtELhwkbv22KvyblgqoR6JtR7oGGI6HNdlsEKU4qCyTVnClA1JlQAS7CwAzVywcfc6LXNdbGXE6uvJzH2K7NDAIvAnrlIzMI2t2dRQXjxq9iuWMKWUfEYQBErLLDyZBfuVOJ30Ch4v9+wAwOreak1u8xvnCuO8RmZe3RpMrAebvlwHz9brZ2R//gGwAsvl8VH5BmuhNWf3g4w1cwkw7iPlTxZdsRq7U6OvNpCy/zV70Kz4E7apbdQNZGEakZRhUWLaruBHMyVxQma3RCfo+kPTdug/5dULtUOlCEGYc3Z/HU6SLum2Q8hmRKQj1MPfpw+g4ANEO1W340XYfxZoBmsh0tnJ+V1QhxzyMdjpbXtblhpb6xlvxKonxW/lubVvmcFDtLBeZa64dBcTupLa82m93MS6A0nqF77NQJ6ddVEZNOlrbNiQ5oced9bhSjeWlNUvQZaGjRc5qHje6enOhnhn030LEoA9/K0Dw2PCNXdo19wmnP9ZSESSjhTqKSrp66+S6O6hA14chROyZYoEcirn+cV3btWeOimcLG6TL9hLoEqkzp6xVB99o2HVoiqgjTGKYI8BkPETw7PpN4dIbKYXicko67TqB9EyAg2ac/hs78ZbHzk6M0jhnPGvYJz6fUEN9HJoz4aS4ymN6ExYa4PL0t+x8U=
+    secure: CKTlXCK0ers5GpLR7f2kWQaJ4earj7Q+VxvvMMwIPPbz9ccJ4AQqE7NYwvRQzbhhHFIufJrtGJfhwgmx/2rttSl9KDnYASMZDhBMbXgJJY1Ili6OVYPmqMJITuulbmyRpcpVsGD7NUzHozqgjfmdRYHIlszU3VBr5gSj05qR8a4nyADAo4ZpgMKGAS2gbmQvue/W91iiFb097jMpCF7IRS0dfv5tjYBB5JDt9Fdh/nWNIeOw1QL2Zv2jEfAllpSaeEeFaw/D3n+P2q0cNxCk3TPmlql6H/2iOjDTlN5LGB5Y439jI3WUJCP+OahiNdaOCQY1T1wzT/xK1DfmZyBtD4r8N1qdnDQSK36sgrEDy/hJyJxzRtU87cOgpPA11zGe7svMEbaTxnyd6cfNwE1eKG5BTbyuHM2G0FLRCpafUF1T32iLJWbmFqmVszvforIWYRNHlO6ypyqesjjnApF1BSL8LFem+8W/BRX3pT77oWgPvgM8sbUrwjCkz9q3D5paqFNharKJBc+RgECBDl/4/xxom7jHNeLnxBOHZ2qkZeaCc9gseG9A5pTlpOXwh2csJNz2RSu9NQcmS9p70ugE9aRMdJnxLQUu4krTh4GUtfS0njqMC0cWQunirCAaVQBpSXHMkKpWWyfcmkWkpMhd6KJiviiQSmgqfm8vgCDwQWQ=
   on:
     tags: true
     branch: master
