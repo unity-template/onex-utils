@@ -17,12 +17,13 @@ after_success:
 
 deploy:
   provider: npm
-  email: 1461304646@qq.com
+  email: '1461304646@qq.com'
   api_key:
-    secure: a4Cc2iPzm1N3OYF1oaAA1E5CS23LDlqOLzgqw99wQ6Stg54PL/cQWkutt/gBxAsgvxQX3xT3MTeUz7Pg0GtTi66cQhtZckK61wn0kOFNM4faLuabLvnVdMlU2lxnlX1FOkZFAkavn2k/gTKnYE4zkMF3LzMDZUWNoemAYXOD8Ersb7mlXYCXvwwpXFDRTFh1bu2vv34UaQun2WzSyjpK42OwpIV5RSNRYpsfuq1DX8N9kHEwblpYS7l+m3BYTLuI7y28/92C/h+e+I80E7XbmnJrFmmqti6AiQtFpr45uqYv3qBiNDcug0KWwjdL22ML48YyW3py7uizb/wEwPlf953Z5ITb2UTuAVwulYoSL2F15Q2asskYAOZI9L0s904DbtgxlMSpNtoYttf6hzwCCJ3csTgXPr61th9E5zfSFNOsHeeHxpQioRd5d5ehDJqC/5a6cA34qm1eaJxOj5LL1LWtIfrve8CrP224Ns63HY2EBWj5Ga/BAOvL9hs2AxL+s9FjJvlYrPF6KJ0HGDd3Ec0JR40yd0zViluqW9dP6g4RCxcdvycGgIQWUxB9QCI1VIZPU7Fp5oEV3E2FjO206slLLramxGCYtgCcPm0LWG0j1bTOI69ujvHnIX9Z6WJSZTV8V4XNJd9rWJypo9QMctI0v5/FEaqefj9xBXv8sJo=
+    secure: BPoWM7PQcQx/9lAAtELhwkbv22KvyblgqoR6JtR7oGGI6HNdlsEKU4qCyTVnClA1JlQAS7CwAzVywcfc6LXNdbGXE6uvJzH2K7NDAIvAnrlIzMI2t2dRQXjxq9iuWMKWUfEYQBErLLDyZBfuVOJ30Ch4v9+wAwOreak1u8xvnCuO8RmZe3RpMrAebvlwHz9brZ2R//gGwAsvl8VH5BmuhNWf3g4w1cwkw7iPlTxZdsRq7U6OvNpCy/zV70Kz4E7apbdQNZGEakZRhUWLaruBHMyVxQma3RCfo+kPTdug/5dULtUOlCEGYc3Z/HU6SLum2Q8hmRKQj1MPfpw+g4ANEO1W340XYfxZoBmsh0tnJ+V1QhxzyMdjpbXtblhpb6xlvxKonxW/lubVvmcFDtLBeZa64dBcTupLa82m93MS6A0nqF77NQJ6ddVEZNOlrbNiQ5oced9bhSjeWlNUvQZaGjRc5qHje6enOhnhn030LEoA9/K0Dw2PCNXdo19wmnP9ZSESSjhTqKSrp66+S6O6hA14chROyZYoEcirn+cV3btWeOimcLG6TL9hLoEqkzp6xVB99o2HVoiqgjTGKYI8BkPETw7PpN4dIbKYXicko67TqB9EyAg2ac/hs78ZbHzk6M0jhnPGvYJz6fUEN9HJoz4aS4ymN6ExYa4PL0t+x8U=
   on:
     tags: true
     branch: master
+    repo: unity-template/utils
   tag: latest
-  skip-cleanup: true
+  skip_cleanup: 'true'
   condition: "$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$"
