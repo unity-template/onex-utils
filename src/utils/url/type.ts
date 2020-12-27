@@ -95,7 +95,7 @@ class UrlType {
   @isUrl
   async isCss() {
     const contentType = await this.contentType;
-    return contentType === ContentType.css;
+    return contentType.includes(ContentType.css);
   }
 
   /**

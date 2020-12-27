@@ -41,8 +41,9 @@ describe('url.type', () => {
     expect(isJs).toBe(true);
   });
 
-  test('should return this url response is css', () => {
+  test('should return this url response is css', async () => {
     const urlType = type('https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css');
-    expect(urlType.isCss()).resolves.toBe(true);
+    const isCss = await urlType.isCss();
+    expect(isCss).toBe(true);
   });
 });
