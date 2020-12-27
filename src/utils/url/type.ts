@@ -20,7 +20,7 @@ enum ContentType {
   jpg = 'image/jpeg',
   png = 'image/png',
   css = 'text/css',
-  javascript = 'text/javascript',
+  javascript = 'javascript',
 }
 
 function isUrl(target: UrlType, _: string, descriptor: PropertyDescriptor) {
@@ -98,10 +98,14 @@ class UrlType {
     return contentType === ContentType.css;
   }
 
+  /**
+   * Determines whether url is
+   * @see https://stackoverflow.com/questions/21098865/text-javascript-vs-application-javascript
+   */
   @isUrl
   async isJs() {
     const contentType = await this.contentType;
-    return contentType === ContentType.javascript;
+    return contentType.includes(ContentType.javascript);
   }
 
   private async getUrlResponseContentType(): Promise<string> {

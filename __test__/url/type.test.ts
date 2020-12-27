@@ -35,9 +35,10 @@ describe('url.type', () => {
   });
 
 
-  test('should return this url response is js', () => {
+  test('should return this url response is js', async () => {
     const urlType = type('https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.0/clipboard.min.js');
-    expect(urlType.isJs()).resolves.toBe(true);
+    const isJs = await urlType.isJs();
+    expect(isJs).toBe(true);
   });
 
   test('should return this url response is css', () => {
