@@ -1,13 +1,16 @@
 language: node_js
 cache:
   directories:
-  - node_modules
+    - node_modules
 node_js:
-- lts/*
+  - lts/*
 install:
-- npm install
+  - npm install
 script:
-- npm run build
+  - npm run build
+  - npm install codecov -g
+after_success:
+  - codecov
 deploy:
   provider: npm
   email: 1461304646@qq.com
