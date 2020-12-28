@@ -26,7 +26,7 @@ deploy:
       tags: true
     cleanup: 'true'
   - provider: pages # API文档部署
-    skip_cleanup: true
+    cleanup: true
     github_token:
       secure: Hrz9TVst+cl3bLKxkSfWfOXd+LJLok1gTGHKoSxvOEUSN55rhnqftiBu9OVywi5y3yxyO3pr3BgADOq7JToW1i+biF5XRO9Ijab1WghCW/B31nClasUUhEedn1v7tkKYVwXHpxoBE9RsL1ESyAffnrd7Usa3OtKmOb/6QznUIaJVuMcV5r4g1tP6Dt4UOMu3kPxQIisE0o40zsFXKAvlHDwuENF4T58QfYKEmbwunW1nhLGWoaSGDudhfeourGqRO34g1p5B0q6KT8uRwtt4Bo2aeOdrpiIYFtW0xLB4xmzZW/KlpxEoiu5fq1O5+JDqhDjOSixK+uNoSMjgJF07gs12ylypmjo8byk8Hg78vt2hMJ8hhbywJnxd0ECwewKDd9knHCw7LKJf1kdICza2PiQbLkfjWtyl7TAheU+ex/bEy+xxt1/6QA5z9Ykstd/4akkPWDWeWUackrQMpRtnJ8QXlh/beAqVaGm2mpfjndx9bZMv9AkooWOH7wjvXvdQr1nbDJ9w+T9YMseIlh+MqAe+wavbTVIygz/1OAhM6TEx/gdMvK6vgoB33MZ0i2Diqogcna9e31yCYzibU9A8oNJjpCaY42xEszLVX9gXaIDCU/xYXlChJhpL1zkuG17DrBUIiABJuV9olOlVVP7fvO9PNxjXEqT1PtdznA7QKso=
     local_dir: docs
