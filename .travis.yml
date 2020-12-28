@@ -11,6 +11,10 @@ script:
 - npm run test
 after_success:
 - codecov -f coverage/*.json
+
+before_deploy:
+- npm run checkVersion # 版本发布前首先验证版本
+
 deploy:
   provider: npm
   email: 1461304646@qq.com
