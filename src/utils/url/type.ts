@@ -1,11 +1,12 @@
 import axios, { AxiosResponse } from 'axios';
 
 /**
- *判断图片链接对应资源的类型
+ * 判断链接对应的资源类型，会有一定的资源损耗
  *
  * @remarks
  * 会模拟请求链接对应的资源的，然后根据请求头的content-type判断对应资源的类型
  * 需要注意浏览器中使用注意同源策略，可能有些链接的请求直接被浏览器拦截
+ *
  */
 export function type(url: string): UrlType {
   const urlType = new UrlType(url);
@@ -23,29 +24,9 @@ enum ContentType {
   javascript = 'javascript',
 }
 
-function isUrl(target: UrlType, _: string, descriptor: PropertyDescriptor) {
-  const oldValue = descriptor.value;
-  const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
-  const localhostDomainRE = /^localhost[\\:?\d]*(?:[^\\:?\d]\S*)?$/;
-  const nonLocalhostDomainRE = /^[^\s\\.]+\.\S{2,}$/;
-
-  return Object.assign({}, descriptor, {
-    async value() {
-      if (!this.url) return false;
-      const [url, domain] = this.url.match(protocolAndDomainRE) || [];
-
-      if (!url || !domain) {
-        return false;
-      }
-
-      if (localhostDomainRE.test(domain) || nonLocalhostDomainRE.test(domain)) {
-        return oldValue.bind(this)();
-      }
-      return false;
-    },
-  });
-}
-
+/**
+ * @internal
+ */
 class UrlType {
   url: string;
   contentType: Promise<string>;
@@ -89,7 +70,7 @@ class UrlType {
   @isUrl
   async isJson() {
     const contentType = await this.contentType;
-    return contentType === ContentType.json;
+    return contentType.includes(ContentType.json);
   }
 
   @isUrl
@@ -126,4 +107,27 @@ class UrlType {
       return '';
     }
   }
+}
+
+function isUrl(target: UrlType, _: string, descriptor: PropertyDescriptor) {
+  const oldValue = descriptor.value;
+  const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
+  const localhostDomainRE = /^localhost[\\:?\d]*(?:[^\\:?\d]\S*)?$/;
+  const nonLocalhostDomainRE = /^[^\s\\.]+\.\S{2,}$/;
+
+  return Object.assign({}, descriptor, {
+    async value() {
+      if (!target.url) return false;
+      const [url, domain] = target.url.match(protocolAndDomainRE) || [];
+
+      if (!url || !domain) {
+        return false;
+      }
+
+      if (localhostDomainRE.test(domain) || nonLocalhostDomainRE.test(domain)) {
+        return oldValue.bind(target)();
+      }
+      return false;
+    },
+  });
 }

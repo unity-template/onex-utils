@@ -1,12 +1,18 @@
 import qs from 'qs';
 
-function getUrl(url: string) {
+/**
+ * 获取当前URL除去URL的查询参数和锚点部分
+ *
+ * @param url - current {@link window.location.href}
+ * @internal
+ */
+function getUrlHostAndPath(url: string): string {
   const nw = url.split('?');
   return nw[0];
 }
 
 /**
- * 替换当前URL上的参数生成新的链接
+ * 替换当前URL上的参数并生成新的链接
  *
  * @remarks
  * 如果当前URL上不存在传入的参数，也会直接添加到新生成的URL后
@@ -16,14 +22,18 @@ function getUrl(url: string) {
  * @returns with query prefix url
  */
 export function replaceUrlParams(newParams: Record<string, any>) {
+  const currentSearch = window?.location?.search;
+  const currentUrl = window?.location?.href;
+  if (!currentUrl) return '';
+
   try {
     const params = {
-      ...(qs.parse(window.location.search, { ignoreQueryPrefix: true }) || {}),
+      ...(qs.parse(currentSearch, { ignoreQueryPrefix: true }) || {}),
       ...newParams,
     };
-    return `${getUrl(window.location.href)}${qs.stringify(params, {
-      addQueryPrefix: true,
-    })}`;
+    const hostAndPath = getUrlHostAndPath(currentUrl);
+    const search = qs.stringify(params, { addQueryPrefix: true });
+    return `${hostAndPath}${search}`;
   } catch (error) {
     return '';
   }
