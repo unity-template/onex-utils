@@ -1,8 +1,12 @@
 const { getESLintConfig } = require('@iceworks/spec');
 
 module.exports = getESLintConfig('rax-ts', {
+  plugins: [
+    "eslint-plugin-tsdoc"
+  ],
   rules: {
     "no-shadow": "off",
-    "@typescript-eslint/no-shadow": ["error"] 
+    "tsdoc/syntax": ["error"],
+    "@typescript-eslint/no-shadow": ["error"],
   }
 });

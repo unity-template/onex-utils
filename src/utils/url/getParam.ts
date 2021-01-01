@@ -4,8 +4,8 @@
  * @remarks
  * 如果存在两个同名的参数，默认取第一个参数
  *
- * @param {string} key The current url parameter name
- * @returns {string | null} the current url parameter value with the key
+ * @param key - The current url parameter name
+ * @returns the current url parameter value with the key
  */
 export const getUrlParam = (key: string): string | null => {
   const reg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');

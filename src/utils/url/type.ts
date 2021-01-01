@@ -100,7 +100,7 @@ class UrlType {
 
   /**
    * Determines whether url is
-   * @see https://stackoverflow.com/questions/21098865/text-javascript-vs-application-javascript
+   * @see {@link https://stackoverflow.com/questions/21098865/text-javascript-vs-application-javascript}
    */
   @isUrl
   async isJs() {

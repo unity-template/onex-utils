@@ -10,9 +10,9 @@ function getUrl(url: string) {
  *
  * @remarks
  * 如果当前URL上不存在传入的参数，也会直接添加到新生成的URL后
+ * 替换当前location.href上的参数，生成新的链接
  *
- * @param {Record<string, any>} newParams
- * @description 替换当前location.href上的参数，生成新的链接
+ * @param newParams - 需要替换的URL新参数，如果原链接中存在将会进行覆盖
  * @returns with query prefix url
  */
 export function replaceUrlParams(newParams: Record<string, any>) {

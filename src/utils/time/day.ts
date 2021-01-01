@@ -8,7 +8,7 @@ import dayjs from 'dayjs';
  * 目前不支持通过dayjs通过对象、数组创建实例
  *
  *
- * @param {(string | undefined)} currentTime 当前的时间
+ * @param currentTime - 当前的时间
  */
 export function createDayjs(
   time?: string | number | Date,
