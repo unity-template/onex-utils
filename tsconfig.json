@@ -23,6 +23,9 @@
   },
   "typedocOptions": {
     "mode": "modules",
+    "plugin": [
+      "typedoc-plugin-nojekyll"
+    ],
     "out": "docs",
     "inputFiles": ["./src"],
     "exclude": ["**/*+(index|.spec|.e2e).ts"]
