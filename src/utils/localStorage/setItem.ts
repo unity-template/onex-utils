@@ -1,8 +1,12 @@
 /**
+ * localStorage 存储单个item
+ *
  * @remarks
- * localStorage中存储单个item
+ * 设置localStorage中单个item
  *
  */
-export function setItem(name: string, value: string) {
+export function setItem(name: string, value: string): boolean {
+  if (!window?.localStorage?.setItem) return false;
   window?.localStorage?.setItem(name, value);
+  return true;
 }

@@ -1,14 +1,32 @@
 import dayjs from 'dayjs';
 
 /**
- *创建dayjs的工厂函数
+ * 创建dayjs实例的工厂函数
  *
  * @remarks
- * 通过此函数创建dayjs.Dayjs对象，目前只支持字符串、时间戳、Date对象，
- * 目前不支持通过dayjs通过对象、数组创建实例
+ * 通过此函数创建dayjs.Dayjs实例
+ * 支持传入字符串（字符串描述）、时间戳（10位、13位、unix类型）、Date对象
  *
+ * @example string
+ * ```ts
+ * import { time } from 'onex-utils';
+ * const t1 = time.createDayjs('2020-01-01')
+ * ```
  *
- * @param currentTime - 当前的时间
+ * @example number
+ * ```ts
+ * import { time } from 'onex-utils';
+ * const t1 = time.createDayjs(1609518911614);
+ * ```
+ *
+ * @example Date
+ * ```ts
+ * import { time } from 'onex-utils';
+ * const currentTime = new Date();
+ * const t1 = time.createDayjs(currentTime);
+ * ```
+ * @param currentTime - 实例化合法的dayjs实例
+ * @returns dayjs instance
  */
 export function createDayjs(
   time?: string | number | Date,
@@ -27,12 +45,12 @@ export function createDayjs(
   currentTime += '';
 
   if (typeof currentTime === 'string') {
-    // 序列帧 13位
+    // 时间戳13位
     if (/^\d{13}$/.test(currentTime)) {
       dayjsInstance = dayjs(parseInt(currentTime, 10));
     }
 
-    // 序列帧10位
+    // 时间戳10位
     if (/^\d{10}$/.test(currentTime)) {
       dayjsInstance = dayjs(parseInt(`${currentTime}000`, 10));
     }
@@ -42,7 +60,7 @@ export function createDayjs(
       dayjsInstance = dayjs.unix(Number(currentTime));
     }
 
-    // 针对字符串类型的数字
+    // 传入字符进行实例化
     if (/-|:|：/.test(currentTime)) {
       dayjsInstance = dayjs(currentTime);
     }
@@ -51,5 +69,6 @@ export function createDayjs(
   if (dayjsInstance && dayjsInstance.isValid()) {
     return dayjsInstance;
   }
+
   return undefined;
 }

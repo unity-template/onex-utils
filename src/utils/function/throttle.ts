@@ -1,3 +1,8 @@
-import throttle from 'lodash.throttle';
+import lodashThrottle from 'lodash.throttle';
 
-export { throttle };
+/**
+ * 赋值lodash的throttle
+ *
+ * @see {@link https://lodash.com/docs/4.17.15#throttle|throttle}
+ */
+export const throttle = lodashThrottle;
