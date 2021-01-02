@@ -103,7 +103,8 @@ class UrlType {
         return contentType;
       }
       return '';
-    } catch {
+    } catch (error) {
+      console.log('err', error);
       return '';
     }
   }
@@ -117,15 +118,15 @@ function isUrl(target: UrlType, _: string, descriptor: PropertyDescriptor) {
 
   return Object.assign({}, descriptor, {
     async value() {
-      if (!target.url) return false;
-      const [url, domain] = target.url.match(protocolAndDomainRE) || [];
+      if (!this.url) return false;
+      const [url, domain] = this.url.match(protocolAndDomainRE) || [];
 
       if (!url || !domain) {
         return false;
       }
 
       if (localhostDomainRE.test(domain) || nonLocalhostDomainRE.test(domain)) {
-        return oldValue.bind(target)();
+        return oldValue.bind(this)();
       }
       return false;
     },

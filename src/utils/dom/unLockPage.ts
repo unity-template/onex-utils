@@ -2,7 +2,7 @@
  * lock page
  *
  * @remarks
- * 解锁页面
+ * 解锁页面，当前在Y轴进行滚动
  */
 export function unLockPage() {
   if (!document) return;

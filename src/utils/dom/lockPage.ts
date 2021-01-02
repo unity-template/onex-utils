@@ -2,7 +2,7 @@
  * lock page
  *
  * @remarks
- * 锁住当前页面，不让其滚动
+ * 锁住当前页面，不让其在Y轴滚动
  */
 export const pageLock = () => {
   if (!document) return;

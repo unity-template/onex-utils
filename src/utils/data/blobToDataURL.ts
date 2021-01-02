@@ -3,6 +3,8 @@
  *
  * @remarks
  * 将blob对象转为DataUrl类型的数据
+ *
+ * @throws {@link ProgressEvent}
  */
 export const blobToDataURL = (
   blob: Blob | File,

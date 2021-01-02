@@ -29,9 +29,10 @@ describe('url.type', () => {
   });
 
 
-  test('should return this url response is img', () => {
-    const urlType = type('https://avatars2.githubusercontent.com/u/46585516?s=40&u=c963a9d6b2260fe04fb0d5248825654a362bdbc8&v=4');
-    expect(urlType.isImage()).resolves.toBeTruthy();
+  test('should return this url response is img', async () => {
+    const urlType = type('https://www.baidu.com/img/flexible/logo/pc/result.png');
+    const isImage = await urlType.isImage();
+    expect(isImage).toBeTruthy();
   });
 
 
