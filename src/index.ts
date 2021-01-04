@@ -8,3 +8,4 @@ export * as time from './utils/time';
 export * as type from './utils/type';
 export * as url from './utils/url';
 export * as dom from './utils/dom';
+export * as device from './utils/device';
