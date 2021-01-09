@@ -28,7 +28,8 @@
     "eslint-fix": "npm run eslint -- --fix",
     "lint": "npm run eslint",
     "prepublishOnly": "npm run build",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags"
   },
   "peerDependencies": {
     "rax": "^1.1.0"
@@ -72,20 +73,20 @@
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "babel-preset-env": "^1.7.0",
     "build-plugin-component": "^1.0.0",
-    "conventional-changelog-cli": "^2.1.1",
+    "conventional-changelog-cli": "2.0.0",
     "current-git-branch": "^1.1.0",
     "driver-universal": "^3.1.0",
     "eslint": "^6.8.0",
     "eslint-plugin-tsdoc": "^0.2.10",
     "fs-extra": "^9.0.1",
     "git-cz": "^4.7.1",
+    "github-release-from-changelog": "^2.1.1",
     "husky": "^4.3.0",
     "jest": "^26.1.0",
     "jest-canvas-mock": "^2.3.0",
     "lint-staged": "^10.2.11",
     "lodash.defaults": "^4.2.0",
     "lodash.last": "^3.0.0",
-    "markdown-doctest": "^1.1.0",
     "prettier": "^2.1.2",
     "rax": "^1.1.0",
     "rax-test-renderer": "^1.0.0",
