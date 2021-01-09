@@ -27,7 +27,8 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
     "eslint-fix": "npm run eslint -- --fix",
     "lint": "npm run eslint",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "peerDependencies": {
     "rax": "^1.1.0"
@@ -71,6 +72,7 @@
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "babel-preset-env": "^1.7.0",
     "build-plugin-component": "^1.0.0",
+    "conventional-changelog-cli": "^2.1.1",
     "current-git-branch": "^1.1.0",
     "driver-universal": "^3.1.0",
     "eslint": "^6.8.0",
