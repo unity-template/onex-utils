@@ -1,18 +1,7 @@
-<h1 align="center">onex-utils</h1>
+# [onex-utils](https://unity-template.github.io/utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/utils)](https://www.travis-ci.org/github/unity-template/utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
 
-<p align="center">业务处理函数库</p>
-
-<p align="center">
-    <img src="https://badge.fury.io/js/onex-utils.svg" alt="npm version" />
-    <img src="https://img.shields.io/npm/dt/onex-utils" alt="npm download" />
-    <img src="https://img.shields.io/npm/l/onex-utils" alt="npm license" />
-    <img src="https://img.shields.io/npm/types/onex-utils" alt="types" />
-    <img src="https://travis-ci.org/unity-template/utils.svg?branch=master" alt="build" />
-    <img src="https://codecov.io/github/unity-template/utils/coverage.svg?branch=master" alt="coverage" />
-</p>
-
-## 综述
 沉淀业务开发过程中编写的一些业务函数或者采用开源的一些方案，避免多仓库之间的代码的复制，希望能够从业务开发过程中将一些能力沉淀的此仓库中进行长期维护，[API文档](https://unity-template.github.io/utils/index.html)
+
 ### 1. 模板说明
 需要在vscode中安装eslint、stylelint 两个插件做代码格式校验
 
