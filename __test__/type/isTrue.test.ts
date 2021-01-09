@@ -14,4 +14,8 @@ describe('type url isTrue', () => {
   test('should return true if value = `true`', () => {
     expect(isTrue('true')).toBe(true);
   });
+
+  test('should return false if value === "false"', () => {
+    expect(isTrue('false')).toBe(false);
+  });
 });
