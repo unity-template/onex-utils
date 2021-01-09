@@ -18,7 +18,7 @@ before_deploy:
 - git config --local user.email "isgenluo@gmail.com"
 
 after_deploy:
-- npm install github-release-from-changelog
+- npm install github-release-from-changelog -g
 - github-release-from-changelog
 
 deploy:
