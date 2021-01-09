@@ -37,10 +37,7 @@
   "engines": {
     "npm": ">=3.0.0"
   },
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:unity-template/utils.git"
-  },
+  "repository": "git@github.com:unity-template/utils.git",
   "author": {
     "name": "lg208143"
   },
