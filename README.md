@@ -16,24 +16,3 @@
 * [文档生成](https://tsdoc.org/)
 * [测试能力](https://jestjs.io/)
 
-### 4. 函数文档
- TODO
-
-### 5. 路线图
-* 功能
-  * 【done】基础的工具函数
-  * 【done】测试用例编写
-  * 【done】代码格式
-    * 【done】添加eslint-plugin-tsdoc校验代码注释格式
-  * build-script构建器分包
-* CI/CD流程
-  * 【done】依据tag发布
-  * 【done】自动运行测试用例并上传至codecov进行代码覆盖度统计
-  * 【done】文档自动部署
-  * 更加健全的发布部署链路
-  * 干净方便的发布npm包
-* 文档
-  * 【done】文档生成
-  * 深入typeDoc生成utils专属文档
-  * 项目changelog生成
-  
