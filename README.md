@@ -31,11 +31,12 @@
  TODO
 
 ### 5. 路线图
-
-* 【done】基础的工具函数
-* 【done】测试用例编写
-* 【done】代码格式
-  * 【done】添加eslint-plugin-tsdoc校验代码注释格式
+* 功能
+  * 【done】基础的工具函数
+  * 【done】测试用例编写
+  * 【done】代码格式
+    * 【done】添加eslint-plugin-tsdoc校验代码注释格式
+  * build-script构建器分包
 * CI/CD流程
   * 【done】依据tag发布
   * 【done】自动运行测试用例并上传至codecov进行代码覆盖度统计
