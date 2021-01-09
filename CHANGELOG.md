@@ -1,3 +1,13 @@
+<a name="0.0.16"></a>
+## [0.0.16](https://github.com/unity-template/utils/compare/v0.0.15...v0.0.16) (2021-01-09)
+
+
+### Features
+
+* 🎸 构建过程中添加github-release ([ab88f2c](https://github.com/unity-template/utils/commit/ab88f2c))
+
+
+
 # Unreleased (2021-01-09)
 
 
