@@ -1,6 +1,6 @@
 # [onex-utils](https://unity-template.github.io/utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/utils)](https://www.travis-ci.org/github/unity-template/utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
 
-沉淀业务开发过程中编写的一些业务函数或者采用开源的一些方案，避免多仓库之间的代码的复制，希望能够从业务开发过程中将一些能力沉淀的此仓库中进行长期维护
+沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代
 
 ### 1. 模板说明
 需要在vscode中安装eslint、stylelint 两个插件做代码格式校验
