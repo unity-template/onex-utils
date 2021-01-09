@@ -80,7 +80,6 @@
     "eslint-plugin-tsdoc": "^0.2.10",
     "fs-extra": "^9.0.1",
     "git-cz": "^4.7.1",
-    "github-release-from-changelog": "^2.1.1",
     "husky": "^4.3.0",
     "jest": "^26.1.0",
     "jest-canvas-mock": "^2.3.0",
