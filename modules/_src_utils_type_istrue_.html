@@ -91,7 +91,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/utils/blob/311c0e0/src/utils/type/isTrue.ts#L9">src/utils/type/isTrue.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/ce81d16/src/utils/type/isTrue.ts#L30">src/utils/type/isTrue.ts:30</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -102,8 +102,26 @@
 									<dt>remarks</dt>
 									<dd><p>阿里mtop接口请求，针对boolean进行判断，其他业务禁用</p>
 									</dd>
+									<dt>example</dt>
+									<dd><p>value is <code>true</code></p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>);
+<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// true</span></code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>value is <code>false</code></p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;false&#x27;</span>);
+<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// false</span></code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>value is 0</p>
+										<pre><code class="language-ts"> * <span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-number">0</span>);
+<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// false</span></code></pre>
+									</dd>
 									<dt>deprecated</dt>
-									<dd><p>只适合阿里相关业务场景，其他业务场景勿使用</p>
+									<dd><p>只适合阿里MTOP接口请求业务场景，其他业务场景勿使用</p>
 									</dd>
 								</dl>
 							</div>
