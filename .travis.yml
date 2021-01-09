@@ -13,7 +13,6 @@ after_success:
 - codecov -f coverage/*.json
 
 before_deploy:
-- npm run checkVersion # 版本发布前首先验证版本
 - npm run tsdoc # 生成文档
 - git config --local user.name "Genluo"
 - git config --local user.email "isgenluo@gmail.com"
