@@ -1,6 +1,6 @@
 {
   "name": "onex-utils",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "业务工具库，提供通用的能力",
   "main": "lib/index.js",
   "module": "es/index.js",
