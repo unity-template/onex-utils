@@ -1,7 +1,3 @@
-<p align="center">
-    <img alt="logo" src="https://avatars2.githubusercontent.com/u/74908967?s=400&u=d74d3e50e50171bb2930abca4f7bcf36697ff60a&v=4" width="120" height="120" style="margin-bottom: 10px;">
-</p>
-
 <h1 align="center">onex-utils</h1>
 
 <p align="center">业务处理函数库</p>
