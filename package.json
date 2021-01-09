@@ -27,7 +27,6 @@
     "eslint": "eslint --ext .js,.jsx,.ts,.tsx ./",
     "eslint-fix": "npm run eslint -- --fix",
     "lint": "npm run eslint",
-    "checkVersion": "ts-node ./script/publish/index.ts",
     "prepublishOnly": "npm run build"
   },
   "peerDependencies": {
@@ -101,7 +100,7 @@
   "defaultLanguage": "zh-cn",
   "husky": {
     "hooks": {
-      "pre-commit": "npm run checkVersion && lint-staged",
+      "pre-commit": "lint-staged",
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
@@ -113,4 +112,4 @@
     ]
   },
   "homepage": "https://unpkg.com/onex-utils@0.0.9/build/index.html"
-}
+}
