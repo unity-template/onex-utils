@@ -31,15 +31,19 @@
  TODO
 
 ### 5. 路线图
-  
-* 基础的工具函数
-* 测试用例编写
-* 代码格式
-  * 添加eslint-plugin-tsdoc校验代码注释格式
-* CI/CD流程接入
-  * 依据tag发布
-  * 自动运行测试用例并上传至codecov进行统计
+
+* 【done】基础的工具函数
+* 【done】测试用例编写
+* 【done】代码格式
+  * 【done】添加eslint-plugin-tsdoc校验代码注释格式
+* CI/CD流程
+  * 【done】依据tag发布
+  * 【done】自动运行测试用例并上传至codecov进行代码覆盖度统计
+  * 【done】文档自动部署
+  * 更加健全的发布部署链路
+  * 干净方便的发布npm包
 * 文档
-  * 文档生成
-  * 文档自动部署
-  * 深入typedoc生成utils专属文档
+  * 【done】文档生成
+  * 深入typeDoc生成utils专属文档
+  * 项目changelog生成
+  
