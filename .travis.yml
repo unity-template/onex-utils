@@ -17,10 +17,6 @@ before_deploy:
 - git config --local user.name "Genluo"
 - git config --local user.email "isgenluo@gmail.com"
 
-after_deploy:
-- npm install github-release-from-changelog -g
-- github-release-from-changelog
-
 deploy:
   - provider: npm # 包发布部署
     email: 1461304646@qq.com
@@ -38,3 +34,13 @@ deploy:
     on:
       branch: master
       tags: true
+  - provider: releases # Github Releases发布
+    api_key: $GITHUB_TOKEN
+    file: CHANGELOG.md
+    skip_cleanup: true
+    on:
+      branch: master
+      tags: true
+
+
+
