@@ -38,3 +38,10 @@ deploy:
     on:
       branch: master
       tags: true
+
+notifications:
+  email:
+    recipients:
+      - isgenluo@gamil.com
+    on_success: never
+    on_failure: always
