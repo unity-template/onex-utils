@@ -3,7 +3,7 @@
  *
  * @remarks
  * 如果URL上跟了两个同名的参数，默认返回第一个匹配的参数
- * 返回结果会进行 `decodeURIComponent`，进行解码
+ * 返回结果会使用`decodeURIComponent`进行解码
  *
  * @example
  * ```ts
