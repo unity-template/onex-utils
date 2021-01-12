@@ -9,8 +9,10 @@
  *
  */
 export function clean(name?: string) {
-  if (!window?.localStorage?.clear) return false;
-  if (!window?.localStorage?.removeItem) return false;
+  if (!window?.localStorage?.clear || !window?.localStorage?.removeItem) {
+    return true;
+  }
+
   if (name) {
     window.localStorage.removeItem(name);
     return true;
