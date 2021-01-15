@@ -9,3 +9,5 @@ export * as type from './utils/type';
 export * as url from './utils/url';
 export * as dom from './utils/dom';
 export * as device from './utils/device';
+export * as color from './utils/color';
+
