@@ -1,6 +1,6 @@
 import chunk from 'lodash.chunk';
 
-type RgbColor = [r: number, g: number, b: number];
+export type RgbColor = [r: number, g: number, b: number];
 
 function getIntHexColor(color: string): number {
   let IColor = color.replace('#', '');
@@ -41,7 +41,10 @@ function getIntHexColor(color: string): number {
  * @returns rgb {@link RgbColor}
  */
 export function transformHexColorToRgb(hexColor: number | string): RgbColor {
-  const IColor = typeof hexColor === 'string' ? getIntHexColor(hexColor) : hexColor;
+  const IColor =
+    typeof hexColor === 'string' ? getIntHexColor(hexColor) : hexColor;
   const IColorString = IColor.toString(16);
-  return chunk(IColorString.split(''), 2).map((singleColor) => singleColor.join(''));
+  return chunk(IColorString.split(''), 2)
+    .map((singleColor) => singleColor.join(''))
+    .map((singleColor) => parseInt(singleColor, 16));
 }

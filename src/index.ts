@@ -1,3 +1,14 @@
+/**
+ * onex-utils
+ *
+ * @remarks
+ * Encapsulates a reusable business development tool library
+ * hoping to become a Swiss army knife in web business development
+ * helping business development improve efficiency and precipitation
+ *
+ * @packageDocumentation
+ */
+
 export * as base64 from './utils/base64';
 export * as cookie from './utils/cookie';
 export * as data from './utils/data';
@@ -10,4 +21,3 @@ export * as url from './utils/url';
 export * as dom from './utils/dom';
 export * as device from './utils/device';
 export * as color from './utils/color';
-

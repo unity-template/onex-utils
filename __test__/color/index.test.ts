@@ -18,3 +18,16 @@ describe('transformHexColorToRgb', () => {
     expect(transformHexColorToRgb(testColor)).toEqual([238, 238, 225]);
   });
 });
+
+describe('format', () => {
+  test('should return all color type', () => {
+    const result = color.format([255, 255, 255]);
+    expect(result).toEqual({
+      rgb: [255, 255, 255],
+      rgbColor: 'rgb(255, 255, 255)',
+      rgbaColor: 'rgba(255, 255, 255, 1)',
+      intHex: 0xffffff,
+      stringHex: '#ffffff',
+    });
+  });
+});
