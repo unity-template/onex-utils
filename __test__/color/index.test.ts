@@ -31,3 +31,10 @@ describe('format', () => {
     });
   });
 });
+
+describe('color random', () => {
+  test('should return random rgb', () => {
+    const result = color.random();
+    expect(result.length).toEqual(3);
+  });
+});

@@ -48,8 +48,8 @@ interface ColorType {
 export const format = (color: RgbColor, opacity?: number): ColorType => {
   const [rColor, gColor, bColor] = color;
   const getSingleHexColor = (singleColor: number) => {
-    const hexColor = singleColor.toString(16);
-    return hexColor.length === 1 ? `0${hexColor}` : hexColor;
+    const hexColor = `0${singleColor.toString(16)}`.slice(-2);
+    return hexColor;
   };
   return {
     rgb: color,
