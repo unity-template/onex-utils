@@ -1,3 +1,16 @@
+<a name="0.0.19"></a>
+## [0.0.19](https://github.com/unity-template/utils/compare/v0.0.17...v0.0.19) (2021-01-18)
+
+
+### Features
+
+* 🎸 切换自定义构建器 ([f0b22d6](https://github.com/unity-template/utils/commit/f0b22d6))
+* 🎸 添加颜色format ([13718d5](https://github.com/unity-template/utils/commit/13718d5))
+* 🎸 添加color.random ([18237f0](https://github.com/unity-template/utils/commit/18237f0))
+* 添加color处理函数 ([aad5f59](https://github.com/unity-template/utils/commit/aad5f59))
+
+
+
 <a name="0.0.18"></a>
 ## [0.0.18](https://github.com/unity-template/utils/compare/v0.0.17...v0.0.18) (2021-01-10)
 
