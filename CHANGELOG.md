@@ -1,3 +1,13 @@
+<a name="0.0.20"></a>
+## [0.0.20](https://github.com/unity-template/utils/compare/v0.0.19...v0.0.20) (2021-01-18)
+
+
+### Bug Fixes
+
+* ci构建报错 ([4041e9e](https://github.com/unity-template/utils/commit/4041e9e))
+
+
+
 <a name="0.0.19"></a>
 ## [0.0.19](https://github.com/unity-template/utils/compare/v0.0.17...v0.0.19) (2021-01-18)
 
