@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/utils/type/isTrue&quot; | onex-utils</title>
+	<title>&quot;src/utils/url/replaceUrlParams&quot; | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_utils_type_istrue_.html">&quot;src/utils/type/isTrue&quot;</a>
+					<a href="_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replaceUrlParams&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/utils/type/isTrue&quot;</h1>
+			<h1>Module &quot;src/utils/url/replaceUrlParams&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_type_istrue_.html#istrue" class="tsd-kind-icon">is<wbr>True</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a></li>
 							</ul>
 						</section>
 					</div>
@@ -81,57 +82,82 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="istrue" class="tsd-anchor"></a>
-					<h3>is<wbr>True</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>True<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="geturlhostandpath" class="tsd-anchor"></a>
+					<h3>get<wbr>Url<wbr>Host<wbr>And<wbr>Path</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/type/isTrue.ts#L30">src/utils/type/isTrue.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/url/replaceUrlParams.ts#L9">src/utils/url/replaceUrlParams.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>判断接口返回的是否为true</p>
+									<p>获取当前URL除去URL的查询参数和锚点部分</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>internal</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>current {@link window.location.href}</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="replaceurlparams" class="tsd-anchor"></a>
+					<h3>replace<wbr>Url<wbr>Params</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">replace<wbr>Url<wbr>Params<span class="tsd-signature-symbol">(</span>newParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/url/replaceUrlParams.ts#L31">src/utils/url/replaceUrlParams.ts:31</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>替换当前URL上的参数并生成新的链接</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>remarks</dt>
-									<dd><p>阿里mtop接口请求，针对boolean进行判断，其他业务禁用</p>
+									<dd><p>如果当前URL上不存在传入的参数，也会直接添加到新生成的URL后
+										替换当前location.href上的参数，生成新的链接</p>
 									</dd>
 									<dt>example</dt>
-									<dd><p>value is <code>true</code></p>
-										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
-<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>);
-<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// true</span></code></pre>
-									</dd>
-									<dt>example</dt>
-									<dd><p>value is <code>false</code></p>
-										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
-<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;false&#x27;</span>);
-<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// false</span></code></pre>
-									</dd>
-									<dt>example</dt>
-									<dd><p>value is 0</p>
-										<pre><code class="language-ts"> * <span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
-<span class="hljs-keyword">const</span> isTrue = <span class="hljs-keyword">type</span>.isTrue(<span class="hljs-number">0</span>);
-<span class="hljs-built_in">console</span>.log(isTrue); <span class="hljs-comment">// false</span></code></pre>
-									</dd>
-									<dt>deprecated</dt>
-									<dd><p>只适合阿里MTOP接口请求业务场景，其他业务场景勿使用</p>
+									<dd><p>normal</p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { url } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> { replaceUrlParams } = url;
+replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> });</code></pre>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h5>
+									<h5>newParams: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>需要替换的URL新参数，如果原链接中存在将会进行覆盖</p>
+									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>with query prefix url</p>
 						</li>
 					</ul>
 				</section>
@@ -144,14 +170,17 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_utils_type_istrue_.html">&quot;src/utils/type/is<wbr>True&quot;</a>
+						<a href="_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replace<wbr>Url<wbr>Params&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_utils_type_istrue_.html#istrue" class="tsd-kind-icon">is<wbr>True</a>
+						<a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a>
 					</li>
 				</ul>
 			</nav>
