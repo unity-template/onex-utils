@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/utils/localStorage/removeItem&quot; | onex-utils</title>
+	<title>&quot;src/utils/color/random&quot; | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_utils_localstorage_removeitem_.html">&quot;src/utils/localStorage/removeItem&quot;</a>
+					<a href="_src_utils_color_random_.html">&quot;src/utils/color/random&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/utils/localStorage/removeItem&quot;</h1>
+			<h1>Module &quot;src/utils/color/random&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_localstorage_removeitem_.html#removeitem" class="tsd-kind-icon">remove<wbr>Item</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_color_random_.html#random" class="tsd-kind-icon">random</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,35 +82,31 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="removeitem" class="tsd-anchor"></a>
-					<h3>remove<wbr>Item</h3>
+					<a name="random" class="tsd-anchor"></a>
+					<h3>random</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">remove<wbr>Item<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">random<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_utils_color_hex2rgb_.html#rgbcolor" class="tsd-signature-type">RgbColor</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/utils/blob/ce81d16/src/utils/localStorage/removeItem.ts#L8">src/utils/localStorage/removeItem.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/color/random.ts#L13">src/utils/color/random.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>清除localStorage中的item</p>
+									<p>随机生成一个颜色</p>
 								</div>
 								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>删除localStorage中的单个item</p>
+									<dt>example</dt>
+									<dd><pre><code class="language-ts"><span class="hljs-keyword">import</span> { color } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> randomColor = color.random(); <span class="hljs-comment">// [122, 23, 89]</span></code></pre>
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>name: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="_src_utils_color_hex2rgb_.html#rgbcolor" class="tsd-signature-type">RgbColor</a></h4>
+							<p>color rgb <a href="_src_utils_color_hex2rgb_.html#rgbcolor">RgbColor</a></p>
 						</li>
 					</ul>
 				</section>
@@ -123,14 +119,14 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_utils_localstorage_removeitem_.html">&quot;src/utils/local<wbr>Storage/remove<wbr>Item&quot;</a>
+						<a href="_src_utils_color_random_.html">&quot;src/utils/color/random&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_utils_localstorage_removeitem_.html#removeitem" class="tsd-kind-icon">remove<wbr>Item</a>
+						<a href="_src_utils_color_random_.html#random" class="tsd-kind-icon">random</a>
 					</li>
 				</ul>
 			</nav>
@@ -145,9 +141,13 @@
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>

@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/utils/url/replaceParams&quot; | onex-utils</title>
+	<title>&quot;src/utils/url/replaceUrlParams&quot; | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_utils_url_replaceparams_.html">&quot;src/utils/url/replaceParams&quot;</a>
+					<a href="_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replaceUrlParams&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/utils/url/replaceParams&quot;</h1>
+			<h1>Module &quot;src/utils/url/replaceUrlParams&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -73,8 +73,8 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_url_replaceparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a></li>
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_url_replaceparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a></li>
 							</ul>
 						</section>
 					</div>
@@ -92,7 +92,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/utils/blob/ce81d16/src/utils/url/replaceParams.ts#L9">src/utils/url/replaceParams.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/url/replaceUrlParams.ts#L9">src/utils/url/replaceUrlParams.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -127,7 +127,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/utils/blob/ce81d16/src/utils/url/replaceParams.ts#L24">src/utils/url/replaceParams.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/utils/blob/15488a3/src/utils/url/replaceUrlParams.ts#L31">src/utils/url/replaceUrlParams.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -138,6 +138,12 @@
 									<dt>remarks</dt>
 									<dd><p>如果当前URL上不存在传入的参数，也会直接添加到新生成的URL后
 										替换当前location.href上的参数，生成新的链接</p>
+									</dd>
+									<dt>example</dt>
+									<dd><p>normal</p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { url } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-keyword">const</span> { replaceUrlParams } = url;
+replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> });</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -164,17 +170,17 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_utils_url_replaceparams_.html">&quot;src/utils/url/replace<wbr>Params&quot;</a>
+						<a href="_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replace<wbr>Url<wbr>Params&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_src_utils_url_replaceparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a>
+						<a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_utils_url_replaceparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a>
+						<a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a>
 					</li>
 				</ul>
 			</nav>
@@ -189,9 +195,13 @@
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
