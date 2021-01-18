@@ -2,12 +2,9 @@
   "name": "onex-utils",
   "version": "0.0.18",
   "description": "业务工具库，提供通用的能力",
-  "main": "lib/index.js",
+  "main": "build/index.js",
+  "types": "./lib",
   "module": "es/index.js",
-  "miniappConfig": {
-    "main": "lib/miniapp/index",
-    "main:wechat": "lib/wechat-miniprogram/index"
-  },
   "browser": {
     "fs": false,
     "net": false,
@@ -74,6 +71,7 @@
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "babel-preset-env": "^1.7.0",
     "build-plugin-component": "^1.0.0",
+    "build-plugin-utils": "^0.0.5",
     "conventional-changelog-cli": "2.0.0",
     "current-git-branch": "^1.1.0",
     "driver-universal": "^3.1.0",

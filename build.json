@@ -1,9 +1,5 @@
 {
-  "type": "rax",
-  "targets": [
-    "web"
-  ],
   "plugins": [
-    "build-plugin-component"
+    "build-plugin-utils"
   ]
 }
