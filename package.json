@@ -4,7 +4,6 @@
   "description": "业务工具库，提供通用的能力",
   "main": "build/index.js",
   "types": "./lib",
-  "module": "es/index.js",
   "browser": {
     "fs": false,
     "net": false,
