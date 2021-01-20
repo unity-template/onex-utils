@@ -1,3 +1,15 @@
+<a name="0.0.21"></a>
+## [0.0.21](https://github.com/unity-template/utils/compare/v0.0.20...v0.0.21) (2021-01-20)
+
+
+### Features
+
+* 🎸 生成图片的base64支持多类型和质量的设置 ([9afc818](https://github.com/unity-template/utils/commit/9afc818))
+* 构建器升级 ([f7c535b](https://github.com/unity-template/utils/commit/f7c535b))
+* 文档地址更新 ([9c1e975](https://github.com/unity-template/utils/commit/9c1e975))
+
+
+
 <a name="0.0.20"></a>
 ## [0.0.20](https://github.com/unity-template/utils/compare/v0.0.19...v0.0.20) (2021-01-18)
 
