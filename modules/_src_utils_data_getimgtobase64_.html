@@ -85,7 +85,10 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_data_getimgtobase64_.html#getimgbase64bycanvas" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByCanvas</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_data_getimgtobase64_.html#getimgbase64byfetch" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByFetch</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_data_getimgtobase64_.html#getimgtobase64" class="tsd-kind-icon">get<wbr>Img<wbr>ToBase64</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_data_getimgtobase64_.html#transformblob2base64" class="tsd-kind-icon">transform<wbr>Blob2<wbr>Base64</a></li>
 							</ul>
 						</section>
 					</div>
@@ -93,6 +96,55 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getimgbase64bycanvas" class="tsd-anchor"></a>
+					<h3>get<wbr>Img<wbr>Base64<wbr>ByCanvas</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByCanvas<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_utils_data_getimgtobase64_.imgoptions.html" class="tsd-signature-type">ImgOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/1067d14/src/utils/data/getImgToBase64.ts#L78">src/utils/data/getImgToBase64.ts:78</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>options: <a href="../interfaces/_src_utils_data_getimgtobase64_.imgoptions.html" class="tsd-signature-type">ImgOptions</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="getimgbase64byfetch" class="tsd-anchor"></a>
+					<h3>get<wbr>Img<wbr>Base64<wbr>ByFetch</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByFetch<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/1067d14/src/utils/data/getImgToBase64.ts#L101">src/utils/data/getImgToBase64.ts:101</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>url: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
 					<a name="getimgtobase64" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Img<wbr>ToBase64</h3>
@@ -103,7 +155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/8649bb8/src/utils/data/getImgToBase64.ts#L43">src/utils/data/getImgToBase64.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/1067d14/src/utils/data/getImgToBase64.ts#L67">src/utils/data/getImgToBase64.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -111,6 +163,9 @@
 									<p>将图片的 url 转为 base64 格式</p>
 								</div>
 								<dl class="tsd-comment-tags">
+									<dt>remarks</dt>
+									<dd><p>如果img对应的图片是APNG形式的（或者是后缀为png的动图），请指定类型为APNG或者不传函数的第二个参数</p>
+									</dd>
 									<dt>example</dt>
 									<dd><p>not options</p>
 										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { data } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
@@ -126,6 +181,14 @@ data.getImgToBase64(<span class="hljs-string">&#x27;https://gw.alicdn.com/imgext
 
 getImgToBase64(<span class="hljs-string">&#x27;https://gw.alicdn.com/imgextra/i3/O1CN01lsi6bB1O7PK4ba7GK_!!6000000001658-2-tps-90-70.png&#x27;</span>, { <span class="hljs-attr">type</span>: ImgType.PNG }).then(<span class="hljs-function"><span class="hljs-params">base64</span> =&gt;</span> {
 <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;生成的base64位：&#x27;</span>, base64)
+})</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>针对APNG动图</p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { data } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+data.getImgToBase64(<span class="hljs-string">&#x27;https://ossgw.alicdn.com/ace-tiny-resources/platform/pre/capture/d016edec-5043-4b49-b34c-0ecf4f6ba3c6/2021-01-21/628408979991_n88QCNZhztEQOHStkgBdeWN4_frame.apng&#x27;</span>)
+.then(<span class="hljs-function"><span class="hljs-params">base64</span> =&gt;</span> {
+   <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;生成的base64为：&#x27;</span>, base64)
 })</code></pre>
 									</dd>
 								</dl>
@@ -156,6 +219,29 @@ getImgToBase64(<span class="hljs-string">&#x27;https://gw.alicdn.com/imgextra/i3
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+					<a name="transformblob2base64" class="tsd-anchor"></a>
+					<h3>transform<wbr>Blob2<wbr>Base64</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">transform<wbr>Blob2<wbr>Base64<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Blob</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/1067d14/src/utils/data/getImgToBase64.ts#L106">src/utils/data/getImgToBase64.ts:106</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>content: <span class="tsd-signature-type">Blob</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+						</li>
+					</ul>
+				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -177,8 +263,17 @@ getImgToBase64(<span class="hljs-string">&#x27;https://gw.alicdn.com/imgextra/i3
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="../interfaces/_src_utils_data_getimgtobase64_.imgoptions.html" class="tsd-kind-icon">Img<wbr>Options</a>
 					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_src_utils_data_getimgtobase64_.html#getimgbase64bycanvas" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByCanvas</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_src_utils_data_getimgtobase64_.html#getimgbase64byfetch" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByFetch</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_utils_data_getimgtobase64_.html#getimgtobase64" class="tsd-kind-icon">get<wbr>Img<wbr>ToBase64</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
+						<a href="_src_utils_data_getimgtobase64_.html#transformblob2base64" class="tsd-kind-icon">transform<wbr>Blob2<wbr>Base64</a>
 					</li>
 				</ul>
 			</nav>
