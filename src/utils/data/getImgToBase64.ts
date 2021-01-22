@@ -2,7 +2,10 @@ export enum ImgType {
   JPG = 'image/jpg',
   JPEG = 'image/jpeg',
   PNG = 'image/png',
-  APNG = 'image/png',
+  /**
+   * 只是标识，无实际意义
+   */
+  APNG = 'image/apng',
   /**
    * 只有在chrome中支持
    */
@@ -25,6 +28,10 @@ export interface ImgOptions {
 /**
  * 将图片的 url 转为 base64 格式
  *
+ * @remarks
+ * 如果img对应的图片是APNG形式的（或者是后缀为png的动图），请指定类型为APNG或者不传函数的第二个参数
+ *
+ *
  * @example not options
  * ```ts
  * import { data } from 'onex-utils';
@@ -32,6 +39,7 @@ export interface ImgOptions {
  * console.log('生成的base64位：', base64)
  * })
  * ```
+ *
  * @example appoint type
  * ```ts
  * import { data } from 'onex-utils';
@@ -40,6 +48,15 @@ export interface ImgOptions {
  *
  * getImgToBase64('https://gw.alicdn.com/imgextra/i3/O1CN01lsi6bB1O7PK4ba7GK_!!6000000001658-2-tps-90-70.png', { type: ImgType.PNG }).then(base64 => {
  * console.log('生成的base64位：', base64)
+ * })
+ * ```
+ * @example 针对APNG动图
+ *
+ * ```ts
+ * import { data } from 'onex-utils';
+ * data.getImgToBase64('https://ossgw.alicdn.com/ace-tiny-resources/platform/pre/capture/d016edec-5043-4b49-b34c-0ecf4f6ba3c6/2021-01-21/628408979991_n88QCNZhztEQOHStkgBdeWN4_frame.apng')
+ * .then(base64 => {
+ *    console.log('生成的base64为：', base64)
  * })
  * ```
  *
@@ -51,25 +68,55 @@ export const getImgToBase64 = (
   url: string,
   options?: ImgOptions,
 ): Promise<string> => {
-  const { type = ImgType.PNG, quality = 1 } = options ?? {};
+  const { type } = options ?? {};
 
-  return new Promise((success, fail) => {
-    let canvas = document.createElement('canvas');
-    const ctx = canvas.getContext('2d');
-    const img = new Image();
+  if (!options || type === ImgType.APNG) return getImgBase64ByFetch(url);
 
-    img.crossOrigin = 'Anonymous';
+  return getImgBase64ByCanvas(url, options);
+};
+
+async function getImgBase64ByCanvas(url: string, options: ImgOptions): Promise<string> {
+  const { type = ImgType.PNG, quality = 1 } = options;
+  let canvas = document.createElement('canvas');
+  const ctx = canvas.getContext('2d');
+  const img = new Image();
+  img.crossOrigin = 'Anonymous';
+
+  return await new Promise((resolve, reject) => {
     img.onload = function () {
       canvas.height = img.height;
       canvas.width = img.width;
       ctx.drawImage(img, 0, 0);
       const dataURL = canvas.toDataURL(type, quality);
-      success(dataURL);
+      resolve(dataURL);
       canvas = null;
     };
     img.onerror = (err) => {
-      fail(err);
+      reject(err);
     };
     img.src = url;
   });
-};
+}
+
+async function getImgBase64ByFetch(url: string) {
+  const ImgBlob = await fetch(url).then((response) => response.blob());
+  return transformBlob2Base64(ImgBlob);
+}
+
+function transformBlob2Base64(content: Blob): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const IFileReader = new FileReader();
+    IFileReader.onload = (e) => {
+      const result = e?.target?.result;
+      if (typeof result !== 'string') {
+        reject(new Error('Conversion of dataUrl error'));
+      } else {
+        resolve(result);
+      }
+    };
+    IFileReader.onerror = (error) => {
+      reject(error);
+    };
+    IFileReader.readAsDataURL(content);
+  });
+}
