@@ -1,3 +1,14 @@
+<a name="0.0.22-0"></a>
+## [0.0.22-0](https://github.com/unity-template/utils/compare/v0.0.21...v0.0.22-0) (2021-01-22)
+
+
+### Bug Fixes
+
+* 🐛 apng动图处理 ([a4857f9](https://github.com/unity-template/utils/commit/a4857f9))
+* 🐛 ImgOptions参数配置为可选 ([9e1b2fe](https://github.com/unity-template/utils/commit/9e1b2fe))
+
+
+
 <a name="0.0.21"></a>
 ## [0.0.21](https://github.com/unity-template/utils/compare/v0.0.20...v0.0.21) (2021-01-20)
 
