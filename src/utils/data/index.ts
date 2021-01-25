@@ -5,3 +5,5 @@ export * from './downloadFile';
 export * from './getImgToBase64';
 export * from './getImgToBlob';
 export * from './setClipboardData';
+export * from './imgLoad';
+
