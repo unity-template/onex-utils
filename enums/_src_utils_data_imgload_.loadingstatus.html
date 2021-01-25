@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>&quot;src/utils/url/getParam&quot; | onex-utils</title>
+	<title>LoadingStatus | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,10 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="_src_utils_url_getparam_.html">&quot;src/utils/url/getParam&quot;</a>
+					<a href="../modules/_src_utils_data_imgload_.html">&quot;src/utils/data/imgLoad&quot;</a>
+				</li>
+				<li>
+					<a href="_src_utils_data_imgload_.loadingstatus.html">LoadingStatus</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/utils/url/getParam&quot;</h1>
+			<h1>Enumeration LoadingStatus</h1>
 		</div>
 	</div>
 </header>
@@ -71,60 +74,62 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_url_getparam_.html#geturlparam" class="tsd-kind-icon">get<wbr>Url<wbr>Param</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_src_utils_data_imgload_.loadingstatus.html#error" class="tsd-kind-icon">error</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_src_utils_data_imgload_.loadingstatus.html#loaded" class="tsd-kind-icon">loaded</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="_src_utils_data_imgload_.loadingstatus.html#loading" class="tsd-kind-icon">loading</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="geturlparam" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> get<wbr>Url<wbr>Param</h3>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Url<wbr>Param<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/url/getParam.ts#L18">src/utils/url/getParam.ts:18</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Get the current value on the url</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>如果URL上跟了两个同名的参数，默认返回第一个匹配的参数
-										返回结果会使用<code>decodeURIComponent</code>进行解码</p>
-									</dd>
-									<dt>example</dt>
-									<dd><pre><code class="language-ts"><span class="hljs-keyword">import</span> { url } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
-<span class="hljs-keyword">const</span> { getUrlParams } = url;
-<span class="hljs-built_in">console</span>.log(getUrlParams(<span class="hljs-string">&#x27;key&#x27;</span>));</code></pre>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<div class="lead">
-											<p>The current url parameter name</p>
-										</div>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
-							<p>the current url parameter value with the key</p>
-						</li>
-					</ul>
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="error" class="tsd-anchor"></a>
+					<h3>error</h3>
+					<div class="tsd-signature tsd-kind-icon">error<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;error&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/imgLoad.ts#L15">src/utils/data/imgLoad.ts:15</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>加载报错</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="loaded" class="tsd-anchor"></a>
+					<h3>loaded</h3>
+					<div class="tsd-signature tsd-kind-icon">loaded<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;loaded&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/imgLoad.ts#L7">src/utils/data/imgLoad.ts:7</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>已加载完成</p>
+						</div>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="loading" class="tsd-anchor"></a>
+					<h3>loading</h3>
+					<div class="tsd-signature tsd-kind-icon">loading<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;loading&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/imgLoad.ts#L11">src/utils/data/imgLoad.ts:11</a></li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>正在加载中</p>
+						</div>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -135,14 +140,38 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="_src_utils_url_getparam_.html">&quot;src/utils/url/get<wbr>Param&quot;</a>
+						<a href="../modules/_src_utils_data_imgload_.html">&quot;src/utils/data/img<wbr>Load&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-enum tsd-parent-kind-module">
+						<a href="_src_utils_data_imgload_.loadingstatus.html" class="tsd-kind-icon">Loading<wbr>Status</a>
+						<ul>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_src_utils_data_imgload_.loadingstatus.html#error" class="tsd-kind-icon">error</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_src_utils_data_imgload_.loadingstatus.html#loaded" class="tsd-kind-icon">loaded</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="_src_utils_data_imgload_.loadingstatus.html#loading" class="tsd-kind-icon">loading</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_src_utils_data_imgload_.imgloadoptions.html" class="tsd-kind-icon">Img<wbr>Load<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/_src_utils_data_imgload_.progressoptions.html" class="tsd-kind-icon">Progress<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="_src_utils_url_getparam_.html#geturlparam" class="tsd-kind-icon">get<wbr>Url<wbr>Param</a>
+						<a href="../modules/_src_utils_data_imgload_.html#imgload" class="tsd-kind-icon">img<wbr>Load</a>
 					</li>
 				</ul>
 			</nav>

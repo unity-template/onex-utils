@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ImgOptions | onex-utils</title>
+	<title>ImgLoadOptions | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,13 +56,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_src_utils_data_getimgtobase64_.html">&quot;src/utils/data/getImgToBase64&quot;</a>
+					<a href="../modules/_src_utils_data_imgload_.html">&quot;src/utils/data/imgLoad&quot;</a>
 				</li>
 				<li>
-					<a href="_src_utils_data_getimgtobase64_.imgoptions.html">ImgOptions</a>
+					<a href="_src_utils_data_imgload_.imgloadoptions.html">ImgLoadOptions</a>
 				</li>
 			</ul>
-			<h1>Interface ImgOptions</h1>
+			<h1>Interface ImgLoadOptions</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ImgOptions</span>
+						<span class="target">ImgLoadOptions</span>
 					</li>
 				</ul>
 			</section>
@@ -84,8 +84,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_utils_data_getimgtobase64_.imgoptions.html#quality" class="tsd-kind-icon">quality</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_utils_data_getimgtobase64_.imgoptions.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_utils_data_imgload_.imgloadoptions.html#dealurl" class="tsd-kind-icon">deal<wbr>Url</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_src_utils_data_imgload_.imgloadoptions.html#progress" class="tsd-kind-icon">progress</a></li>
 							</ul>
 						</section>
 					</div>
@@ -94,38 +94,75 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="quality" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> quality</h3>
-					<div class="tsd-signature tsd-kind-icon">quality<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="dealurl" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> deal<wbr>Url</h3>
+					<div class="tsd-signature tsd-kind-icon">deal<wbr>Url<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/getImgToBase64.ts#L25">src/utils/data/getImgToBase64.ts:25</a></li>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/imgLoad.ts#L53">src/utils/data/imgLoad.ts:53</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>在指定图片格式为 image/jpeg 或 image/webp的情况下，可以从 0 到 1 的区间内选择图片的质量。如果超出取值范围，将会使用默认值 0.92</p>
+							<p>针对链接进行处理</p>
 						</div>
-						<dl class="tsd-comment-tags">
-							<dt>see</dt>
-							<dd><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL" class="external">MDN</a></p>
-							</dd>
-						</dl>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>url: <span class="tsd-signature-type">string</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="type" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> type</h3>
-					<div class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">:</span> <a href="../enums/_src_utils_data_getimgtobase64_.imgtype.html" class="tsd-signature-type">ImgType</a></div>
+					<a name="progress" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> progress</h3>
+					<div class="tsd-signature tsd-kind-icon">progress<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="_src_utils_data_imgload_.progressoptions.html" class="tsd-signature-type">ProgressOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/getImgToBase64.ts#L20">src/utils/data/getImgToBase64.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/976af26/src/utils/data/imgLoad.ts#L49">src/utils/data/imgLoad.ts:49</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
 						<div class="lead">
-							<p>图片类型 <a href="../enums/_src_utils_data_getimgtobase64_.imgtype.html">ImgType</a></p>
+							<p>获取加载状态</p>
 						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="_src_utils_data_imgload_.progressoptions.html" class="tsd-signature-type">ProgressOptions</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>data: <a href="_src_utils_data_imgload_.progressoptions.html" class="tsd-signature-type">ProgressOptions</a></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+									</li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</section>
 			</section>
@@ -137,41 +174,35 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="../modules/_src_utils_data_getimgtobase64_.html">&quot;src/utils/data/get<wbr>Img<wbr>ToBase64&quot;</a>
+						<a href="../modules/_src_utils_data_imgload_.html">&quot;src/utils/data/img<wbr>Load&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-enum tsd-parent-kind-module">
-						<a href="../enums/_src_utils_data_getimgtobase64_.imgtype.html" class="tsd-kind-icon">Img<wbr>Type</a>
+						<a href="../enums/_src_utils_data_imgload_.loadingstatus.html" class="tsd-kind-icon">Loading<wbr>Status</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-module">
-						<a href="_src_utils_data_getimgtobase64_.imgoptions.html" class="tsd-kind-icon">Img<wbr>Options</a>
+						<a href="_src_utils_data_imgload_.imgloadoptions.html" class="tsd-kind-icon">Img<wbr>Load<wbr>Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_utils_data_getimgtobase64_.imgoptions.html#quality" class="tsd-kind-icon">quality</a>
+								<a href="_src_utils_data_imgload_.imgloadoptions.html#dealurl" class="tsd-kind-icon">deal<wbr>Url</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_src_utils_data_getimgtobase64_.imgoptions.html#type" class="tsd-kind-icon">type</a>
+								<a href="_src_utils_data_imgload_.imgloadoptions.html#progress" class="tsd-kind-icon">progress</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_src_utils_data_getimgtobase64_.html#getimgbase64bycanvas" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByCanvas</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_src_utils_data_getimgtobase64_.html#getimgbase64byfetch" class="tsd-kind-icon">get<wbr>Img<wbr>Base64<wbr>ByFetch</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="_src_utils_data_imgload_.progressoptions.html" class="tsd-kind-icon">Progress<wbr>Options</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="../modules/_src_utils_data_getimgtobase64_.html#getimgtobase64" class="tsd-kind-icon">get<wbr>Img<wbr>ToBase64</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="../modules/_src_utils_data_getimgtobase64_.html#transformblob2base64" class="tsd-kind-icon">transform<wbr>Blob2<wbr>Base64</a>
+						<a href="../modules/_src_utils_data_imgload_.html#imgload" class="tsd-kind-icon">img<wbr>Load</a>
 					</li>
 				</ul>
 			</nav>
