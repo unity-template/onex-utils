@@ -1,6 +1,6 @@
 import chunk from 'lodash.chunk';
 
-export type RgbColor = [r: number, g: number, b: number];
+export type RgbColor = number[];
 
 function getIntHexColor(color: string): number {
   let IColor = color.replace('#', '');
