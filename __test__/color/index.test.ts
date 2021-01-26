@@ -2,7 +2,7 @@ import { color } from '../../src/index';
 
 const { transformHexColorToRgb } = color;
 
-describe('transformHexColorToRgb', () => {
+describe('color transformHexColorToRgb', () => {
   test('should return rgb color when params is int hex Color', () => {
     const testColor = 0x666666;
     expect(transformHexColorToRgb(testColor)).toEqual([102, 102, 102]);
@@ -19,7 +19,7 @@ describe('transformHexColorToRgb', () => {
   });
 });
 
-describe('format', () => {
+describe('color format', () => {
   test('should return all color type', () => {
     const result = color.format([255, 255, 255]);
     expect(result).toEqual({
