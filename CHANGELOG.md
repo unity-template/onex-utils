@@ -1,3 +1,18 @@
+<a name="0.0.24"></a>
+## [0.0.24](https://github.com/unity-template/utils/compare/v0.0.24-0...v0.0.24) (2021-01-26)
+
+
+### Bug Fixes
+
+* 解决构建问题(类型构建报错 [#3](https://github.com/unity-template/utils/issues/3)) ([c5b8a3b](https://github.com/unity-template/utils/commit/c5b8a3b))
+
+
+### Features
+
+* 🎸 发包添加build目录 ([57c2de7](https://github.com/unity-template/utils/commit/57c2de7))
+
+
+
 <a name="0.0.24-0"></a>
 ## [0.0.24-0](https://github.com/unity-template/utils/compare/v0.0.23-0...v0.0.24-0) (2021-01-25)
 
