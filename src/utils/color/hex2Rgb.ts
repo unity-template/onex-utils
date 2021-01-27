@@ -1,6 +1,7 @@
+import { FixedLengthArray } from 'type-fest';
 import chunk from 'lodash.chunk';
 
-export type RgbColor = number[];
+export type RgbColor = FixedLengthArray<number, 3>;
 
 function getIntHexColor(color: string): number {
   let IColor = color.replace('#', '');
