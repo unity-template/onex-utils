@@ -68,12 +68,8 @@
 					<h1><a href="https://unity-template.github.io/onex-utils/index.html">onex-utils</a> &middot; <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/v/onex-utils.svg?style=flat" alt="npm version"></a> <a href="https://github.com/unity-template/onex-utils/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a> <a href="https://codecov.io/gh/unity-template/onex-utils"><img src="https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master" alt="codeCov"></a> <a href="https://www.travis-ci.org/github/unity-template/onex-utils"><img src="https://img.shields.io/travis/unity-template/onex-utils" alt="Travis (.org)"></a> <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/dt/onex-utils" alt="npm"></a></h1>
 				</a>
 				<p>沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代</p>
-				<a href="#1-模板说明" id="1-模板说明" style="color: inherit; text-decoration: none;">
-					<h3>1. 模板说明</h3>
-				</a>
-				<p>需要在vscode中安装eslint、stylelint 两个插件做代码格式校验</p>
-				<a href="#2-模板命令" id="2-模板命令" style="color: inherit; text-decoration: none;">
-					<h3>2. 模板命令</h3>
+				<a href="#1-项目命令" id="1-项目命令" style="color: inherit; text-decoration: none;">
+					<h3>1. 项目命令</h3>
 				</a>
 				<ul>
 					<li><code>npm run start</code> 项目启动命令</li>
@@ -81,14 +77,128 @@
 					<li><code>npm run commit</code> 统一使用这个命令提交代码</li>
 					<li><code>npm run lint</code> 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交</li>
 				</ul>
-				<a href="#3-通用能力" id="3-通用能力" style="color: inherit; text-decoration: none;">
-					<h3>3. 通用能力</h3>
+				<a href="#2-通用能力" id="2-通用能力" style="color: inherit; text-decoration: none;">
+					<h3>2. 通用能力</h3>
 				</a>
 				<ul>
 					<li><a href="https://tsdoc.org/">文档生成</a></li>
 					<li><a href="https://jestjs.io/">测试能力</a></li>
 					<li><a href="https://github.com/sindresorhus/type-fest">TS工具类型</a></li>
 				</ul>
+				<a href="#3-使用方式" id="3-使用方式" style="color: inherit; text-decoration: none;">
+					<h3>3. 使用方式</h3>
+				</a>
+				<a href="#1-通过npm方式" id="1-通过npm方式" style="color: inherit; text-decoration: none;">
+					<h4>1) 通过npm方式</h4>
+				</a>
+				<p>安装：</p>
+				<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install onex-utils --save</span></code></pre>
+				<p>使用：</p>
+				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>)); <span class="hljs-comment">// true</span></code></pre>
+				<a href="#2-通过cdn方式-·-" id="2-通过cdn方式-·-" style="color: inherit; text-decoration: none;">
+					<h4>2) 通过CDN方式 · <a href="https://www.jsdelivr.com/package/npm/onex-utils"><img src="https://data.jsdelivr.com/v1/package/npm/onex-utils/badge" alt=""></a></h4>
+				</a>
+				<p>安装：</p>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/onex-utils@0.0.25/dist/index.umd.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<p>使用：</p>
+				<pre><code class="language-ts"><span class="hljs-built_in">console</span>.log(onexUtils.type.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>));</code></pre>
+				<a href="#4-配套插件" id="4-配套插件" style="color: inherit; text-decoration: none;">
+					<h3>4. 配套插件</h3>
+				</a>
+				<a href="#1-babel-plugin-onex-utils-babel、webpack" id="1-babel-plugin-onex-utils-babel、webpack" style="color: inherit; text-decoration: none;">
+					<h4>1) babel-plugin-onex-utils (babel、webpack)</h4>
+				</a>
+				<details>
+					<summary>CLICK ME</summary>
+					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+						<h4>Install</h4>
+					</a>
+					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm i --save onex-utils</span>
+<span class="hljs-meta">$</span><span class="bash"> npm i --save-dev babel-plugin-onex-utils @babel/cli @babel/preset-env</span></code></pre>
+					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+						<h4>Example</h4>
+					</a>
+					<p>Transforms</p>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> { capitalize, map } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+
+map([], capitalize);</code></pre>
+					<p>roughly to</p>
+					<pre><code class="language-ts"><span class="hljs-meta">&quot;use strict&quot;</span>;
+
+<span class="hljs-keyword">var</span> _map2 = _interopRequireDefault(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;onex-utils/build/utils/map&quot;</span>));
+
+<span class="hljs-keyword">var</span> _capitalize2 = _interopRequireDefault(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;onex-utils/build/utils/capitalize&quot;</span>));
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_interopRequireDefault</span>(<span class="hljs-params">obj</span>) </span>{ <span class="hljs-keyword">return</span> obj &amp;&amp; obj.__esModule ? obj : { <span class="hljs-string">&quot;default&quot;</span>: obj }; }
+
+(<span class="hljs-number">0</span>, _map2[<span class="hljs-string">&quot;default&quot;</span>])([], _capitalize2[<span class="hljs-string">&quot;default&quot;</span>]);</code></pre>
+					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+						<h4>Usage</h4>
+					</a>
+					<p>.babelrc</p>
+					<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;onex-utils&quot;</span>],
+  <span class="hljs-attr">&quot;presets&quot;</span>: [[<span class="hljs-string">&quot;@babel/env&quot;</span>, { <span class="hljs-attr">&quot;targets&quot;</span>: { <span class="hljs-attr">&quot;node&quot;</span>: <span class="hljs-number">6</span> } }]]
+}</code></pre>
+					<p>Babel API</p>
+					<pre><code class="language-ts"><span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;babel-core&#x27;</span>).transform(<span class="hljs-string">&#x27;code&#x27;</span>, {
+  <span class="hljs-string">&#x27;plugins&#x27;</span>: [<span class="hljs-string">&#x27;onex-utils&#x27;</span>],
+  <span class="hljs-string">&#x27;presets&#x27;</span>: [[<span class="hljs-string">&#x27;@babel/env&#x27;</span>, { <span class="hljs-string">&#x27;targets&#x27;</span>: { <span class="hljs-string">&#x27;node&#x27;</span>: <span class="hljs-number">6</span> } }]]
+})</code></pre>
+					<p>webpack.config.js</p>
+					<pre><code class="language-ts"><span class="hljs-string">&#x27;module&#x27;</span>: {
+  <span class="hljs-string">&#x27;loaders&#x27;</span>: [{
+    <span class="hljs-string">&#x27;loader&#x27;</span>: <span class="hljs-string">&#x27;babel-loader&#x27;</span>,
+    <span class="hljs-string">&#x27;test&#x27;</span>: <span class="hljs-regexp">/\.js$/</span>,
+    <span class="hljs-string">&#x27;exclude&#x27;</span>: <span class="hljs-regexp">/node_modules/</span>,
+    <span class="hljs-string">&#x27;query&#x27;</span>: {
+      <span class="hljs-string">&#x27;plugins&#x27;</span>: [<span class="hljs-string">&#x27;onex-utils&#x27;</span>],
+      <span class="hljs-string">&#x27;presets&#x27;</span>: [[<span class="hljs-string">&#x27;@babel/env&#x27;</span>, { <span class="hljs-string">&#x27;targets&#x27;</span>: { <span class="hljs-string">&#x27;node&#x27;</span>: <span class="hljs-number">6</span> } }]]
+    }
+  }]
+}</code></pre>
+				</details>
+				<a href="#2-build-plugin-onex-utils（build-scripts）" id="2-build-plugin-onex-utils（build-scripts）" style="color: inherit; text-decoration: none;">
+					<h4>2) build-plugin-onex-utils（build-scripts）</h4>
+				</a>
+				<details>
+					<summary>CLICK ME</summary>
+					<a href="#install-1" id="install-1" style="color: inherit; text-decoration: none;">
+						<h4>Install</h4>
+					</a>
+					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev</span> </code></pre>
+					<a href="#usage（和rax结合使用）" id="usage（和rax结合使用）" style="color: inherit; text-decoration: none;">
+						<h4>Usage（和rax结合使用）</h4>
+					</a>
+					<p>build.json</p>
+					<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;rax&quot;</span>,
+  <span class="hljs-attr">&quot;targets&quot;</span>: [
+    <span class="hljs-string">&quot;web&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;plugins&quot;</span>: [
+    <span class="hljs-string">&quot;build-plugin-component&quot;</span>,
+    <span class="hljs-string">&quot;build-plugin-onex-utils&quot;</span>
+  ]
+}</code></pre>
+					<p>package.json</p>
+					<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;build/index.js&quot;</span>,
+  <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./lib&quot;</span>,
+  <span class="hljs-attr">&quot;files&quot;</span>: [
+    <span class="hljs-string">&quot;dist&quot;</span>,
+    <span class="hljs-string">&quot;es&quot;</span>,
+    <span class="hljs-string">&quot;lib&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;scripts&quot;</span>: {
+    <span class="hljs-attr">&quot;build&quot;</span>: <span class="hljs-string">&quot;build-scripts build&quot;</span>
+  }
+}</code></pre>
+					<p>cli</p>
+					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm run build</span></code></pre>
+				</details>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
