@@ -33,7 +33,7 @@ console.log(type.isTrue('true')); // true
 安装：
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/onex-utils@0.0.25/build/index.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/onex-utils@0.0.25/dist/index.umd.js"></script>
 ```
 
 使用：

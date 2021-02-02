@@ -72,7 +72,7 @@
     "babel-jest": "^26.1.0",
     "babel-plugin-replace-ts-export-assignment": "^0.0.2",
     "babel-preset-env": "^1.7.0",
-    "build-plugin-utils": "^0.1.4",
+    "build-plugin-utils": "^0.4.0",
     "conventional-changelog-cli": "2.0.0",
     "current-git-branch": "^1.1.0",
     "driver-universal": "^3.1.0",
