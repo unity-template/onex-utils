@@ -2,23 +2,47 @@
 
 沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代
 
-### 1. 模板说明
-需要在vscode中安装eslint、stylelint 两个插件做代码格式校验
-
-### 2. 模板命令
+### 1. 项目命令
 * `npm run start` 项目启动命令
 * `npm run build` 项目构建命令
 * `npm run commit` 统一使用这个命令提交代码
 * `npm run lint` 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
 
-### 3. 通用能力
+### 2. 通用能力
 
 * [文档生成](https://tsdoc.org/)
 * [测试能力](https://jestjs.io/)
 * [TS工具类型](https://github.com/sindresorhus/type-fest)
 
+### 3. 使用方式
+
+#### 1) 通过npm方式
+安装：
+```shell
+$ npm install onex-utils --save
+```
+使用：
+```ts
+import { type } from 'onex-utils';
+
+console.log(type.isTrue('true')); // true
+```
+
+#### 2) 通过CDN方式 · [![](https://data.jsdelivr.com/v1/package/npm/onex-utils/badge)](https://www.jsdelivr.com/package/npm/onex-utils)
+
+安装：
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/onex-utils@0.0.25/build/index.min.js"></script>
+```
+
+使用：
+```ts
+console.log(onexUtils.type.isTrue('true'));
+```
+
 ### 4. 配套插件
-#### 1.babel-plugin-onex-utils (babel、webpack)
+#### 1) babel-plugin-onex-utils (babel、webpack)
 
 <details>
 <summary>CLICK ME</summary>
@@ -86,7 +110,7 @@ webpack.config.js
 </details>
 
 
-#### 2. build-plugin-onex-utils（build-scripts）
+#### 2) build-plugin-onex-utils（build-scripts）
 <details>
 <summary>CLICK ME</summary>
 
