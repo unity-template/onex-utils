@@ -1,3 +1,14 @@
+<a name="0.0.26"></a>
+## [0.0.26](https://github.com/unity-template/utils/compare/v0.0.25...v0.0.26) (2021-02-02)
+
+
+### Features
+
+* 🎸 新增UMD使用方式 ([b974345](https://github.com/unity-template/utils/commit/b974345))
+* 支持UMD构建方式 ([fbce9a4](https://github.com/unity-template/utils/commit/fbce9a4))
+
+
+
 <a name="0.0.25"></a>
 ## [0.0.25](https://github.com/unity-template/utils/compare/v0.0.24...v0.0.25) (2021-01-28)
 
