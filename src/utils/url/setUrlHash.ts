@@ -21,7 +21,7 @@ import { getUrlHash } from './getUrlHash';
  */
 export const setUrlHash = (key: string, value?: string) => {
   const params = getUrlHash();
-  if (params?.[key] && value) {
+  if (value) {
     params[key] = value;
   } else if (params?.[key] && !value) {
     delete params[key];
