@@ -156,7 +156,7 @@ $ npm run build
 </details>
 
 
-### 常见问题
+### 5. 常见问题
 
 **1) 引入工具包，导致undefined报错**
 
