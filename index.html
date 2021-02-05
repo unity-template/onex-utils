@@ -67,7 +67,7 @@
 				<a href="#onex-utils-middot-----" id="onex-utils-middot-----" style="color: inherit; text-decoration: none;">
 					<h1><a href="https://unity-template.github.io/onex-utils/index.html">onex-utils</a> &middot; <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/v/onex-utils.svg?style=flat" alt="npm version"></a> <a href="https://github.com/unity-template/onex-utils/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a> <a href="https://codecov.io/gh/unity-template/onex-utils"><img src="https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master" alt="codeCov"></a> <a href="https://www.travis-ci.org/github/unity-template/onex-utils"><img src="https://img.shields.io/travis/unity-template/onex-utils" alt="Travis (.org)"></a> <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/dt/onex-utils" alt="npm"></a></h1>
 				</a>
-				<p>沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代</p>
+				<p>沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档：<a href="https://unity-template.github.io/onex-utils/index.html">click me</a></p>
 				<a href="#1-项目命令" id="1-项目命令" style="color: inherit; text-decoration: none;">
 					<h3>1. 项目命令</h3>
 				</a>
@@ -101,7 +101,7 @@
 					<h4>2) 通过CDN方式 · <a href="https://www.jsdelivr.com/package/npm/onex-utils"><img src="https://data.jsdelivr.com/v1/package/npm/onex-utils/badge" alt=""></a></h4>
 				</a>
 				<p>安装：</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/onex-utils@0.0.25/dist/index.umd.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
 				<p>使用：</p>
 				<pre><code class="language-ts"><span class="hljs-built_in">console</span>.log(onexUtils.type.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>));</code></pre>
 				<a href="#4-配套插件" id="4-配套插件" style="color: inherit; text-decoration: none;">
@@ -199,6 +199,33 @@ map([], capitalize);</code></pre>
 					<p>cli</p>
 					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm run build</span></code></pre>
 				</details>
+				<a href="#5-常见问题" id="5-常见问题" style="color: inherit; text-decoration: none;">
+					<h3>5. 常见问题</h3>
+				</a>
+				<p><strong>1) 引入工具包，导致undefined报错</strong></p>
+				<details>
+					<summary>CLICK ME</summary>
+					<p><strong>源码：</strong></p>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> onexUtils <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+<span class="hljs-built_in">console</span>.log(onexUtils.url);</code></pre>
+					<p><strong>报错：</strong></p>
+					<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png" alt=""></p>
+					<p><strong>修改方式：</strong></p>
+					<ol>
+						<li>如果是JS项目，通过namescpae的导入方式导入</li>
+					</ol>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> onexUtils <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;</code></pre>
+					<ol>
+						<li>如果是ts文件，通过配置<code>tsconfig.json</code>解决构建问题</li>
+					</ol>
+					<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;compilerOptions&quot;</span>: {
+    <span class="hljs-attr">&quot;allowSyntheticDefaultImports&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// 类型检查</span>
+    <span class="hljs-attr">&quot;esModuleInterop&quot;</span>: <span class="hljs-literal">true</span>, <span class="hljs-comment">// import CommonJS modules as es6 module</span>
+  }
+}</code></pre>
+					<p><code>tsconfig</code>中<code>allowSyntheticDefaultImports</code></p>
+				</details>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -289,10 +316,16 @@ map([], capitalize);</code></pre>
 						<a href="modules/_src_utils_url_getparam_.html">&quot;src/utils/url/get<wbr>Param&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_src_utils_url_geturlhash_.html">&quot;src/utils/url/get<wbr>Url<wbr>Hash&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_src_utils_url_parse_.html">&quot;src/utils/url/parse&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replace<wbr>Url<wbr>Params&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_utils_url_seturlhash_.html">&quot;src/utils/url/set<wbr>Url<wbr>Hash&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_utils_url_stringify_.html">&quot;src/utils/url/stringify&quot;</a>
