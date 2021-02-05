@@ -157,7 +157,11 @@ $ npm run build
 
 
 ### 常见问题
-1. 引入工具包，导致undefined报错
+
+**1) 引入工具包，导致undefined报错**
+
+<details>
+<summary>CLICK ME</summary>
 
 **源码：**
 
@@ -179,3 +183,4 @@ import * as onexUtils from 'onex-utils';
 ```
 
 2. 如果是ts文件，可以通过配置`tsconfig`中`allowSyntheticDefaultImports`解决
+</details>
