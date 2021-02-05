@@ -1,3 +1,15 @@
+<a name="0.0.27"></a>
+## [0.0.27](https://github.com/unity-template/utils/compare/v0.0.26...v0.0.27) (2021-02-05)
+
+
+### Features
+
+* 🎸 支持url上hash操作 [#5](https://github.com/unity-template/utils/issues/5) ([bf63625](https://github.com/unity-template/utils/commit/bf63625))
+* 🎸 add url.hash (feat [#5](https://github.com/unity-template/utils/issues/5)) ([620474e](https://github.com/unity-template/utils/commit/620474e))
+* 添加默认导出 ([344fd8f](https://github.com/unity-template/utils/commit/344fd8f))
+
+
+
 <a name="0.0.26"></a>
 ## [0.0.26](https://github.com/unity-template/utils/compare/v0.0.25...v0.0.26) (2021-02-02)
 
