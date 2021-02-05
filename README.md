@@ -1,6 +1,6 @@
 # [onex-utils](https://unity-template.github.io/onex-utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/onex-utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/onex-utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/onex-utils)](https://www.travis-ci.org/github/unity-template/onex-utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
 
-沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代
+沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档：[click me](https://unity-template.github.io/onex-utils/index.html)
 
 ### 1. 项目命令
 * `npm run start` 项目启动命令
@@ -154,3 +154,28 @@ $ npm run build
 ```
 
 </details>
+
+
+### 常见问题
+1. 引入工具包，导致undefined报错
+
+**源码：**
+
+```ts
+import onexUtils from 'onex-utils';
+console.log(onexUtils.url);
+```
+
+**报错：**
+
+![](https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png)
+
+**修改方式：**
+
+1. 通过namescpae的导入方式导入
+
+```ts
+import * as onexUtils from 'onex-utils';
+```
+
+2. 如果是ts文件，可以通过配置`tsconfig`中`allowSyntheticDefaultImports`解决

@@ -9,15 +9,47 @@
  * @packageDocumentation
  */
 
-export * as base64 from './utils/base64';
-export * as cookie from './utils/cookie';
-export * as data from './utils/data';
-export * as event from './utils/event';
-export * as func from './utils/function';
-export * as localStorage from './utils/localStorage';
-export * as time from './utils/time';
-export * as type from './utils/type';
-export * as url from './utils/url';
-export * as dom from './utils/dom';
-export * as device from './utils/device';
-export * as color from './utils/color';
+import * as base64 from './utils/base64';
+import * as cookie from './utils/cookie';
+import * as data from './utils/data';
+import * as event from './utils/event';
+import * as func from './utils/function';
+import * as localStorage from './utils/localStorage';
+import * as time from './utils/time';
+import * as type from './utils/type';
+import * as url from './utils/url';
+import * as dom from './utils/dom';
+import * as device from './utils/device';
+import * as color from './utils/color';
+
+const utils = {
+  base64,
+  cookie,
+  data,
+  event,
+  func,
+  localStorage,
+  time,
+  type,
+  url,
+  dom,
+  device,
+  color,
+};
+
+export {
+  base64,
+  cookie,
+  data,
+  event,
+  func,
+  localStorage,
+  time,
+  type,
+  url,
+  dom,
+  device,
+  color,
+};
+
+export default utils;
