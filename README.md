@@ -176,11 +176,21 @@ console.log(onexUtils.url);
 
 **修改方式：**
 
-1. 通过namescpae的导入方式导入
+1. 如果是JS项目，通过namescpae的导入方式导入
 
 ```ts
 import * as onexUtils from 'onex-utils';
 ```
 
-2. 如果是ts文件，可以通过配置`tsconfig`中`allowSyntheticDefaultImports`解决
+1. 如果是ts文件，通过配置`tsconfig.json`解决构建问题
+
+```json
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true, // 类型检查
+    "esModuleInterop": true, // import CommonJS modules as es6 module
+  }
+}
+```
+`tsconfig`中`allowSyntheticDefaultImports`
 </details>
