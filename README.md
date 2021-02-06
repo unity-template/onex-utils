@@ -10,7 +10,8 @@
 
 ### 2. 通用能力
 
-* [文档生成](https://tsdoc.org/)
+* [注释规范](https://tsdoc.org/)
+* [文档生成](https://github.com/TypeStrong/typedoc)
 * [测试能力](https://jestjs.io/)
 * [TS工具类型](https://github.com/sindresorhus/type-fest)
 
