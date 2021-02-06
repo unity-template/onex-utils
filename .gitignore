@@ -25,3 +25,4 @@ demo/miniapp/components/Target
 .eslintcache
 .vscode
 docs/
+script/theme/build

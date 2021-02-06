@@ -21,6 +21,7 @@
  * const hashParams = getUrlHash();
  * console.log(hashParams);
  * ```
+ *
  */
 export function getUrlHash(): { [key: string]: string } | undefined;
 export function getUrlHash(currentKey: string): string | undefined;
