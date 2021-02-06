@@ -2,7 +2,7 @@
 
 [简体中文](./README.md) | English
 
-✨ Some business functions written in the process of precipitation business development and some implementation schemes are adopted to avoid code duplication between multiple warehouses in the process of business development, and to carry out long-term maintenance and iteration in this warehouse that has accumulated some capabilities during business development. Document address: [click me](https://unity-template.github.io/onex-utils/index.html)
+Some business functions written in the process of precipitation business development and some implementation schemes are adopted to avoid code duplication between multiple warehouses in the process of business development, and to carry out long-term maintenance and iteration in this warehouse that has accumulated some capabilities during business development. Document address: [click me](https://unity-template.github.io/onex-utils/index.html)
 
 
 ### 1. Project command

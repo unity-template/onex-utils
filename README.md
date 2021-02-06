@@ -3,7 +3,7 @@
 简体中文 | [English](./README-en-GB.md)
 
 
-✨ 沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档 ☞ ：[click me](https://unity-template.github.io/onex-utils/index.html)
+沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档 ☞ ：[click me](https://unity-template.github.io/onex-utils/index.html)
 
 ### 1. 项目命令
 * `npm run start` 项目启动命令
