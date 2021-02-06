@@ -1,53 +1,57 @@
 # [onex-utils](https://unity-template.github.io/onex-utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/onex-utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/onex-utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/onex-utils)](https://www.travis-ci.org/github/unity-template/onex-utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
 
-简体中文 | [English](./README-en-GB.md)
+[简体中文](./README.md) | English
+
+✨ Some business functions written in the process of precipitation business development and some implementation schemes are adopted to avoid code duplication between multiple warehouses in the process of business development, and to carry out long-term maintenance and iteration in this warehouse that has accumulated some capabilities during business development. Document address: [click me](https://unity-template.github.io/onex-utils/index.html)
 
 
-✨ 沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档 ☞ ：[click me](https://unity-template.github.io/onex-utils/index.html)
+### 1. Project command
+* `npm run start` Project start command
+* `npm run build` Project build command
+* `npm run commit` Use this command to submit code
+* `npm run lint` Check the css style sheet and ts code format. If there is a problem with the rules, please contact the project developer to change
 
-### 1. 项目命令
-* `npm run start` 项目启动命令
-* `npm run build` 项目构建命令
-* `npm run commit` 统一使用这个命令提交代码
-* `npm run lint` 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
 
-### 2. 通用能力
+### 2. General ability
 
-* [注释规范](https://tsdoc.org/)
-* [文档生成](https://github.com/TypeStrong/typedoc)
-* [测试能力](https://jestjs.io/)
-* [TS工具类型](https://github.com/sindresorhus/type-fest)
+* [Annotation specification](https://tsdoc.org/)
+* [Document generation](https://github.com/TypeStrong/typedoc)
+* [Project test](https://jestjs.io/)
+* [TS tool type](https://github.com/sindresorhus/type-fest)
 
-### 3. 使用方式
 
-⚠️ ‼️ 非`onex-utils`维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用
+### 3. How to use
 
-#### 1) 通过npm方式
-安装：
+
+⚠️ ‼️ Used in online business where non-`onex-utils` maintainers participate. To ensure stability, it is recommended to use the locked version
+
+#### 1) Via npm
+
+install:
 ```shell
 $ npm install onex-utils --save
 ```
-使用：
+usage：
 ```ts
 import { type } from 'onex-utils';
 
 console.log(type.isTrue('true')); // true
 ```
 
-#### 2) 通过CDN方式 · [![](https://data.jsdelivr.com/v1/package/npm/onex-utils/badge)](https://www.jsdelivr.com/package/npm/onex-utils)
+#### 2) Via CDN · [![](https://data.jsdelivr.com/v1/package/npm/onex-utils/badge)](https://www.jsdelivr.com/package/npm/onex-utils)
 
-安装：
+install:
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js"></script>
 ```
 
-使用：
+usage:
 ```ts
 console.log(onexUtils.type.isTrue('true'));
 ```
 
-### 4. 配套插件
+### 4. Engineering plugin
 #### 1) babel-plugin-onex-utils (babel、webpack)
 
 <details>
@@ -125,7 +129,8 @@ webpack.config.js
 $ npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev 
 ```
 
-#### Usage（和rax结合使用）
+#### Usage(Used in conjunction with rax)
+
 build.json
 ```json
 {
@@ -162,33 +167,33 @@ $ npm run build
 </details>
 
 
-### 5. 常见问题
+### 5. Common problem
 
-**1) 引入工具包，导致undefined报错**
+**1) The toolkit was introduced, causing undefined error**
 
 <details>
 <summary>CLICK ME</summary>
 
-**源码：**
+**code:**
 
 ```ts
 import onexUtils from 'onex-utils';
 console.log(onexUtils.url);
 ```
 
-**报错：**
+**error:**
 
 ![](https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png)
 
-**修改方式：**
+**Modification method：**
 
-1. 如果是JS项目，通过namescpae的导入方式导入
+1. If it is a JS project, import it through the import method of namescpae
 
 ```ts
 import * as onexUtils from 'onex-utils';
 ```
 
-1. 如果是ts文件，通过配置`tsconfig.json`解决构建问题
+1. If it is a ts file, solve the build problem by configuring `tsconfig.json`
 
 ```json
 {
@@ -198,4 +203,5 @@ import * as onexUtils from 'onex-utils';
   }
 }
 ```
+
 </details>
