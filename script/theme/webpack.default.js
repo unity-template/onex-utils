@@ -15,7 +15,7 @@ const config = {
   module: {
     rules: [
       {
-        test: /\.png$/,
+        test: /\.(png|ico)$/,
         loader: 'file-loader',
         options: {
           outputPath: 'assets/images',

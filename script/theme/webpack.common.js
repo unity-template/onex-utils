@@ -1,6 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+
 
 const config = {
   mode: 'development',
@@ -49,6 +51,13 @@ const config = {
 
   plugins: [
     new CleanWebpackPlugin(),
+    new CopyPlugin({
+      patterns: [{
+        context: path.resolve(__dirname, './src/assets/images'),
+        from: '**/*.ico',
+        to: path.resolve(__dirname, 'build'),
+      }],
+    })
   ],
 };
 
