@@ -55,7 +55,7 @@ const config = {
       patterns: [{
         context: path.resolve(__dirname, './src/assets/images'),
         from: '**/*.ico',
-        to: path.resolve(__dirname, 'build'),
+        to: path.resolve(__dirname, 'build/assets/images'),
       }],
     })
   ],
