@@ -35,3 +35,23 @@ describe('func flag utils', () => {
     )).toBe(true);
   });
 });
+
+
+describe('fun curry utils', () => {
+  test('should return curry function', () => {
+    const testFun = (a: number, b: number) => [a, b];
+    expect(func.curry(testFun)(1)(2)()).toEqual([1, 2]);
+  });
+
+  test('should return curryRight function', () => {
+    const testFun = (a: number, b: number) => [a, b];
+    expect(func.curryRight(testFun)(1)(2)()).toEqual([2, 1]);
+  });
+
+  test('should return unCurry function', () => {
+    const testArr = [];
+    func.unCurry(Array.prototype.push)(testArr, 1, 2);
+    expect(testArr).toEqual([1, 2]);
+  });
+});
+
