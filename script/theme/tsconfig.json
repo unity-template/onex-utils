@@ -1,0 +1,15 @@
+{
+    "include": ["./src/assets/js/src/**/*.ts"],
+    "exclude": ["node_modules", "lib"],
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "ES2015",
+        "lib": ["ES2016", "DOM", "DOM.Iterable"],
+        "declaration": false,
+        "skipLibCheck": true,
+        "sourceMap": false,
+        "strict": true,
+        "alwaysStrict": false,
+        "noImplicitUseStrict": true
+    }
+}
