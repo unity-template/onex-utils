@@ -1,3 +1,15 @@
+<a name="0.0.30"></a>
+## [0.0.30](https://github.com/unity-template/utils/compare/v0.0.29...v0.0.30) (2021-03-11)
+
+
+### Features
+
+* 🎸 添加柯里化 feat: [#9](https://github.com/unity-template/utils/issues/9) ([55551a8](https://github.com/unity-template/utils/commit/55551a8))
+* 添加Flags相关操作 ([2b2082e](https://github.com/unity-template/utils/commit/2b2082e)), closes [#11](https://github.com/unity-template/utils/issues/11)
+* function中添加curry、curryRight、uncurrying相关工具函数 ([0ea424b](https://github.com/unity-template/utils/commit/0ea424b)), closes [#9](https://github.com/unity-template/utils/issues/9)
+
+
+
 <a name="0.0.29"></a>
 ## [0.0.29](https://github.com/unity-template/utils/compare/v0.0.28...v0.0.29) (2021-03-11)
 
