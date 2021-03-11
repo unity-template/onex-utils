@@ -25,6 +25,14 @@ interface ReplaceParamsOptions {
  * replaceUrlParams({ a: 1 });
  * ```
  *
+ * @example assign url option
+ * ```ts
+ * import { url } from 'onex-utils';
+ *
+ * const { replaceUrlParams } = url;
+ * replaceUrlParams({node: 'test'}, { url: 'https://taobao.com/pribuy#/firstbuy/list?node=1' });
+ * ```
+ *
  * @param newParams - 需要替换的URL新参数，如果原链接中存在将会进行覆盖
  * @param options - 自定义配置参数
  * @returns with query prefix url
