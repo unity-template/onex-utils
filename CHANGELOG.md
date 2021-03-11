@@ -1,3 +1,21 @@
+<a name="0.0.29"></a>
+## [0.0.29](https://github.com/unity-template/utils/compare/v0.0.28...v0.0.29) (2021-03-11)
+
+
+### Bug Fixes
+
+* 🐛 注释修改 ([9f3e4ca](https://github.com/unity-template/utils/commit/9f3e4ca))
+
+
+### Features
+
+* 🎸 添加主题模板 [#8](https://github.com/unity-template/utils/issues/8) ([927cf41](https://github.com/unity-template/utils/commit/927cf41))
+* 🎸 支持ico [#8](https://github.com/unity-template/utils/issues/8) ([5a3729c](https://github.com/unity-template/utils/commit/5a3729c))
+* 🎸 支持replaceUrlParams options参数 ([c548c1d](https://github.com/unity-template/utils/commit/c548c1d))
+* 🎸 icon替换 [#8](https://github.com/unity-template/utils/issues/8) ([5f3b5eb](https://github.com/unity-template/utils/commit/5f3b5eb))
+
+
+
 <a name="0.0.28"></a>
 ## [0.0.28](https://github.com/unity-template/utils/compare/v0.0.27...v0.0.28) (2021-02-05)
 
