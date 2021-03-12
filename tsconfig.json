@@ -24,7 +24,6 @@
   },
   "typedocOptions": {
     "readme": "./README-en-GB.md",
-    "theme": "./script/theme/build/",
     "hideGenerator": true,
     "mode": "modules",
     "plugin": [
