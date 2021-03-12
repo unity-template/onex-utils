@@ -6,7 +6,9 @@
 	<title>&quot;src/utils/url/replaceUrlParams&quot; | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
 	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +42,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -53,13 +53,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">Globals</a>
+					<a href="../globals.html">onex-utils</a>
 				</li>
 				<li>
 					<a href="_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replaceUrlParams&quot;</a>
 				</li>
 			</ul>
-			<h1>Module &quot;src/utils/url/replaceUrlParams&quot;</h1>
+			<h1>&quot;src/utils/url/replaceUrlParams&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -70,10 +70,16 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-not-exported">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported"><a href="../interfaces/_src_utils_url_replaceurlparams_.replaceparamsoptions.html" class="tsd-kind-icon">Replace<wbr>Params<wbr>Options</a></li>
+							</ul>
+						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module tsd-is-not-exported"><a href="_src_utils_url_replaceurlparams_.html#geturlhashandsearch" class="tsd-kind-icon">get<wbr>Url<wbr>Hash<wbr>And<wbr>Search</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-module"><a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a></li>
 							</ul>
 						</section>
@@ -83,37 +89,36 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-					<a name="geturlhostandpath" class="tsd-anchor"></a>
-					<h3>get<wbr>Url<wbr>Host<wbr>And<wbr>Path</h3>
+					<a name="geturlhashandsearch" class="tsd-anchor"></a>
+					<h3>get<wbr>Url<wbr>Hash<wbr>And<wbr>Search</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Url<wbr>Hash<wbr>And<wbr>Search<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>search<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/7d71911/src/utils/url/replaceUrlParams.ts#L9">src/utils/url/replaceUrlParams.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/0bc9d95/src/utils/url/replaceUrlParams.ts#L65">src/utils/url/replaceUrlParams.ts:65</a></li>
 								</ul>
 							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>获取当前URL除去URL的查询参数和锚点部分</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>internal</dt>
-									<dd></dd>
-								</dl>
-							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>url: <span class="tsd-signature-type">string</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>current {@link window.location.href}</p>
-									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span>search<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h4>
+							<ul class="tsd-parameters">
+								<li class="tsd-parameter">
+									<h5>hash<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>host<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li class="tsd-parameter">
+									<h5>search<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -121,13 +126,13 @@
 					<a name="replaceurlparams" class="tsd-anchor"></a>
 					<h3>replace<wbr>Url<wbr>Params</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">replace<wbr>Url<wbr>Params<span class="tsd-signature-symbol">(</span>newParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">replace<wbr>Url<wbr>Params<span class="tsd-signature-symbol">(</span>newParams<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">ReplaceParamsOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/7d71911/src/utils/url/replaceUrlParams.ts#L31">src/utils/url/replaceUrlParams.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/0bc9d95/src/utils/url/replaceUrlParams.ts#L40">src/utils/url/replaceUrlParams.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -139,11 +144,21 @@
 									<dd><p>如果当前URL上不存在传入的参数，也会直接添加到新生成的URL后
 										替换当前location.href上的参数，生成新的链接</p>
 									</dd>
+									<dt>remarks</dt>
+									<dd><p>针对带有hash的链接，需要遵循先search参数，后hash参数的原则</p>
+									</dd>
 									<dt>example</dt>
 									<dd><p>normal</p>
 										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { url } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
 <span class="hljs-keyword">const</span> { replaceUrlParams } = url;
 replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1</span> });</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>assign url option</p>
+										<pre><code class="language-ts"><span class="hljs-keyword">import</span> { url } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+
+<span class="hljs-keyword">const</span> { replaceUrlParams } = url;
+replaceUrlParams({<span class="hljs-attr">node</span>: <span class="hljs-string">&#x27;test&#x27;</span>}, { <span class="hljs-attr">url</span>: <span class="hljs-string">&#x27;https://taobao.com/pribuy#/firstbuy/list?node=1&#x27;</span> });</code></pre>
 									</dd>
 								</dl>
 							</div>
@@ -153,6 +168,12 @@ replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1
 									<h5>newParams: <span class="tsd-signature-type">Record</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>需要替换的URL新参数，如果原链接中存在将会进行覆盖</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">ReplaceParamsOptions</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>自定义配置参数</p>
 									</div>
 								</li>
 							</ul>
@@ -176,8 +197,11 @@ replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module tsd-is-not-exported">
+						<a href="../interfaces/_src_utils_url_replaceurlparams_.replaceparamsoptions.html" class="tsd-kind-icon">Replace<wbr>Params<wbr>Options</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<a href="_src_utils_url_replaceurlparams_.html#geturlhostandpath" class="tsd-kind-icon">get<wbr>Url<wbr>Host<wbr>And<wbr>Path</a>
+						<a href="_src_utils_url_replaceurlparams_.html#geturlhashandsearch" class="tsd-kind-icon">get<wbr>Url<wbr>Hash<wbr>And<wbr>Search</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
 						<a href="_src_utils_url_replaceurlparams_.html#replaceurlparams" class="tsd-kind-icon">replace<wbr>Url<wbr>Params</a>
@@ -187,7 +211,7 @@ replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1
 		</div>
 	</div>
 </div>
-<footer class="with-border-bottom">
+<footer>
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -195,6 +219,7 @@ replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
@@ -209,9 +234,6 @@ replaceUrlParams({ <span class="hljs-attr">a</span>: <span class="hljs-number">1
 		</div>
 	</div>
 </footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 </body>

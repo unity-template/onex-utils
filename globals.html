@@ -6,7 +6,9 @@
 	<title>onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +42,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +51,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>onex-utils</h1>
 		</div>
 	</div>
@@ -89,7 +84,9 @@
 								<li class="tsd-kind-module"><a href="modules/_src_utils_device_iphone_.html" class="tsd-kind-icon">&quot;src/utils/device/iphone&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_dom_lockpage_.html" class="tsd-kind-icon">&quot;src/utils/dom/lock<wbr>Page&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_dom_unlockpage_.html" class="tsd-kind-icon">&quot;src/utils/dom/un<wbr>Lock<wbr>Page&quot;</a></li>
+								<li class="tsd-kind-module"><a href="modules/_src_utils_function_curry_.html" class="tsd-kind-icon">&quot;src/utils/function/curry&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_function_debounce_.html" class="tsd-kind-icon">&quot;src/utils/function/debounce&quot;</a></li>
+								<li class="tsd-kind-module"><a href="modules/_src_utils_function_flag_.html" class="tsd-kind-icon">&quot;src/utils/function/flag&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_function_throttle_.html" class="tsd-kind-icon">&quot;src/utils/function/throttle&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_localstorage_clean_.html" class="tsd-kind-icon">&quot;src/utils/local<wbr>Storage/clean&quot;</a></li>
 								<li class="tsd-kind-module"><a href="modules/_src_utils_localstorage_getitem_.html" class="tsd-kind-icon">&quot;src/utils/local<wbr>Storage/get<wbr>Item&quot;</a></li>
@@ -173,7 +170,13 @@
 						<a href="modules/_src_utils_dom_unlockpage_.html">&quot;src/utils/dom/un<wbr>Lock<wbr>Page&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
+						<a href="modules/_src_utils_function_curry_.html">&quot;src/utils/function/curry&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
 						<a href="modules/_src_utils_function_debounce_.html">&quot;src/utils/function/debounce&quot;</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_src_utils_function_flag_.html">&quot;src/utils/function/flag&quot;</a>
 					</li>
 					<li class=" tsd-kind-module">
 						<a href="modules/_src_utils_function_throttle_.html">&quot;src/utils/function/throttle&quot;</a>
@@ -223,7 +226,7 @@
 		</div>
 	</div>
 </div>
-<footer class="with-border-bottom">
+<footer>
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -231,6 +234,7 @@
 				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
 				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
 			</ul>
 			<ul class="tsd-legend">
@@ -245,9 +249,6 @@
 		</div>
 	</div>
 </footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
 </body>
