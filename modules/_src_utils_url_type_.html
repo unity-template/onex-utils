@@ -6,9 +6,7 @@
 	<title>&quot;src/utils/url/type&quot; | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
 	<link rel="stylesheet" href="../assets/css/main.css">
-	<script async src="../assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -42,6 +40,8 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -53,13 +53,13 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="../globals.html">onex-utils</a>
+					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
 					<a href="_src_utils_url_type_.html">&quot;src/utils/url/type&quot;</a>
 				</li>
 			</ul>
-			<h1>&quot;src/utils/url/type&quot;</h1>
+			<h1>Module &quot;src/utils/url/type&quot;</h1>
 		</div>
 	</div>
 </header>
@@ -98,19 +98,19 @@
 					<a name="isurl" class="tsd-anchor"></a>
 					<h3>is<wbr>Url</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Url<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UrlType</span>, _<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, descriptor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDescriptor</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDescriptor</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Url<span class="tsd-signature-symbol">(</span>target<span class="tsd-signature-symbol">: </span><a href="../classes/_src_utils_url_type_.urltype.html" class="tsd-signature-type">UrlType</a>, _<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, descriptor<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDescriptor</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">PropertyDescriptor</span><span class="tsd-signature-symbol"> &amp; </span><span class="tsd-signature-symbol">{ </span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> }</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/0bc9d95/src/utils/url/type.ts#L113">src/utils/url/type.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/ccf14e3/src/utils/url/type.ts#L113">src/utils/url/type.ts:113</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>target: <span class="tsd-signature-type">UrlType</span></h5>
+									<h5>target: <a href="../classes/_src_utils_url_type_.urltype.html" class="tsd-signature-type">UrlType</a></h5>
 								</li>
 								<li>
 									<h5>_: <span class="tsd-signature-type">string</span></h5>
@@ -127,13 +127,13 @@
 					<a name="type" class="tsd-anchor"></a>
 					<h3>type</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UrlType</span></li>
+						<li class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_src_utils_url_type_.urltype.html" class="tsd-signature-type">UrlType</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/0bc9d95/src/utils/url/type.ts#L11">src/utils/url/type.ts:11</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/ccf14e3/src/utils/url/type.ts#L11">src/utils/url/type.ts:11</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -153,7 +153,7 @@
 									<h5>url: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UrlType</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_src_utils_url_type_.urltype.html" class="tsd-signature-type">UrlType</a></h4>
 						</li>
 					</ul>
 				</section>
