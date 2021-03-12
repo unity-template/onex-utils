@@ -1,3 +1,13 @@
+<a name="0.0.32"></a>
+## [0.0.32](https://github.com/unity-template/utils/compare/v0.0.31...v0.0.32) (2021-03-12)
+
+
+### Features
+
+* 主题配置 ([bd12773](https://github.com/unity-template/utils/commit/bd12773))
+
+
+
 <a name="0.0.31"></a>
 ## [0.0.31](https://github.com/unity-template/utils/compare/v0.0.30...v0.0.31) (2021-03-12)
 
