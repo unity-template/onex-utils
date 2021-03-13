@@ -2,19 +2,20 @@
 name: Feature request
 about: Suggest an idea for this project
 title: ''
-labels: ''
-assignees: ''
+labels: 'enhancement'
+assignees: 'Genluo'
 
 ---
+### 函数描述
+<!-- 描述功能函数 -->
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+### 函数接口
+<!-- 描述功能函数对应的接口 -->
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+### 测试用例
+<!-- 添加动能的测试用例 -->
+测试用例应该包含如下:T
+* [ ] ................
+* [ ] ................
+* [ ] ................
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
