@@ -77,7 +77,7 @@ async function getImgBase64ByCanvas(
   url: string,
   options: ImgOptions,
 ): Promise<string> {
-  const { type = ImgType.PNG, quality = 1 } = options;
+  const { type = ImgType.PNG, quality = 1 } = options || {};
   let canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   const img = new Image();
