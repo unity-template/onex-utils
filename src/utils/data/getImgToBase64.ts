@@ -68,14 +68,15 @@ export const getImgToBase64 = (
   url: string,
   options?: ImgOptions,
 ): Promise<string> => {
-  const { type } = options ?? {};
-
-  if (!options || type === ImgType.APNG) return getImgBase64ByFetch(url);
+  if (options && options?.type === ImgType.APNG) return getImgBase64ByFetch(url);
 
   return getImgBase64ByCanvas(url, options);
 };
 
-async function getImgBase64ByCanvas(url: string, options: ImgOptions): Promise<string> {
+async function getImgBase64ByCanvas(
+  url: string,
+  options: ImgOptions,
+): Promise<string> {
   const { type = ImgType.PNG, quality = 1 } = options;
   let canvas = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
