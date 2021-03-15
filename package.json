@@ -1,6 +1,6 @@
 {
   "name": "onex-utils",
-  "version": "0.0.34-0",
+  "version": "0.0.34",
   "description": "业务工具库，提供通用的能力",
   "main": "build/index.js",
   "types": "./build",
