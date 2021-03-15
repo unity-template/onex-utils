@@ -1,3 +1,13 @@
+<a name="0.0.34-0"></a>
+## [0.0.34-0](https://github.com/unity-template/utils/compare/v0.0.33-0...v0.0.34-0) (2021-03-15)
+
+
+### Bug Fixes
+
+* 🐛 options为空情况处理 ([87c4079](https://github.com/unity-template/utils/commit/87c4079))
+
+
+
 <a name="0.0.33-0"></a>
 ## [0.0.33-0](https://github.com/unity-template/utils/compare/v0.0.32...v0.0.33-0) (2021-03-15)
 
