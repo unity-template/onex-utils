@@ -1,3 +1,18 @@
+<a name="0.0.33-0"></a>
+## [0.0.33-0](https://github.com/unity-template/utils/compare/v0.0.32...v0.0.33-0) (2021-03-15)
+
+
+### Bug Fixes
+
+* 🐛 修改图片跨域问题 ([c3f02eb](https://github.com/unity-template/utils/commit/c3f02eb))
+
+
+### Features
+
+* 🎸 修改issue模板 ([baf1175](https://github.com/unity-template/utils/commit/baf1175))
+
+
+
 <a name="0.0.32"></a>
 ## [0.0.32](https://github.com/unity-template/utils/compare/v0.0.31...v0.0.32) (2021-03-12)
 
