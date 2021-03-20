@@ -55,3 +55,9 @@ describe('fun curry utils', () => {
   });
 });
 
+describe('func utils uuid', () => {
+  test('should return random uuid', () => {
+    const testId = func.uuid();
+    expect(testId.length).toEqual(36);
+  });
+});
