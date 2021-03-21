@@ -1,17 +1,23 @@
 {
-  "include": ["./src/"],
-  "exclude": ["node_modules", "lib"],
+  "include": [
+    "./packages/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
   "compilerOptions": {
-      "target": "ES5",
-      "module": "ES2015",
-      "lib": ["ES2016", "DOM", "DOM.Iterable"],
-      "declaration": false,
-      "skipLibCheck": true,
-      "sourceMap": false,
-      "strict": true,
-      "alwaysStrict": false,
-      "noImplicitUseStrict": true,
-      "outDir": "./build",
-      "rootDir": "./"
+    "moduleResolution": "node",
+    "target": "ES2015",
+    "module": "CommonJS",
+    "lib": ["es2018", "dom"],
+    "declaration": false,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,
+    "outDir": "./build",
+    "rootDir": "./"
   }
 }
