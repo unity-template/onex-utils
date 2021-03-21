@@ -17,6 +17,7 @@
     "strict": true,
     "alwaysStrict": false,
     "noImplicitUseStrict": true,
+    "inlineSourceMap": true,
     "outDir": "./build",
     "rootDir": "./"
   }
