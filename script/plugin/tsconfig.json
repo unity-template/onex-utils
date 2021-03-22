@@ -1,0 +1,24 @@
+{
+  "include": [
+    "./packages/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "lib"
+  ],
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "target": "ES2015",
+    "module": "CommonJS",
+    "lib": ["es2018", "dom"],
+    "declaration": false,
+    "skipLibCheck": true,
+    "sourceMap": false,
+    "strict": true,
+    "alwaysStrict": false,
+    "noImplicitUseStrict": true,
+    "inlineSourceMap": true,
+    "outDir": "./build",
+    "rootDir": "./"
+  }
+}

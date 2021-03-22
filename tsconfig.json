@@ -27,7 +27,8 @@
     "hideGenerator": true,
     "mode": "modules",
     "plugin": [
-      "typedoc-plugin-nojekyll"
+      "typedoc-plugin-nojekyll",
+      "./script/plugin/build/packages/alias/index.js"
     ],
     "out": "docs",
     "inputFiles": ["./src"],

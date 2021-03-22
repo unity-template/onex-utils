@@ -17,8 +17,10 @@
   ],
   "scripts": {
     "commit": "git-cz",
+    "build:plugin": "tsc -p './script/plugin'",
     "build:theme": "webpack --config ./script/theme/webpack.config.js",
-    "tsdoc": "npm run build:theme && typedoc",
+    "build:tsdoc": "typedoc",
+    "tsdoc": "npm run build:theme && npm run build:plugin && npm run build:tsdoc",
     "build": "build-scripts build",
     "test": "jest --config=jest.config.js --coverage",
     "start": "build-scripts start",
