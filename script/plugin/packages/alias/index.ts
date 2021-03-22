@@ -21,7 +21,7 @@ function changeGroups(page: PageEvent) {
   // TODO：后续需要进行分组
   page?.model?.groups?.forEach((element: any) => {
     if (element.categories) {
-      element.categories.children.forEach((cate: any) => {
+      element?.categories?.children?.forEach((cate: any) => {
         if (func.hasAllFlags(cate.id, ReflectionKind.Module)) {
           cate.name = cate.name.replace('src/utils/', '');
         }
