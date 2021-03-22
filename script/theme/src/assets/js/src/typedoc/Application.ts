@@ -1,11 +1,11 @@
-import { IComponentOptions } from './Component';
+import { IComponentOptions } from "./Component";
 
 /**
  * Component definition.
  */
 export interface IComponent {
-  constructor: new (options: IComponentOptions) => unknown;
-  selector: string;
+    constructor: new (options: IComponentOptions) => unknown;
+    selector: string;
 }
 
 /**
@@ -17,39 +17,37 @@ const components: IComponent[] = [];
  * Register a new component.
  */
 export function registerComponent(
-  constructor: IComponent['constructor'],
-  selector: string,
+    constructor: IComponent["constructor"],
+    selector: string
 ) {
-  components.push({
-    selector,
-    constructor,
-  });
+    components.push({
+        selector: selector,
+        constructor: constructor,
+    });
 }
 
 /**
  * TypeDoc application class.
  */
 export class Application {
-  /**
+    /**
      * Create a new Application instance.
      */
-  constructor() {
-    this.createComponents(document.body);
-  }
+    constructor() {
+        this.createComponents(document.body);
+    }
 
-  /**
+    /**
      * Create all components beneath the given jQuery element.
      */
-  createComponents(context: HTMLElement) {
-    components.forEach((c) => {
-      context.querySelectorAll<HTMLElement>(c.selector).forEach((el) => {
-        if (!el.dataset.hasInstance) {
-          // eslint-disable-next-line @iceworks/best-practices/recommend-polyfill
-          // eslint-disable-next-line no-new
-          new c.constructor({ el });
-          el.dataset.hasInstance = String(true);
-        }
-      });
-    });
-  }
+    public createComponents(context: HTMLElement) {
+        components.forEach((c) => {
+            context.querySelectorAll<HTMLElement>(c.selector).forEach((el) => {
+                if (!el.dataset.hasInstance) {
+                    new c.constructor({ el: el });
+                    el.dataset.hasInstance = String(true);
+                }
+            });
+        });
+    }
 }
