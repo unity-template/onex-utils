@@ -14,6 +14,9 @@ function changeAlias(page: PageEvent) {
   changeLayout(page);
 }
 
+/**
+ * 针对 Global 页面处理
+ */
 function changeGroups(page: PageEvent) {
   // TODO：后续需要进行分组
   page?.model?.groups?.forEach((element: any) => {
@@ -31,6 +34,9 @@ function changeGroups(page: PageEvent) {
   });
 }
 
+/**
+ * layout 结构修改
+ */
 function changeLayout(page: PageEvent) {
   if (page.navigation) {
     changeNavigationItem(page.navigation);
