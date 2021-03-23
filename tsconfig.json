@@ -26,10 +26,12 @@
     "readme": "./README-en-GB.md",
     "theme": "./script/theme/build",
     "highlightTheme": "github-light",
+    "categorizeByGroup": true,
     "hideGenerator": true,
     "plugin": [
       "typedoc-plugin-nojekyll",
-      "./script/plugin/build/packages/alias/index.js"
+      "./script/plugin/build/packages/alias/index.js",
+      "./script/plugin/build/packages/categories/index.js"
     ],
     "out": "docs",
     "entryPoints": ["./src"],
