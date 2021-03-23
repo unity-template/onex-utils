@@ -23,14 +23,14 @@ export const load = (that: Application) => {
 /**
  * 获取官网中对应的json
  */
-const getVersionMap = async (event?: RendererEvent) => {
+const getVersionMap = (event?: RendererEvent) => {
   try {
     sync(() =>
       axios.get(versionMapUrl).then((result) => {
         versionMap = result.data ?? {};
       })
     )();
-  }
+  } catch {}
 };
 
 /**
