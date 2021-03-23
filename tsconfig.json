@@ -24,14 +24,17 @@
   },
   "typedocOptions": {
     "readme": "./README-en-GB.md",
+    "theme": "./script/theme/build",
+    "highlightTheme": "github-light",
+    "categorizeByGroup": true,
     "hideGenerator": true,
-    "mode": "modules",
     "plugin": [
       "typedoc-plugin-nojekyll",
-      "./script/plugin/build/packages/alias/index.js"
+      "./script/plugin/build/packages/alias/index.js",
+      "./script/plugin/build/packages/categories/index.js"
     ],
     "out": "docs",
-    "inputFiles": ["./src"],
+    "entryPoints": ["./src"],
     "exclude": ["**/*+(index|.spec|.e2e).ts"]
   },
   "include": ["src/**/*"],

@@ -55,7 +55,7 @@ console.log(onexUtils.type.isTrue('true'));
 #### 1) babel-plugin-onex-utils (babel、webpack)
 
 <details>
-<summary>CLICK ME</summary>
+<summary>➡️ CLICK ME</summary>
 
 
 #### Install
@@ -122,7 +122,7 @@ webpack.config.js
 
 #### 2) build-plugin-onex-utils（build-scripts）
 <details>
-<summary>CLICK ME</summary>
+<summary>➡️ CLICK ME</summary>
 
 #### Install
 ```shell
