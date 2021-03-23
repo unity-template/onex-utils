@@ -31,7 +31,8 @@
     "plugin": [
       "typedoc-plugin-nojekyll",
       "./script/plugin/build/packages/alias/index.js",
-      "./script/plugin/build/packages/categories/index.js"
+      "./script/plugin/build/packages/categories/index.js",
+      "./script/plugin/build/packages/version/index.js"
     ],
     "out": "docs",
     "entryPoints": ["./src"],
