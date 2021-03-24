@@ -6,7 +6,9 @@
 	<title>onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -40,8 +42,6 @@
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
 							<input type="checkbox" id="tsd-filter-externals" checked />
 							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -51,11 +51,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>onex-utils</h1>
 		</div>
 	</div>
@@ -95,18 +90,22 @@
 					<h4>1) Via npm</h4>
 				</a>
 				<p>install:</p>
-				<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install onex-utils --save</span></code></pre>
+				<pre><code class="language-shell"><span style="color: #24292E">$ npm install onex-utils --save</span>
+</code></pre>
 				<p>usage：</p>
-				<pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-keyword">type</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+				<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { type } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
 
-<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">type</span>.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>)); <span class="hljs-comment">// true</span></code></pre>
+<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;true&#039;</span><span style="color: #24292E">)); </span><span style="color: #6A737D">// true</span>
+</code></pre>
 				<a href="#2-via-cdn-·-" id="2-via-cdn-·-" style="color: inherit; text-decoration: none;">
 					<h4>2) Via CDN · <a href="https://www.jsdelivr.com/package/npm/onex-utils"><img src="https://data.jsdelivr.com/v1/package/npm/onex-utils/badge" alt=""></a></h4>
 				</a>
 				<p>install:</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+				<pre><code class="language-html"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E"> </span><span style="color: #6F42C1">src</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js&quot;</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span>
+</code></pre>
 				<p>usage:</p>
-				<pre><code class="language-ts"><span class="hljs-built_in">console</span>.log(onexUtils.type.isTrue(<span class="hljs-string">&#x27;true&#x27;</span>));</code></pre>
+				<pre><code class="language-ts"><span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(onexUtils.type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;true&#039;</span><span style="color: #24292E">));</span>
+</code></pre>
 				<a href="#4-engineering-plugin" id="4-engineering-plugin" style="color: inherit; text-decoration: none;">
 					<h3>4. Engineering plugin</h3>
 				</a>
@@ -114,93 +113,103 @@
 					<h4>1) babel-plugin-onex-utils (babel、webpack)</h4>
 				</a>
 				<details>
-					<summary>CLICK ME</summary>
+					<summary>➡️ CLICK ME</summary>
 					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
 						<h4>Install</h4>
 					</a>
-					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm i --save onex-utils</span>
-<span class="hljs-meta">$</span><span class="bash"> npm i --save-dev babel-plugin-onex-utils @babel/cli @babel/preset-env</span></code></pre>
+					<pre><code class="language-shell"><span style="color: #24292E">$ npm i --save onex-utils</span>
+<span style="color: #24292E">$ npm i --save-dev babel-plugin-onex-utils @babel/cli @babel/preset-env</span>
+</code></pre>
 					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
 						<h4>Example</h4>
 					</a>
 					<p>Transforms</p>
-					<pre><code class="language-ts"><span class="hljs-keyword">import</span> { capitalize, map } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
+					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { capitalize, map } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
 
-map([], capitalize);</code></pre>
+<span style="color: #6F42C1">map</span><span style="color: #24292E">([], capitalize);</span>
+</code></pre>
 					<p>roughly to</p>
-					<pre><code class="language-ts"><span class="hljs-meta">&quot;use strict&quot;</span>;
+					<pre><code class="language-ts"><span style="color: #032F62">&quot;use strict&quot;</span><span style="color: #24292E">;</span>
 
-<span class="hljs-keyword">var</span> _map2 = _interopRequireDefault(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;onex-utils/build/utils/map&quot;</span>));
+<span style="color: #D73A49">var</span><span style="color: #24292E"> _map2 </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;onex-utils/build/utils/map&quot;</span><span style="color: #24292E">));</span>
 
-<span class="hljs-keyword">var</span> _capitalize2 = _interopRequireDefault(<span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;onex-utils/build/utils/capitalize&quot;</span>));
+<span style="color: #D73A49">var</span><span style="color: #24292E"> _capitalize2 </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;onex-utils/build/utils/capitalize&quot;</span><span style="color: #24292E">));</span>
 
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">_interopRequireDefault</span>(<span class="hljs-params">obj</span>) </span>{ <span class="hljs-keyword">return</span> obj &amp;&amp; obj.__esModule ? obj : { <span class="hljs-string">&quot;default&quot;</span>: obj }; }
+<span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #E36209">obj</span><span style="color: #24292E">) { </span><span style="color: #D73A49">return</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">&amp;&amp;</span><span style="color: #24292E"> obj.__esModule </span><span style="color: #D73A49">?</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">:</span><span style="color: #24292E"> { </span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">: obj }; }</span>
 
-(<span class="hljs-number">0</span>, _map2[<span class="hljs-string">&quot;default&quot;</span>])([], _capitalize2[<span class="hljs-string">&quot;default&quot;</span>]);</code></pre>
+<span style="color: #24292E">(</span><span style="color: #005CC5">0</span><span style="color: #24292E">, _map2[</span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">])([], _capitalize2[</span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">]);</span>
+</code></pre>
 					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 						<h4>Usage</h4>
 					</a>
 					<p>.babelrc</p>
-					<pre><code class="language-json">{
-  <span class="hljs-attr">&quot;plugins&quot;</span>: [<span class="hljs-string">&quot;onex-utils&quot;</span>],
-  <span class="hljs-attr">&quot;presets&quot;</span>: [[<span class="hljs-string">&quot;@babel/env&quot;</span>, { <span class="hljs-attr">&quot;targets&quot;</span>: { <span class="hljs-attr">&quot;node&quot;</span>: <span class="hljs-number">6</span> } }]]
-}</code></pre>
+					<pre><code class="language-json"><span style="color: #24292E">{</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;plugins&quot;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&quot;onex-utils&quot;</span><span style="color: #24292E">],</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;presets&quot;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&quot;@babel/env&quot;</span><span style="color: #24292E">, { </span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: { </span><span style="color: #005CC5">&quot;node&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E"> } }]]</span>
+<span style="color: #24292E">}</span>
+</code></pre>
 					<p>Babel API</p>
-					<pre><code class="language-ts"><span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;babel-core&#x27;</span>).transform(<span class="hljs-string">&#x27;code&#x27;</span>, {
-  <span class="hljs-string">&#x27;plugins&#x27;</span>: [<span class="hljs-string">&#x27;onex-utils&#x27;</span>],
-  <span class="hljs-string">&#x27;presets&#x27;</span>: [[<span class="hljs-string">&#x27;@babel/env&#x27;</span>, { <span class="hljs-string">&#x27;targets&#x27;</span>: { <span class="hljs-string">&#x27;node&#x27;</span>: <span class="hljs-number">6</span> } }]]
-})</code></pre>
+					<pre><code class="language-ts"><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;babel-core&#039;</span><span style="color: #24292E">).</span><span style="color: #6F42C1">transform</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;code&#039;</span><span style="color: #24292E">, {</span>
+<span style="color: #24292E">  </span><span style="color: #032F62">&#039;plugins&#039;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">],</span>
+<span style="color: #24292E">  </span><span style="color: #032F62">&#039;presets&#039;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&#039;@babel/env&#039;</span><span style="color: #24292E">, { </span><span style="color: #032F62">&#039;targets&#039;</span><span style="color: #24292E">: { </span><span style="color: #032F62">&#039;node&#039;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E"> } }]]</span>
+<span style="color: #24292E">})</span>
+</code></pre>
 					<p>webpack.config.js</p>
-					<pre><code class="language-ts"><span class="hljs-string">&#x27;module&#x27;</span>: {
-  <span class="hljs-string">&#x27;loaders&#x27;</span>: [{
-    <span class="hljs-string">&#x27;loader&#x27;</span>: <span class="hljs-string">&#x27;babel-loader&#x27;</span>,
-    <span class="hljs-string">&#x27;test&#x27;</span>: <span class="hljs-regexp">/\.js$/</span>,
-    <span class="hljs-string">&#x27;exclude&#x27;</span>: <span class="hljs-regexp">/node_modules/</span>,
-    <span class="hljs-string">&#x27;query&#x27;</span>: {
-      <span class="hljs-string">&#x27;plugins&#x27;</span>: [<span class="hljs-string">&#x27;onex-utils&#x27;</span>],
-      <span class="hljs-string">&#x27;presets&#x27;</span>: [[<span class="hljs-string">&#x27;@babel/env&#x27;</span>, { <span class="hljs-string">&#x27;targets&#x27;</span>: { <span class="hljs-string">&#x27;node&#x27;</span>: <span class="hljs-number">6</span> } }]]
-    }
-  }]
-}</code></pre>
+					<pre><code class="language-ts"><span style="color: #032F62">&#039;module&#039;</span><span style="color: #24292E">: {</span>
+<span style="color: #24292E">  </span><span style="color: #032F62">&#039;loaders&#039;</span><span style="color: #24292E">: [{</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&#039;loader&#039;</span><span style="color: #24292E">: </span><span style="color: #032F62">&#039;babel-loader&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&#039;test&#039;</span><span style="color: #24292E">:</span><span style="color: #032F62"> /</span><span style="color: #22863A">\.</span><span style="color: #032F62">js</span><span style="color: #D73A49">$</span><span style="color: #032F62">/</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&#039;exclude&#039;</span><span style="color: #24292E">:</span><span style="color: #032F62"> /node_modules/</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&#039;query&#039;</span><span style="color: #24292E">: {</span>
+<span style="color: #24292E">      </span><span style="color: #032F62">&#039;plugins&#039;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">],</span>
+<span style="color: #24292E">      </span><span style="color: #032F62">&#039;presets&#039;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&#039;@babel/env&#039;</span><span style="color: #24292E">, { </span><span style="color: #032F62">&#039;targets&#039;</span><span style="color: #24292E">: { </span><span style="color: #032F62">&#039;node&#039;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E"> } }]]</span>
+<span style="color: #24292E">    }</span>
+<span style="color: #24292E">  }]</span>
+<span style="color: #24292E">}</span>
+</code></pre>
 				</details>
 				<a href="#2-build-plugin-onex-utils（build-scripts）" id="2-build-plugin-onex-utils（build-scripts）" style="color: inherit; text-decoration: none;">
 					<h4>2) build-plugin-onex-utils（build-scripts）</h4>
 				</a>
 				<details>
-					<summary>CLICK ME</summary>
+					<summary>➡️ CLICK ME</summary>
 					<a href="#install-1" id="install-1" style="color: inherit; text-decoration: none;">
 						<h4>Install</h4>
 					</a>
-					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev</span> </code></pre>
+					<pre><code class="language-shell"><span style="color: #24292E">$ npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev </span>
+</code></pre>
 					<a href="#usageused-in-conjunction-with-rax" id="usageused-in-conjunction-with-rax" style="color: inherit; text-decoration: none;">
 						<h4>Usage(Used in conjunction with rax)</h4>
 					</a>
 					<p>build.json</p>
-					<pre><code class="language-json">{
-  <span class="hljs-attr">&quot;type&quot;</span>: <span class="hljs-string">&quot;rax&quot;</span>,
-  <span class="hljs-attr">&quot;targets&quot;</span>: [
-    <span class="hljs-string">&quot;web&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;plugins&quot;</span>: [
-    <span class="hljs-string">&quot;build-plugin-component&quot;</span>,
-    <span class="hljs-string">&quot;build-plugin-onex-utils&quot;</span>
-  ]
-}</code></pre>
+					<pre><code class="language-json"><span style="color: #24292E">{</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;type&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;rax&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: [</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;web&quot;</span>
+<span style="color: #24292E">  ],</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;plugins&quot;</span><span style="color: #24292E">: [</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;build-plugin-component&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;build-plugin-onex-utils&quot;</span>
+<span style="color: #24292E">  ]</span>
+<span style="color: #24292E">}</span>
+</code></pre>
 					<p>package.json</p>
-					<pre><code class="language-json">{
-  <span class="hljs-attr">&quot;main&quot;</span>: <span class="hljs-string">&quot;build/index.js&quot;</span>,
-  <span class="hljs-attr">&quot;types&quot;</span>: <span class="hljs-string">&quot;./lib&quot;</span>,
-  <span class="hljs-attr">&quot;files&quot;</span>: [
-    <span class="hljs-string">&quot;dist&quot;</span>,
-    <span class="hljs-string">&quot;es&quot;</span>,
-    <span class="hljs-string">&quot;lib&quot;</span>
-  ],
-  <span class="hljs-attr">&quot;scripts&quot;</span>: {
-    <span class="hljs-attr">&quot;build&quot;</span>: <span class="hljs-string">&quot;build-scripts build&quot;</span>
-  }
-}</code></pre>
+					<pre><code class="language-json"><span style="color: #24292E">{</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;main&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;build/index.js&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;types&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;./lib&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;files&quot;</span><span style="color: #24292E">: [</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;dist&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;es&quot;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #032F62">&quot;lib&quot;</span>
+<span style="color: #24292E">  ],</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;scripts&quot;</span><span style="color: #24292E">: {</span>
+<span style="color: #24292E">    </span><span style="color: #005CC5">&quot;build&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;build-scripts build&quot;</span>
+<span style="color: #24292E">  }</span>
+<span style="color: #24292E">}</span>
+</code></pre>
 					<p>cli</p>
-					<pre><code class="language-shell"><span class="hljs-meta">$</span><span class="bash"> npm run build</span></code></pre>
+					<pre><code class="language-shell"><span style="color: #24292E">$ npm run build</span>
+</code></pre>
 				</details>
 				<a href="#5-common-problem" id="5-common-problem" style="color: inherit; text-decoration: none;">
 					<h3>5. Common problem</h3>
@@ -209,137 +218,143 @@ map([], capitalize);</code></pre>
 				<details>
 					<summary>CLICK ME</summary>
 					<p><strong>code:</strong></p>
-					<pre><code class="language-ts"><span class="hljs-keyword">import</span> onexUtils <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;
-<span class="hljs-built_in">console</span>.log(onexUtils.url);</code></pre>
+					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> onexUtils </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(onexUtils.url);</span>
+</code></pre>
 					<p><strong>error:</strong></p>
 					<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png" alt=""></p>
 					<p><strong>Modification method：</strong></p>
 					<ol>
 						<li>If it is a JS project, import it through the import method of namescpae</li>
 					</ol>
-					<pre><code class="language-ts"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> onexUtils <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;onex-utils&#x27;</span>;</code></pre>
+					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> </span><span style="color: #005CC5">*</span><span style="color: #24292E"> </span><span style="color: #D73A49">as</span><span style="color: #24292E"> onexUtils </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+</code></pre>
 					<ol>
 						<li>If it is a ts file, solve the build problem by configuring <code>tsconfig.json</code></li>
 					</ol>
-					<pre><code class="language-json">{
-  <span class="hljs-attr">&quot;compilerOptions&quot;</span>: {
-    <span class="hljs-attr">&quot;allowSyntheticDefaultImports&quot;</span>: <span class="hljs-literal">true</span>,
-    <span class="hljs-attr">&quot;esModuleInterop&quot;</span>: <span class="hljs-literal">true</span>,
-  }
-}</code></pre>
+					<pre><code class="language-json"><span style="color: #24292E">{</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;compilerOptions&quot;</span><span style="color: #24292E">: {</span>
+<span style="color: #24292E">    </span><span style="color: #005CC5">&quot;allowSyntheticDefaultImports&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">true</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">    </span><span style="color: #005CC5">&quot;esModuleInterop&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">true</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">  }</span>
+<span style="color: #24292E">}</span>
+</code></pre>
 				</details>
 			</div>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_base64_decode_.html">&quot;src/utils/base64/decode&quot;</a>
+						<a href="modules/base64_decode.html">base64/decode</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_base64_encode_.html">&quot;src/utils/base64/encode&quot;</a>
+						<a href="modules/base64_encode.html">base64/encode</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_color_format_.html">&quot;src/utils/color/format&quot;</a>
+						<a href="modules/color_format.html">color/format</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_color_hex2rgb_.html">&quot;src/utils/color/hex2<wbr>Rgb&quot;</a>
+						<a href="modules/color_hex2rgb.html">color/hex2<wbr>Rgb</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_color_random_.html">&quot;src/utils/color/random&quot;</a>
+						<a href="modules/color_random.html">color/random</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_cookie_getcookie_.html">&quot;src/utils/cookie/get<wbr>Cookie&quot;</a>
+						<a href="modules/cookie_getcookie.html">cookie/get<wbr>Cookie</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_cookie_removecookie_.html">&quot;src/utils/cookie/remove<wbr>Cookie&quot;</a>
+						<a href="modules/cookie_removecookie.html">cookie/remove<wbr>Cookie</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_cookie_setcookie_.html">&quot;src/utils/cookie/set<wbr>Cookie&quot;</a>
+						<a href="modules/cookie_setcookie.html">cookie/set<wbr>Cookie</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_blobtodataurl_.html">&quot;src/utils/data/blob<wbr>ToDataURL&quot;</a>
+						<a href="modules/data_blobtodataurl.html">data/blob<wbr>ToDataURL</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_dataurltoblob_.html">&quot;src/utils/data/dataURLto<wbr>Blob&quot;</a>
+						<a href="modules/data_dataurltoblob.html">data/dataURLto<wbr>Blob</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_dataurltofile_.html">&quot;src/utils/data/dataURLto<wbr>File&quot;</a>
+						<a href="modules/data_dataurltofile.html">data/dataURLto<wbr>File</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_downloadfile_.html">&quot;src/utils/data/download<wbr>File&quot;</a>
+						<a href="modules/data_downloadfile.html">data/download<wbr>File</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_getimgtobase64_.html">&quot;src/utils/data/get<wbr>Img<wbr>ToBase64&quot;</a>
+						<a href="modules/data_getimgtobase64.html">data/get<wbr>Img<wbr>ToBase64</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_getimgtoblob_.html">&quot;src/utils/data/get<wbr>Img<wbr>ToBlob&quot;</a>
+						<a href="modules/data_getimgtoblob.html">data/get<wbr>Img<wbr>ToBlob</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_imgload_.html">&quot;src/utils/data/img<wbr>Load&quot;</a>
+						<a href="modules/data_imgload.html">data/img<wbr>Load</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_data_setclipboarddata_.html">&quot;src/utils/data/set<wbr>Clipboard<wbr>Data&quot;</a>
+						<a href="modules/data_setclipboarddata.html">data/set<wbr>Clipboard<wbr>Data</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_device_iphone_.html">&quot;src/utils/device/iphone&quot;</a>
+						<a href="modules/device_iphone.html">device/iphone</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_dom_lockpage_.html">&quot;src/utils/dom/lock<wbr>Page&quot;</a>
+						<a href="modules/dom_lockpage.html">dom/lock<wbr>Page</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_dom_unlockpage_.html">&quot;src/utils/dom/un<wbr>Lock<wbr>Page&quot;</a>
+						<a href="modules/dom_unlockpage.html">dom/un<wbr>Lock<wbr>Page</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_function_curry_.html">&quot;src/utils/function/curry&quot;</a>
+						<a href="modules/function_curry.html">function/curry</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_function_debounce_.html">&quot;src/utils/function/debounce&quot;</a>
+						<a href="modules/function_debounce.html">function/debounce</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_function_flag_.html">&quot;src/utils/function/flag&quot;</a>
+						<a href="modules/function_flag.html">function/flag</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_function_throttle_.html">&quot;src/utils/function/throttle&quot;</a>
+						<a href="modules/function_throttle.html">function/throttle</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_localstorage_clean_.html">&quot;src/utils/local<wbr>Storage/clean&quot;</a>
+						<a href="modules/function_uuid.html">function/uuid</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_localstorage_getitem_.html">&quot;src/utils/local<wbr>Storage/get<wbr>Item&quot;</a>
+						<a href="modules/localstorage_clean.html">local<wbr>Storage/clean</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_localstorage_setitem_.html">&quot;src/utils/local<wbr>Storage/set<wbr>Item&quot;</a>
+						<a href="modules/localstorage_getitem.html">local<wbr>Storage/get<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_time_day_.html">&quot;src/utils/time/day&quot;</a>
+						<a href="modules/localstorage_setitem.html">local<wbr>Storage/set<wbr>Item</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_type_istrue_.html">&quot;src/utils/type/is<wbr>True&quot;</a>
+						<a href="modules/time_day.html">time/day</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_getparam_.html">&quot;src/utils/url/get<wbr>Param&quot;</a>
+						<a href="modules/type_istrue.html">type/is<wbr>True</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_geturlhash_.html">&quot;src/utils/url/get<wbr>Url<wbr>Hash&quot;</a>
+						<a href="modules/url_getparam.html">url/get<wbr>Param</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_parse_.html">&quot;src/utils/url/parse&quot;</a>
+						<a href="modules/url_geturlhash.html">url/get<wbr>Url<wbr>Hash</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_replaceurlparams_.html">&quot;src/utils/url/replace<wbr>Url<wbr>Params&quot;</a>
+						<a href="modules/url_parse.html">url/parse</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_seturlhash_.html">&quot;src/utils/url/set<wbr>Url<wbr>Hash&quot;</a>
+						<a href="modules/url_replaceurlparams.html">url/replace<wbr>Url<wbr>Params</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_stringify_.html">&quot;src/utils/url/stringify&quot;</a>
+						<a href="modules/url_seturlhash.html">url/set<wbr>Url<wbr>Hash</a>
 					</li>
 					<li class=" tsd-kind-module">
-						<a href="modules/_src_utils_url_type_.html">&quot;src/utils/url/type&quot;</a>
+						<a href="modules/url_stringify.html">url/stringify</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/url_type.html">url/type</a>
 					</li>
 				</ul>
 			</nav>
@@ -355,8 +370,6 @@ map([], capitalize);</code></pre>
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
 			<ul class="tsd-legend">
-				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
 				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
@@ -366,9 +379,6 @@ map([], capitalize);</code></pre>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
 			</ul>
 		</div>
 	</div>
