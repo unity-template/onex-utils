@@ -4,6 +4,10 @@
         <h3>{{#each flags}}<span class="tsd-flag ts-flag{{this}}">{{this}}</span> {{/each}}{{{wbr name}}}</h3>
     {{/if}}
 
+    {{#if version}}
+        <div class="tsd-version"><span>{{version}}</span> provide</div>
+    {{/if}}
+
     {{#if signatures}}
         {{> member.signatures}}
     {{else}}{{#if hasGetterOrSetter}}

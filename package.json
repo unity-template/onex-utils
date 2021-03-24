@@ -45,7 +45,6 @@
     "name": "lg208143"
   },
   "dependencies": {
-    "axios": "^0.21.1",
     "dayjs": "^1.9.6",
     "lodash.chunk": "^4.2.0",
     "lodash.debounce": "^4.0.8",
@@ -108,6 +107,7 @@
     "sass-loader": "^10.1.0",
     "sinon": "^9.2.1",
     "stats-filelist": "^1.0.1",
+    "sync-request": "^6.1.0",
     "ts-jest": "^26.4.4",
     "ts-loader": "^8.0.11",
     "ts-node": "^9.1.1",
