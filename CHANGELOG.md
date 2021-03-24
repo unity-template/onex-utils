@@ -1,3 +1,27 @@
+<a name="0.0.35"></a>
+## [0.0.35](https://github.com/unity-template/utils/compare/v0.0.34...v0.0.35) (2021-03-24)
+
+
+### Features
+
+* 🎸 创建插件目录([#19](https://github.com/unity-template/utils/issues/19)) ([e8983bf](https://github.com/unity-template/utils/commit/e8983bf))
+* 🎸 生成uuid的函数 ([ce55992](https://github.com/unity-template/utils/commit/ce55992)), closes [#18](https://github.com/unity-template/utils/issues/18)
+* 🎸 添加页面路径处理 ([383c245](https://github.com/unity-template/utils/commit/383c245))
+* 🎸 添加alias插件 ([66b5fa9](https://github.com/unity-template/utils/commit/66b5fa9))
+* 🎸 针对Model.html页面进行分类 ([68edeb4](https://github.com/unity-template/utils/commit/68edeb4)), closes [#22](https://github.com/unity-template/utils/issues/22) [#22](https://github.com/unity-template/utils/issues/22)
+* 升级typedoc版本 ([82bbe9b](https://github.com/unity-template/utils/commit/82bbe9b))
+* 实现函数版本(feat: [#15](https://github.com/unity-template/utils/issues/15)) ([ab07225](https://github.com/unity-template/utils/commit/ab07225))
+* 使用自定义样式 ([7c166a9](https://github.com/unity-template/utils/commit/7c166a9))
+* 远程versionmap获取失败处理 ([e3c7055](https://github.com/unity-template/utils/commit/e3c7055))
+* 针对title进行alias处理 ([fe57251](https://github.com/unity-template/utils/commit/fe57251))
+* 支持version(feat: [#15](https://github.com/unity-template/utils/issues/15)) ([2664281](https://github.com/unity-template/utils/commit/2664281))
+* Group只针对ReflectionKind.Module处理 ([aaf7eae](https://github.com/unity-template/utils/commit/aaf7eae))
+* scripts命令修改 ([bc9edf4](https://github.com/unity-template/utils/commit/bc9edf4))
+* theme更新 ([0c22a5b](https://github.com/unity-template/utils/commit/0c22a5b))
+* version.map处理 ([5357dba](https://github.com/unity-template/utils/commit/5357dba))
+
+
+
 <a name="0.0.34"></a>
 ## [0.0.34](https://github.com/unity-template/utils/compare/v0.0.34-0...v0.0.34) (2021-03-15)
 
