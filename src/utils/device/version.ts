@@ -19,6 +19,16 @@ interface OsVersion {
  * 获取客户端系统版本
  *
  * @remarks 只能判断手机客户端版本
+ *
+ * @example 简单实用
+ * ```ts
+ * import { device } from 'onex-utils';
+ *
+ * const osInfo = device.getOsVersion();
+ * console.log(osInfo.isIos); // true
+ * console.log(osInfo.isAndroid); // false
+ * console.log(osInfo.version); // 12.0.2
+ * ```
  */
 export function getOsVersion(): OsVersion {
   const ios = isIos();
