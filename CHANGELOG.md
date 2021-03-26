@@ -1,3 +1,15 @@
+<a name="0.0.36"></a>
+## [0.0.36](https://github.com/unity-template/utils/compare/v0.0.35...v0.0.36) (2021-03-26)
+
+
+### Features
+
+* 🎸 添加导入导出测试用例 ([ce565ba](https://github.com/unity-template/utils/commit/ce565ba))
+* 🎸 支持os版本 ([1ba3aa9](https://github.com/unity-template/utils/commit/1ba3aa9))
+* 添加注释 ([b97d90f](https://github.com/unity-template/utils/commit/b97d90f))
+
+
+
 <a name="0.0.35"></a>
 ## [0.0.35](https://github.com/unity-template/utils/compare/v0.0.34...v0.0.35) (2021-03-24)
 
