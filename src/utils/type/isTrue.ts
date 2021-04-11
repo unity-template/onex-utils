@@ -20,7 +20,7 @@
  *
  * @example value is 0
  * ```ts
- *  * import { type } from 'onex-utils';
+ * import { type } from 'onex-utils';
  * const isTrue = type.isTrue(0);
  * console.log(isTrue); // false
  * ```
