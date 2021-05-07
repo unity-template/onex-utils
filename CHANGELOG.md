@@ -1,3 +1,13 @@
+<a name="0.0.38"></a>
+## [0.0.38](https://github.com/unity-template/utils/compare/v0.0.37...v0.0.38) (2021-05-07)
+
+
+### Features
+
+* 🎸 支持inserScript ([86e2d2f](https://github.com/unity-template/utils/commit/86e2d2f))
+
+
+
 <a name="0.0.37"></a>
 ## [0.0.37](https://github.com/unity-template/utils/compare/v0.0.36...v0.0.37) (2021-04-02)
 
