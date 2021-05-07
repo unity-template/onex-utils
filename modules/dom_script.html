@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>function/uuid | onex-utils</title>
+	<title>dom/script | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
@@ -56,10 +56,10 @@
 					<a href="../modules.html">onex-utils</a>
 				</li>
 				<li>
-					<a href="function_uuid.html">function/uuid</a>
+					<a href="dom_script.html">dom/script</a>
 				</li>
 			</ul>
-			<h1>Module function/uuid</h1>
+			<h1>Module dom/script</h1>
 		</div>
 	</div>
 </header>
@@ -71,9 +71,15 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
+							<h3>Enumerations</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-enum tsd-parent-kind-module"><a href="../enums/dom_script.scripttype.html" class="tsd-kind-icon">Script<wbr>Type</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="function_uuid.html#uuid" class="tsd-kind-icon">uuid</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="dom_script.html#insertscript" class="tsd-kind-icon">insert<wbr>Script</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,44 +88,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="uuid" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> uuid</h3>
-					<div class="tsd-version"><span>0.0.35</span> provide</div>
+					<a name="insertscript" class="tsd-anchor"></a>
+					<h3>insert<wbr>Script</h3>
+					<div class="tsd-version"><span>0.0.38</span> provide</div>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">uuid<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Script<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InsertOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/947f5b2/src/utils/function/uuid.ts#L25">src/utils/function/uuid.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/947f5b2/src/utils/dom/script.ts#L25">src/utils/dom/script.ts:25</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>生成统一唯一标识符</p>
+									<p>动态插入Js或者Css脚本</p>
 								</div>
 								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>统一唯一标识符计算说明
-											通用唯一标识符 ( Universally Unique Identifier )，对于所有的UUID它可以保证在空间和时间上的唯一性，
-											也称为GUID，全称为：Universally Unique IDentifier ，它是通过MAC地址，时间戳，命名空间，随机数，伪
-											随机数来保证生成ID的唯一性。有着固定的大小( 128 bit位 )，通常由 32 字节的字符串（十六进制）表示。这里
-										借助开源<a href="https://github.com/uuidjs/uuid" class="external">uuid</a>实现uuid的生成</p>
-									</dd>
-									<dt>see</dt>
-									<dd><p><a href="https://github.com/uuidjs/uuid" class="external">uuid</a> for more information</p>
-									</dd>
 									<dt>example</dt>
-									<dd><p>基本使用</p>
-										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { func } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(func.</span><span style="color: #6F42C1">uuid</span><span style="color: #24292E">()) </span><span style="color: #6A737D">// 生成一个唯一标识符</span>
+									<dd><p>插入css</p>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+<span style="color: #24292E">dom.</span><span style="color: #6F42C1">insertScript</span><span style="color: #24292E">({</span>
+<span style="color: #24292E"> type: dom.ScriptType.css,</span>
+<span style="color: #24292E"> src: </span><span style="color: #032F62">&#039;https://test.css&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">})</span>
 </code></pre>
 									</dd>
 								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">InsertOptions</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -132,14 +136,17 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="function_uuid.html">function/uuid</a>
+						<a href="dom_script.html">dom/script</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-module">
+						<a href="../enums/dom_script.scripttype.html" class="tsd-kind-icon">Script<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="function_uuid.html#uuid" class="tsd-kind-icon">uuid</a>
+						<a href="dom_script.html#insertscript" class="tsd-kind-icon">insert<wbr>Script</a>
 					</li>
 				</ul>
 			</nav>
