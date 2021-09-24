@@ -45,11 +45,13 @@
     "name": "lg208143"
   },
   "dependencies": {
+    "@types/object-hash": "^2.2.1",
     "dayjs": "^1.9.6",
     "lodash.chunk": "^4.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
     "lodash.uniq": "^4.5.0",
+    "object-hash": "^2.2.0",
     "onex-utils": "^0.0.33-0",
     "qs": "^6.9.4",
     "typedoc": "^0.20.33",

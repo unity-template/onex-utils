@@ -61,3 +61,12 @@ describe('func utils uuid', () => {
     expect(testId.length).toEqual(36);
   });
 });
+
+
+describe('func utils hash', () => {
+  test('should return object hash', () => {
+    const testId = func.hash({ foo: 'bar' });
+    expect(testId).toEqual('a75c05bdca7d704bdfcd761913e5a4e4636e956b');
+  });
+});
+
