@@ -1,3 +1,13 @@
+<a name="0.0.39"></a>
+## [0.0.39](https://github.com/unity-template/utils/compare/v0.0.38...v0.0.39) (2021-09-24)
+
+
+### Features
+
+* 支持hash操作 ([154d491](https://github.com/unity-template/utils/commit/154d491))
+
+
+
 <a name="0.0.38"></a>
 ## [0.0.38](https://github.com/unity-template/utils/compare/v0.0.37...v0.0.38) (2021-05-07)
 
