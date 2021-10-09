@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: onex-utils-CI
 
 # Controls when the workflow will run
 on:
@@ -13,20 +13,49 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
+  test:
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Checkout 🛎️
+      - uses: actions/checkout@master
 
-      # Runs a single command using the runners shell
-      - name: 安装依赖
-        run: npm install
+      - name: Generate coverage report ⏳
+        run: |
+          npm install
+          npm install codecov -g
+          npm run test
+          codecov -f coverage/*.json
 
-      # Runs a set of commands using the runners shell
-      - name: 构建
-        run: npm run build
+      - name: Deploy codecov 🚀
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          directory: ./coverage
+          flags: unittests
+          name: codecov-umbrella
+          fail_ci_if_error: true
+          verbose: true
+
+  deploy:
+   runs-on: ubuntu-latest
+   steps:
+    - name: Checkout 🛎️
+    - uses: actions/checkout@master
+
+    - name: Generate build file 🧬
+      run: |
+        npm install
+        npm run build
+        npm run tsdoc
+
+    - name: Deploy docs 🚀
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
+    
+    - name: Deploy npm 🚀
+      uses: JS-DevTools/npm-publish@v1
+      with:
+        token: ${{ secrets.NPM_TOKEN }}
+    
