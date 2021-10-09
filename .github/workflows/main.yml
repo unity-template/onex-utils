@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
-      - uses: actions/checkout@master
+        uses: actions/checkout@master
 
       - name: Generate coverage report ⏳
         run: |
@@ -40,7 +40,7 @@ jobs:
    runs-on: ubuntu-latest
    steps:
     - name: Checkout 🛎️
-    - uses: actions/checkout@master
+      uses: actions/checkout@master
 
     - name: Generate build file 🧬
       run: |
