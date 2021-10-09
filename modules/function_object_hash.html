@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>type/isTrue | onex-utils</title>
+	<title>function/object.hash | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
@@ -56,10 +56,10 @@
 					<a href="../modules.html">onex-utils</a>
 				</li>
 				<li>
-					<a href="type_istrue.html">type/isTrue</a>
+					<a href="function_object_hash.html">function/object.hash</a>
 				</li>
 			</ul>
-			<h1>Module type/isTrue</h1>
+			<h1>Module function/object.hash</h1>
 		</div>
 	</div>
 </header>
@@ -73,7 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="type_istrue.html#istrue" class="tsd-kind-icon">is<wbr>True</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="function_object_hash.html#hash" class="tsd-kind-icon">hash</a></li>
 							</ul>
 						</section>
 					</div>
@@ -82,60 +82,49 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="istrue" class="tsd-anchor"></a>
-					<h3>is<wbr>True</h3>
-					<div class="tsd-version"><span>0.0.35</span> provide</div>
+					<a name="hash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> hash</h3>
+					<div class="tsd-version"><span>0.0.40</span> provide</div>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>True<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">hash<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">JsonValue</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/902e33d/src/utils/type/isTrue.ts#L30">src/utils/type/isTrue.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/902e33d/src/utils/function/object.hash.ts#L22">src/utils/function/object.hash.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>判断接口返回的是否为true</p>
+									<p>针对对象生成hash</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>remarks</dt>
-									<dd><p>阿里mtop接口请求，针对boolean进行判断，其他业务禁用</p>
+									<dd><p>Generate hashes from objects and values in node and the browser.
+											Uses node.js crypto module for hashing. Supports SHA1 and many
+										others (depending on the platform) as well as custom streams (e.g. CRC32).</p>
+									</dd>
+									<dt>see</dt>
+									<dd><p><a href="https://github.com/puleos/object-hash" class="external">object-hash</a> for more information</p>
 									</dd>
 									<dt>example</dt>
-									<dd><p>value is <code>true</code></p>
-										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { type } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-<span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">isTrue</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;true&#039;</span><span style="color: #24292E">);</span>
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(isTrue); </span><span style="color: #6A737D">// true</span>
+									<dd><p>基本使用</p>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { func } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+
+<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(func.</span><span style="color: #6F42C1">hash</span><span style="color: #24292E">({foo: </span><span style="color: #032F62">&#039;bar&#039;</span><span style="color: #24292E">})) </span><span style="color: #6A737D">// =&gt; &#039;67b69634f9880a282c14a0f0cb7ba20cf5d677e9&#039;</span>
+<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(func.</span><span style="color: #6F42C1">hash</span><span style="color: #24292E">([</span><span style="color: #005CC5">1</span><span style="color: #24292E">, </span><span style="color: #005CC5">2</span><span style="color: #24292E">, </span><span style="color: #005CC5">2.718</span><span style="color: #24292E">, </span><span style="color: #005CC5">3.14159</span><span style="color: #24292E">])) </span><span style="color: #6A737D">// =&gt; &#039;136b9b88375971dff9f1af09d7356e3e04281951&#039;</span>
 </code></pre>
-									</dd>
-									<dt>example</dt>
-									<dd><p>value is <code>false</code></p>
-										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { type } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-<span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">isTrue</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;false&#039;</span><span style="color: #24292E">);</span>
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(isTrue); </span><span style="color: #6A737D">// false</span>
-</code></pre>
-									</dd>
-									<dt>example</dt>
-									<dd><p>value is 0</p>
-										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { type } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-<span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">isTrue</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #005CC5">0</span><span style="color: #24292E">);</span>
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(isTrue); </span><span style="color: #6A737D">// false</span>
-</code></pre>
-									</dd>
-									<dt>deprecated</dt>
-									<dd><p>只适合阿里MTOP接口请求业务场景，其他业务场景勿使用</p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">boolean</span></h5>
+									<h5>data: <span class="tsd-signature-type">JsonValue</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -148,14 +137,14 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="type_istrue.html">type/is<wbr>True</a>
+						<a href="function_object_hash.html">function/object.hash</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="type_istrue.html#istrue" class="tsd-kind-icon">is<wbr>True</a>
+						<a href="function_object_hash.html#hash" class="tsd-kind-icon">hash</a>
 					</li>
 				</ul>
 			</nav>
