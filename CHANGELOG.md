@@ -1,3 +1,22 @@
+<a name="0.0.41"></a>
+## [0.0.41](https://github.com/unity-template/utils/compare/v0.0.40...v0.0.41) (2021-10-10)
+
+
+### Bug Fixes
+
+* 依赖构建 ([f2dcb84](https://github.com/unity-template/utils/commit/f2dcb84))
+
+
+### Features
+
+* 添加githubCi ([358cbc8](https://github.com/unity-template/utils/commit/358cbc8))
+* 修改ci脚本 ([f9dc487](https://github.com/unity-template/utils/commit/f9dc487))
+* github ci完善 ([6e5a629](https://github.com/unity-template/utils/commit/6e5a629))
+* github ci完善 ([902e33d](https://github.com/unity-template/utils/commit/902e33d))
+* github ci完善 ([b9d166c](https://github.com/unity-template/utils/commit/b9d166c))
+
+
+
 <a name="0.0.40"></a>
 ## [0.0.40](https://github.com/unity-template/utils/compare/v0.0.39...v0.0.40) (2021-09-27)
 
