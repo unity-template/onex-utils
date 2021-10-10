@@ -39,25 +39,27 @@ jobs:
           verbose: true
 
   deploy:
-   runs-on: ubuntu-latest
-   steps:
-    - name: Checkout 🛎️
-      uses: actions/checkout@master
+    if: github.event.base_ref == 'refs/heads/master'
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@master
 
-    - name: Generate build file 🧬
-      run: |
-        npm install
-        npm run build
-        npm run tsdoc
+      - name: Generate build file 🧬
+        run: |
+          npm install
+          npm run build
+          npm run tsdoc
 
-    - name: Deploy docs 🚀
-      uses: JamesIves/github-pages-deploy-action@4.1.5
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: docs # The folder the action should deploy.
-    
-    - name: Deploy npm 🚀
-      uses: JS-DevTools/npm-publish@v1
-      with:
-        token: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy docs 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
+      
+      - name: Deploy npm 🚀
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.NPM_TOKEN }}
     
