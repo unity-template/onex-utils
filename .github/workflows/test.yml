@@ -45,8 +45,6 @@ jobs:
           secure: true
           # Optional plain body:
           body: ${{ github.job }} job in workflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
-          # Optional HTML body read from file:
-          html_body: file://README.html
           # Optional carbon copy recipients:
           cc: kyloren@example.com,leia@example.com
           # Optional blind carbon copy recipients:
