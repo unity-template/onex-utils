@@ -15,7 +15,7 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@master
 
-      - name: Generate coverage report ⏳
+      - name: Run Test ⏳
         run: |
           npm install
           npm run test
@@ -37,6 +37,7 @@ jobs:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
           subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          html_body: file://README.md
           # Required recipients' addresses:
           to: lg208143@alibaba-inc.com
           # Required sender full name (address can be skipped):
