@@ -49,7 +49,6 @@ console.log(onexUtils.type.isTrue("true"));
 - [文档生成](https://github.com/TypeStrong/typedoc)
 - [测试能力](https://jestjs.io/)
 - [TS 工具类型](https://github.com/sindresorhus/type-fest)
--
 
 ### 4. 配套插件
 
@@ -174,6 +173,7 @@ $ npm run build
 ```
 
 </details>
+
 
 ### 5. 常见问题
 
