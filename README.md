@@ -5,20 +5,7 @@
 
 沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档 ☞ ：[click me](https://unity-template.github.io/onex-utils/index.html)
 
-### 1. 项目命令
-* `npm run start` 项目启动命令
-* `npm run build` 项目构建命令
-* `npm run commit` 统一使用这个命令提交代码
-* `npm run lint` 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
-
-### 2. 通用能力
-
-* [注释规范](https://tsdoc.org/)
-* [文档生成](https://github.com/TypeStrong/typedoc)
-* [测试能力](https://jestjs.io/)
-* [TS工具类型](https://github.com/sindresorhus/type-fest)
-
-### 3. 使用方式
+### 1. 使用方式
 
 ⚠️ ‼️ 非`onex-utils`维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用
 
@@ -161,6 +148,20 @@ $ npm run build
 
 </details>
 
+
+### 2. 项目命令
+* `npm run start` 项目启动命令
+* `npm run build` 项目构建命令
+* `npm run commit` 统一使用这个命令提交代码
+* `npm run lint` 对css样式表和ts代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
+
+### 3. 通用能力
+
+* [注释规范](https://tsdoc.org/)
+* [文档生成](https://github.com/TypeStrong/typedoc)
+* [测试能力](https://jestjs.io/)
+* [TS工具类型](https://github.com/sindresorhus/type-fest)
+* 
 
 ### 5. 常见问题
 

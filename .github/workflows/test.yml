@@ -18,16 +18,24 @@ jobs:
       - name: Generate coverage report ⏳
         run: |
           npm install
-          npm install codecov -g
           npm run test
-          codecov -f coverage/*.json
 
-      - name: Deploy codecov 🚀
-        uses: codecov/codecov-action@v2
+      - name: Send email 
+        # tells the Github Actions to always run this step
+        # regardless of whether the preceding steps have been
+        # executed successfully or not
+        if: always() 
+        uses: devellany/send-mailer@v1.0.2
         with:
-          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          directory: ./coverage
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: true
-          verbose: true
+          host: smtp.google.com
+          port: 465
+          account: ${{secrets.ACCOUNT}}
+          password: ${{secrets.MAIL_PASSWORD}}
+          sender: devellany
+          from: ${{secrets.MAIL_ADDRESS}}
+          to: lg208143@alibaba-inc.com
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          body: ${{ github.job }} job in workflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # Optional content type (defaults to text/plain)
+          contentType: text/plain
+
