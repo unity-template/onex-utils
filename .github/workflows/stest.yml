@@ -36,7 +36,7 @@ jobs:
           # Optional (recommended) mail server password:
           password: ${{secrets.MAIL_PASSWORD}}
           # Required mail subject:
-          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          subject: Github Actions job result
           # Required recipients' addresses:
           to: lg208143@alibaba-inc.com
           # Required sender full name (address can be skipped):
@@ -44,7 +44,7 @@ jobs:
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: ${{ github.job }} job in workflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          body: Build job of ${{github.repository}} completed successfully!
           # Optional HTML body read from file:
           html_body: file://README.html
           # Optional carbon copy recipients:
@@ -57,5 +57,9 @@ jobs:
           ignore_cert: true
           # Optional converting Markdown to HTML (set content_type to text/html too):
           convert_markdown: true
+          # Optional attachments:
+          attachments: attachments.zip,git.diff,./dist/static/*.js
           # Optional priority: 'high', 'normal' (default) or 'low'
           priority: low
+
+
