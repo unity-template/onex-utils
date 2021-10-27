@@ -1,3 +1,15 @@
+<a name="0.0.42"></a>
+## [0.0.42](https://github.com/unity-template/utils/compare/v0.0.41...v0.0.42) (2021-10-27)
+
+
+### Features
+
+* 版本使用 ([edadf7c](https://github.com/unity-template/utils/commit/edadf7c))
+* 删除send email ci ([15a3a4c](https://github.com/unity-template/utils/commit/15a3a4c))
+* 修改ci脚本 ([25659e0](https://github.com/unity-template/utils/commit/25659e0))
+
+
+
 <a name="0.0.41"></a>
 ## [0.0.41](https://github.com/unity-template/utils/compare/v0.0.40...v0.0.41) (2021-10-10)
 
