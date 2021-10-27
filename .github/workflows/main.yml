@@ -39,7 +39,6 @@ jobs:
           verbose: true
 
   deploy:
-    if: github.event.base_ref == 'refs/heads/master'
     needs: test
     runs-on: ubuntu-latest
     steps:
