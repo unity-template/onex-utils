@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
  * @remarks
  * 通过此函数创建dayjs.Dayjs实例
  * 支持传入字符串（字符串描述）、时间戳（10位、13位、unix类型）、Date对象
+ * Links can point to a URL: {@link https://dayjs.gitee.io/zh-CN/ | dayjs}
  *
  * @example string
  * ```ts
