@@ -1,3 +1,8 @@
+<a name="0.0.45"></a>
+## [0.0.45](https://github.com/unity-template/utils/compare/v0.0.44...v0.0.45) (2021-11-05)
+
+
+
 <a name="0.0.44"></a>
 ## [0.0.44](https://github.com/unity-template/utils/compare/v0.0.43...v0.0.44) (2021-11-05)
 
