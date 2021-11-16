@@ -20,6 +20,7 @@
     "esModuleInterop": true,
     "outDir": "build",
     "rootDir": "src",
+    "emitDecoratorMetadata": true,
     "baseUrl": "."
   },
   "typedocOptions": {
