@@ -1,12 +1,10 @@
 import { validate } from '../../src/index';
 
-const { Attribute, validateInterfaceData } = validate;
+const { AttributeDescriptor, validateInterfaceData } = validate;
 
 class ServiceDTO {
-  @Attribute.prefix('pre-')
+  @AttributeDescriptor.prefix('pre-')
   bizCode: string;
-  bizName: string;
-  note?: string;
 }
 
 describe('test decorator utils', () => {
