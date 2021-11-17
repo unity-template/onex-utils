@@ -21,6 +21,7 @@ import * as url from './utils/url';
 import * as dom from './utils/dom';
 import * as device from './utils/device';
 import * as color from './utils/color';
+import * as validate from './utils/validate';
 
 const utils = {
   base64,
@@ -35,6 +36,7 @@ const utils = {
   dom,
   device,
   color,
+  validate,
 };
 
 export {
@@ -50,6 +52,7 @@ export {
   dom,
   device,
   color,
+  validate,
 };
 
 export default utils;

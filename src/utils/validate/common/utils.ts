@@ -1,3 +1,4 @@
+/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import { DecoratorManager } from './decoratorManager';
 import 'reflect-metadata';
 
@@ -16,7 +17,7 @@ export function getClassExtendedMetadata(
     return metadata;
   }
   const father = Reflect.getPrototypeOf(target);
-  if (father.constructor !== Object) {
+  if (father?.constructor !== Object) {
     metadata = mergeMeta(
       getClassExtendedMetadata(decoratorNameKey, father),
       manager.getMetadata(decoratorNameKey, target),

@@ -23,7 +23,7 @@
  * ```
  *
  */
-export function getUrlHash(): { [key: string]: string } | undefined;
+export function getUrlHash(): { [key: string]: string } | {};
 export function getUrlHash(currentKey: string): string | undefined;
 export function getUrlHash(currentKey?: string) {
   const params: { [key: string]: string } = {};
@@ -40,5 +40,5 @@ export function getUrlHash(currentKey?: string) {
     }
   });
 
-  return currentKey ? params[currentKey] : params;
+  return currentKey ? (params[currentKey] as string | undefined) : params;
 }

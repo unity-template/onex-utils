@@ -1,3 +1,4 @@
+/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import 'reflect-metadata';
 
 export type DecoratorKey = string | symbol;
@@ -44,11 +45,11 @@ export class DecoratorManager extends Map {
 
   static saveMetadata(
     metaKey: string,
-    target: any,
+    _target: any,
     dataKey: string,
     data: any,
   ) {
-    // filter Object.create(null)
+    let target = _target;
     if (typeof target === 'object' && target.constructor) {
       target = target.constructor;
     }
@@ -66,12 +67,13 @@ export class DecoratorManager extends Map {
 
   static attachMetadata(
     metaKey: string,
-    target: any,
+    _target: any,
     dataKey: string,
     data: any,
     groupBy?: string,
   ) {
     // filter Object.create(null)
+    let target = _target;
     if (typeof target === 'object' && target.constructor) {
       target = target.constructor;
     }
@@ -98,8 +100,9 @@ export class DecoratorManager extends Map {
     Reflect.defineMetadata(metaKey, m, target);
   }
 
-  static getMetadata(metaKey: string, target: any, dataKey?: string) {
+  static getMetadata(metaKey: string, _target: any, dataKey?: string) {
     // filter Object.create(null)
+    let target = _target;
     if (typeof target === 'object' && target.constructor) {
       target = target.constructor;
     }
@@ -131,11 +134,16 @@ export class DecoratorManager extends Map {
    */
   injectMethodKeyPrefix = 'INJECTION_METHOD_META_DATA';
 
+  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+  constructor() {
+    super();
+  }
+
   saveModule(key, module) {
     if (!this.has(key)) {
       this.set(key, new Set());
     }
-    this.get(key).add(module);
+    this.get(key)?.add(module);
   }
 
   resetModule(key) {
@@ -143,7 +151,7 @@ export class DecoratorManager extends Map {
   }
 
   listModule(key) {
-    return Array.from(this.get(key) || {});
+    return Array.from(this.get(key) || []);
   }
 
   saveMetadata(decoratorNameKey: DecoratorKey, data, target, propertyName?) {
@@ -282,7 +290,7 @@ export class DecoratorManager extends Map {
       this.injectClassMethodKeyPrefix,
       target,
     );
-    const res = [];
+    const res: any[] = [];
     for (const [key, value] of originMap) {
       if (
         key.indexOf(

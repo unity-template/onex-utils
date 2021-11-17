@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
-    "target": "ES5",
+    "target": "ES6",
     "declaration": true,
     "moduleResolution": "node",
     "alwaysStrict": true,
@@ -19,7 +19,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "build",
-    "rootDir": "src",
+    "rootDir": "./",
     "emitDecoratorMetadata": true,
     "strictNullChecks": true,
     "baseUrl": "."
@@ -40,6 +40,6 @@
     "entryPoints": ["./src"],
     "exclude": ["**/*+(index|.spec|.e2e).ts"]
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "__test__/**/*"],
   "exclude": ["node_modules", "lib"]
 }

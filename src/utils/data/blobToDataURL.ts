@@ -13,7 +13,7 @@ export const blobToDataURL = (
     const reader = new FileReader();
     reader.readAsDataURL(blob);
     reader.onload = () => {
-      success(reader.result);
+      success(reader.result ?? '');
     };
     reader.onerror = (err) => {
       fail(err);

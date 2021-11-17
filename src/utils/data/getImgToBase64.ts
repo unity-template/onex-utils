@@ -75,19 +75,20 @@ export const getImgToBase64 = (
 
 async function getImgBase64ByCanvas(
   url: string,
-  options: ImgOptions,
+  options?: ImgOptions,
 ): Promise<string> {
   const { type = ImgType.PNG, quality = 1 } = options || {};
-  let canvas = document.createElement('canvas');
+  let canvas: HTMLCanvasElement | null = document.createElement('canvas');
   const ctx = canvas.getContext('2d');
   const img = new Image();
   img.crossOrigin = 'Anonymous';
 
   return await new Promise((resolve, reject) => {
     img.onload = function () {
+      if (!canvas) return;
       canvas.height = img.height;
       canvas.width = img.width;
-      ctx.drawImage(img, 0, 0);
+      ctx?.drawImage(img, 0, 0);
       const dataURL = canvas.toDataURL(type, quality);
       resolve(dataURL);
       canvas = null;

@@ -32,8 +32,8 @@ import dayjs from 'dayjs';
 export function createDayjs(
   time?: string | number | Date,
 ): dayjs.Dayjs | undefined {
-  let dayjsInstance: dayjs.Dayjs;
-  let currentTime: string | number | Date = time;
+  let dayjsInstance!: dayjs.Dayjs;
+  let currentTime: string | number | Date | undefined = time;
 
   if (!currentTime) {
     dayjsInstance = dayjs();

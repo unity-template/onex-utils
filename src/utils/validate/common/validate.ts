@@ -1,7 +1,4 @@
-import {
-  getClassExtendedMetadata,
-  getMethodParamTypes,
-} from './decoratorManager';
+import { getClassExtendedMetadata, getMethodParamTypes } from './utils';
 import { plainToClass } from 'class-transformer';
 import * as Joi from 'joi';
 import { RULES_KEY } from './key';
@@ -15,6 +12,7 @@ export function Validate(isTransform = true) {
     const origin = descriptor.value;
     const paramTypes = getMethodParamTypes(target, propertyKey);
 
+    // eslint-disable-next-line no-param-reassign
     descriptor.value = function (...args: any[]) {
       for (let i = 0; i < paramTypes.length; i++) {
         const item = paramTypes[i];
