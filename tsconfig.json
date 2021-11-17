@@ -19,7 +19,7 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "outDir": "build",
-    "rootDir": "./",
+    "rootDir": "./src",
     "emitDecoratorMetadata": true,
     "strictNullChecks": true,
     "baseUrl": "."
@@ -40,6 +40,6 @@
     "entryPoints": ["./src"],
     "exclude": ["**/*+(index|.spec|.e2e).ts"]
   },
-  "include": ["src/**/*", "__test__/**/*"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "lib"]
 }
