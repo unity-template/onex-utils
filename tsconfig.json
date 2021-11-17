@@ -21,6 +21,7 @@
     "outDir": "build",
     "rootDir": "src",
     "emitDecoratorMetadata": true,
+    "strictNullChecks": true,
     "baseUrl": "."
   },
   "typedocOptions": {
