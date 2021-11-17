@@ -65,7 +65,10 @@
   ],
   "dependencies": {
     "@types/object-hash": "^2.2.1",
+    "class": "^0.1.4",
+    "class-transformer": "^0.4.0",
     "dayjs": "^1.9.6",
+    "joi": "^17.4.2",
     "lodash.chunk": "^4.2.0",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
@@ -73,6 +76,7 @@
     "object-hash": "^2.2.0",
     "onex-utils": "^0.0.33-0",
     "qs": "^6.9.4",
+    "reflect-metadata": "^0.1.13",
     "typedoc": "^0.20.33",
     "uuid": "^8.3.2"
   },
@@ -135,7 +139,7 @@
     "tsutils": "^3.17.1",
     "type-fest": "^0.20.2",
     "typedoc-plugin-nojekyll": "^1.0.1",
-    "typescript": "^4.0.3",
+    "typescript": "4.0.3",
     "url-loader": "^4.1.1",
     "webpack": "^4.27.1",
     "webpack-cli": "^4.5.0",

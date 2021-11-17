@@ -39,7 +39,7 @@ export function getOsVersion(): OsVersion {
     version = getIosVersion() ?? version;
   }
 
-  if (isAndroid) {
+  if (android) {
     version = getAndroidVersion() ?? version;
   }
 

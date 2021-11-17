@@ -27,7 +27,7 @@
  *
  * @deprecated 只适合阿里MTOP接口请求业务场景，其他业务场景勿使用
  */
-export function isTrue(value: string | boolean) {
+export function isTrue(value: string | boolean | null | undefined) {
   if (value === 'true') return true;
   if (value === 'false') return false;
   return !!value;

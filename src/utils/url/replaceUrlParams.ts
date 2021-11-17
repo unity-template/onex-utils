@@ -62,9 +62,11 @@ export function replaceUrlParams(
   }
 }
 
-function getUrlHashAndSearch(
-  url: string,
-): { hash: string; search: string; host: string } {
+function getUrlHashAndSearch(url: string): {
+  hash: string;
+  search: string;
+  host: string;
+} {
   // eslint-disable-next-line no-useless-escape
   const [host, ...paramsArr] = url.split(/(\?|\#)/g);
   let standardParamsArr = paramsArr;
@@ -72,7 +74,9 @@ function getUrlHashAndSearch(
   // 需要遵循先 search 后 hash
   if (paramsArr.length === 4) {
     if (paramsArr[0] === '#') {
-      standardParamsArr = [paramsArr.shift(), paramsArr.join('')];
+      standardParamsArr = [paramsArr.shift(), paramsArr.join('')].filter(
+        (i) => i,
+      ) as string[];
     }
   }
 
