@@ -50,7 +50,7 @@ export function validateInterfaceData(ClassFto) {
       }
       return plainToClass(ClassFto, result.value);
     }
-    return data;
+    return plainToClass(ClassFto, data);
   };
 }
 
