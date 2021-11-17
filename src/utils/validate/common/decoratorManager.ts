@@ -4,7 +4,35 @@ import 'reflect-metadata';
 export type DecoratorKey = string | symbol;
 export const INJECT_CLASS_KEY_PREFIX = 'INJECTION_CLASS_META_DATA';
 
-export class DecoratorManager extends Map {
+class IMap implements Pick<Map<any, any>, 'clear' | 'delete' | 'get' | 'has' | 'set' | 'forEach'> {
+  private map: Map<any, any> = new Map();
+
+  clear = () => {
+    this.map.clear();
+  };
+
+  delete = (key: any) => {
+    return this.map.delete(key);
+  };
+
+  get = (key: any) => {
+    return this.map.get(key);
+  };
+
+  has = (key: any) => {
+    return this.map.has(key);
+  };
+
+  set = (key: any, value: any) => {
+    return this.map.set(key, value);
+  };
+
+  forEach = (callbackfn: (value: any, key: any, map: Map<any, any>) => void, thisArg?: any) => {
+    this.map.forEach(callbackfn, thisArg);
+  };
+}
+
+export class DecoratorManager extends IMap {
   static getDecoratorClassKey(decoratorNameKey: DecoratorKey) {
     return `${decoratorNameKey.toString()}_CLS`;
   }
@@ -133,11 +161,6 @@ export class DecoratorManager extends Map {
    * the key for method meta data store in method
    */
   injectMethodKeyPrefix = 'INJECTION_METHOD_META_DATA';
-
-  // eslint-disable-next-line @typescript-eslint/no-useless-constructor
-  constructor() {
-    super();
-  }
 
   saveModule(key, module) {
     if (!this.has(key)) {
