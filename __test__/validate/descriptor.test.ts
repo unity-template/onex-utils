@@ -1,12 +1,12 @@
 import { validate } from '../../src/index';
 
-const { AttributeDescriptor, validateInterfaceData } = validate;
+const { AttributeDecorator, validateInterfaceData } = validate;
 
 
 describe('test decorator utils', () => {
   it('should return pre when prefix params is exist', () => {
     class ServiceDTO {
-      @AttributeDescriptor.prefix('pre-')
+      @AttributeDecorator.prefix('pre-')
       bizCode: string;
     }
     const data = validateInterfaceData(ServiceDTO)({ bizCode: '你好' });
@@ -15,7 +15,7 @@ describe('test decorator utils', () => {
 
   it('should return pre when prefix params is not exist', () => {
     class ServiceDTO {
-      @AttributeDescriptor.prefix()
+      @AttributeDecorator.prefix()
       bizCode: string;
     }
     const data = validateInterfaceData(ServiceDTO)({ bizCode: '你好' });
@@ -24,7 +24,7 @@ describe('test decorator utils', () => {
 
   it('should return pre when prefix params is symbol', () => {
     class ServiceDTO {
-      @AttributeDescriptor.prefix(Symbol('null'))
+      @AttributeDecorator.prefix(Symbol('null'))
       bizCode: string;
     }
     const data = validateInterfaceData(ServiceDTO)({ bizCode: '你好' });
