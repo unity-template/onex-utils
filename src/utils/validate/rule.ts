@@ -4,7 +4,7 @@ import {
   getClassMetadata,
   getPropertyType,
   saveClassMetadata,
-} from './common/utils';
+} from './common/metadata';
 import { RULES_KEY } from './common/key';
 
 export interface RuleOptions {

@@ -1,5 +1,5 @@
 /* eslint-disable @iceworks/best-practices/recommend-polyfill */
-import { decorate } from '../common/decorate';
+import { decorate } from '../../common/decorate';
 
 type options = [prefix: string | symbol];
 const handleDescriptor = (target, key, descriptor, [prefix]: options) => {

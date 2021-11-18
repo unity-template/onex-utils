@@ -1,5 +1,5 @@
 /* eslint-disable @iceworks/best-practices/recommend-polyfill */
-import { DecoratorManager } from './decoratorManager';
+import { DecoratorManager } from './manager';
 import 'reflect-metadata';
 
 export type DecoratorKey = string | symbol;
