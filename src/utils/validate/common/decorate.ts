@@ -20,25 +20,11 @@ export function decorate(handleDescriptor, entryArgs) {
   if (isDescriptor(entryArgs[entryArgs.length - 1])) {
     return handleDescriptor(...entryArgs, []);
   } else {
-    return function () {
+    return function (...args) {
       return handleDescriptor(
-        ...Array.prototype.slice.call(arguments),
+        ...Array.prototype.slice.call(args),
         entryArgs,
       );
     };
   }
-}
-
-export function createDefaultSetter(key) {
-  return function set(newValue) {
-    Object.defineProperty(this, key, {
-      configurable: true,
-      writable: true,
-      // IS enumerable when reassigned by the outside word
-      enumerable: true,
-      value: newValue,
-    });
-
-    return newValue;
-  };
 }

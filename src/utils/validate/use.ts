@@ -1,6 +1,6 @@
 import { plainToClass } from 'class-transformer';
 import Joi from 'joi';
-import { getClassExtendedMetadata } from './common/utils';
+import { getClassExtendedMetadata } from './common/metadata';
 import { RULES_KEY } from './common/key';
 
 /**
@@ -28,12 +28,12 @@ import { RULES_KEY } from './common/key';
  *       console.log(this.props.bizCode, this.props.bizName, this.props.note);
  *     }
  *   }
- *
+ *  \/**
  *  new Node({
  *     bizCode: '你好',
  *     bizName: '世界',
  *   }).IRender();
- *
+ *   *\/
  *    * output:
  *    * Debugger attached.
  *    * DataDto.note: 参数告警
@@ -134,11 +134,12 @@ export function validateInterfaceData(ClassFto) {
  *      bizCode: '你好',
  *      bizName: '世界',
  *    }).IRender();
- *
+ *    \/**
  *     * output:
  *     * Debugger attached.
  *     * DataDto.note: 参数告警
  *     * test-你好 test-世界 undefined
+ *    *\/
  * ```
  */
 export function validateComponentPropsHoc(dto) {
