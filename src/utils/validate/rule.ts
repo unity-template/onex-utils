@@ -1,4 +1,6 @@
-import * as joi from 'joi';
+/* eslint-disable @iceworks/best-practices/recommend-polyfill */
+/* eslint-disable no-redeclare */
+import * as Joi from 'joi';
 import {
   attachClassMetadata,
   getClassMetadata,
@@ -6,41 +8,66 @@ import {
   saveClassMetadata,
 } from './common/metadata';
 import { RULES_KEY } from './common/key';
+import { RuleOptions, createJoiSchemaRules, isSchema } from './common/schema';
 
-export interface RuleOptions {
-  required?: boolean;
-  min?: number;
-  max?: number;
-}
 
-export function Rule(rule, options: RuleOptions = { required: true }) {
+const initOptions: RuleOptions = {
+  required: true,
+};
+
+/**
+ * 为DTO对象添加规则的装饰器
+ *
+ * @example 装饰器属性
+ * ```ts
+ *  class UserDTO {
+ *    @Rule(RuleType.number().max(10))
+ *    age: number;
+ *  }
+ * ```
+ *
+ * @example 针对extends进行装饰
+ * ```ts
+ *   class TO {}
+ *
+ *   @Rule(TO)
+ *   class UserDTO extends TO {
+ *     @Rule(RuleType.number().max(10))
+ *     age: number;
+ *   }
+ * ```
+ *
+ * @example 属性类装饰
+ * ```ts
+ *  class WorldDTO {
+ *    @Rule(RuleType.number().max(20))
+ *    age: number;
+ *  }
+ *
+ *  class UserDTO {
+ *    @Rule(RuleType.number().max(10))
+ *    age: number;
+ *
+ *    @Rule(WorldDTO)
+ *    world: WorldDTO;
+ *  }
+ * ```
+ */
+export function Rule(rule: Joi.Schema | Function, options: RuleOptions = initOptions) {
   return function (...args) {
     if (args[1]) {
       const [target, propertyKey] = args;
-      if (!joi.isSchema(rule)) {
-        rule = joi
-          .object(getClassMetadata(RULES_KEY, rule))
-          .meta({ id: rule.name });
-        if (getPropertyType(target, propertyKey).name === 'Array') {
-          rule = joi.array().items(rule);
-          if (options.min) {
-            rule = rule.min(options.min);
-          }
-          if (options.max) {
-            rule = rule.max(options.max);
-          }
-        }
-        if (options.required) {
-          rule = rule.required();
-        }
-      }
-      attachClassMetadata(RULES_KEY, rule, target, propertyKey);
+      const schemaRule = isSchema(rule) ? rule : createJoiSchemaRules(
+        getClassMetadata(RULES_KEY, rule),
+        options,
+        getPropertyType(target, propertyKey).name === 'Array',
+      );
+      attachClassMetadata(RULES_KEY, schemaRule, target, propertyKey.toString());
     } else {
       // 类装饰器
       const rules = getClassMetadata(RULES_KEY, rule);
       if (rules) {
-        let currentRule = getClassMetadata(RULES_KEY, args[0]);
-        currentRule = currentRule ?? {};
+        const currentRule = getClassMetadata(RULES_KEY, args[0]) ?? {};
         Object.keys(rules).forEach((item) => {
           if (!currentRule[item]) {
             currentRule[item] = rules[item];
@@ -52,4 +79,4 @@ export function Rule(rule, options: RuleOptions = { required: true }) {
   };
 }
 
-export { joi as RuleType };
+export { Joi as RuleType };
