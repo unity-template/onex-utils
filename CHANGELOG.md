@@ -1,3 +1,25 @@
+<a name="0.0.46"></a>
+## [0.0.46](https://github.com/unity-template/utils/compare/v0.0.45...v0.0.46) (2021-11-18)
+
+
+### Features
+
+* 调整测试用例 ([1cb94e4](https://github.com/unity-template/utils/commit/1cb94e4))
+* 基础能力 ([6e4268a](https://github.com/unity-template/utils/commit/6e4268a))
+* 添加测试用例 & 修改tsconfig配置 ([250873a](https://github.com/unity-template/utils/commit/250873a))
+* 添加工具类型的装饰器 ([fd0002e](https://github.com/unity-template/utils/commit/fd0002e))
+* 添加bug report的issues模板([#33](https://github.com/unity-template/utils/issues/33)) ([bbb6b03](https://github.com/unity-template/utils/commit/bbb6b03))
+* 添加example ([91ccac2](https://github.com/unity-template/utils/commit/91ccac2))
+* 添加prefix装饰器对应测试用例 ([7be86d4](https://github.com/unity-template/utils/commit/7be86d4))
+* 修改装饰器导出名称 ([aee386f](https://github.com/unity-template/utils/commit/aee386f))
+* 修改tsconfig支持配置 ([e721a4c](https://github.com/unity-template/utils/commit/e721a4c))
+* 针对validate，优化descriptor命名 ([#37](https://github.com/unity-template/utils/issues/37)) ([8fd4462](https://github.com/unity-template/utils/commit/8fd4462))
+* 支持文件构建到ES5([#35](https://github.com/unity-template/utils/issues/35)) ([bd3485b](https://github.com/unity-template/utils/commit/bd3485b))
+* validate 添加属性装饰器 ([8e25f9f](https://github.com/unity-template/utils/commit/8e25f9f))
+* validate 整体文件优化([#39](https://github.com/unity-template/utils/issues/39)) ([2f5e84a](https://github.com/unity-template/utils/commit/2f5e84a))
+
+
+
 <a name="0.0.45"></a>
 ## [0.0.45](https://github.com/unity-template/utils/compare/v0.0.44...v0.0.45) (2021-11-05)
 
