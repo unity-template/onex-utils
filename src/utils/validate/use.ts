@@ -1,6 +1,9 @@
-import { plainToClass } from 'class-transformer';
 import Joi from 'joi';
-import { getClassExtendedMetadata, getMethodParamTypes } from './common/metadata';
+import {
+  getClassExtendedMetadata,
+  getMethodParamTypes,
+} from './common/metadata';
+import { plainToClass } from 'class-transformer';
 import { RULES_KEY } from './common/key';
 
 /**
@@ -152,7 +155,36 @@ export function validateComponentPropsHoc(dto) {
   };
 }
 
-
+/**
+ * 类方法检验
+ *
+ * @example 基础实例
+ * ```ts
+ *   class TO {}
+ *
+ *  @Rule(TO)
+ *   class UserDTO extends TO {
+ *     @Rule(RuleType.number().max(10))
+ *     age: number;
+ *   }
+ *
+ *  @Rule(UserDTO)
+ *   class HelloDTO extends UserDTO {
+ *   }
+ *
+ *  class Hello {
+ *     @Validate()
+ *     school(a, data: HelloDTO) {
+ *       return data;
+ *     }
+ *   }
+ *   const user = {
+ *     age: 8,
+ *   };
+ *   const result = new Hello().school(1, user);
+ *   expect(result).toEqual(user);
+ * ```
+ */
 export function Validate(isTransform = true) {
   return function (
     target,
