@@ -1,5 +1,4 @@
 /* eslint-disable @iceworks/best-practices/recommend-polyfill */
-/* eslint-disable no-redeclare */
 import * as Joi from 'joi';
 import {
   attachClassMetadata,
@@ -9,7 +8,6 @@ import {
 } from './common/metadata';
 import { RULES_KEY } from './common/key';
 import { RuleOptions, createJoiSchemaRules, isSchema } from './common/schema';
-
 
 const initOptions: RuleOptions = {
   required: true,
@@ -51,29 +49,45 @@ const initOptions: RuleOptions = {
  *    @Rule(WorldDTO)
  *    world: WorldDTO;
  *  }
+ *
+ * @Rule(UserDTO)
+ * class EmployeeUserDto extends UserDto {
+ *    @Rule(RuleType.string().required())
+ *    post: string;
+ * }
  * ```
  */
-export function Rule(rule: Joi.Schema | Function, options: RuleOptions = initOptions) {
+export function Rule(
+  rule: Joi.Schema | { new (): unknown },
+  options: RuleOptions = initOptions,
+) {
   return function (...args) {
     if (args[1]) {
+      // 类属性装饰器
       const [target, propertyKey] = args;
-      const schemaRule = isSchema(rule) ? rule : createJoiSchemaRules(
-        getClassMetadata(RULES_KEY, rule),
-        options,
-        getPropertyType(target, propertyKey).name === 'Array',
+      const schemaRule = isSchema(rule)
+        ? rule
+        : createJoiSchemaRules(
+          getClassMetadata(RULES_KEY, rule),
+          options,
+          getPropertyType(target, propertyKey).name === 'Array',
+        );
+      attachClassMetadata(
+        RULES_KEY,
+        schemaRule,
+        target,
+        propertyKey.toString(),
       );
-      attachClassMetadata(RULES_KEY, schemaRule, target, propertyKey.toString());
     } else {
       // 类装饰器
-      const rules = getClassMetadata(RULES_KEY, rule);
-      if (rules) {
-        const currentRule = getClassMetadata(RULES_KEY, args[0]) ?? {};
-        Object.keys(rules).forEach((item) => {
-          if (!currentRule[item]) {
-            currentRule[item] = rules[item];
-          }
-        });
-        saveClassMetadata(RULES_KEY, currentRule, args[0]);
+      const parentRules = getClassMetadata(RULES_KEY, rule) ?? {};
+      const childRules = getClassMetadata(RULES_KEY, args[0]) ?? {};
+      if (Object.keys(parentRules).length > 0) {
+        const allClassRule = {
+          ...parentRules,
+          ...childRules,
+        };
+        saveClassMetadata(RULES_KEY, allClassRule, args[0]);
       }
     }
   };
