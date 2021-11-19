@@ -114,7 +114,8 @@ describe('test rule', () => {
         age: 22,
       }],
     };
-    expect(() => new Hello().school(1, user)).toThrow();
+
+    expect(new Hello().school(1, user)).toEqual(user);
   });
 
   it('check with check and transform object', () => {
@@ -138,7 +139,7 @@ describe('test rule', () => {
     }
 
     class Hello {
-      @Validate(true)
+      @Validate()
       school(a, data: UserDTO) {
         return data;
       }
@@ -227,9 +228,7 @@ describe('test rule', () => {
         age: 22,
       },
     };
-    expect(() => {
-      new Hello().school(1, user);
-    }).toThrow(Error);
+    expect(new Hello().school(1, user)).toEqual(user);
   });
 
   it('check with check when two level and array and not equal', () => {
@@ -260,9 +259,7 @@ describe('test rule', () => {
         },
       ],
     };
-    expect(() => {
-      new Hello().school(1, user);
-    }).toThrow(Error);
+    expect(new Hello().school(1, user)).toEqual(user);
   });
 
   it('should transform string to number', () => {

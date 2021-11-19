@@ -1,10 +1,25 @@
 import Joi from 'joi';
+import { JsonObject } from 'type-fest';
+import { plainToClass } from 'class-transformer';
+import { RULES_KEY } from './common/key';
+import { type } from 'onex-utils';
 import {
   getClassExtendedMetadata,
   getMethodParamTypes,
 } from './common/metadata';
-import { plainToClass } from 'class-transformer';
-import { RULES_KEY } from './common/key';
+
+function validateDataRules(rules: Joi.Schema, value: JsonObject) {
+  const schema = Joi.object(rules);
+  const result = schema.validate(value);
+  if (result.error) {
+    console.warn('数据校验：', result.error);
+  }
+  return result.value;
+}
+
+function transformDataToClass<T>(dto: { new (): T }, value: JsonObject) {
+  return plainToClass(dto, value) as T;
+}
 
 /**
  * 组件的装饰器使用方式
@@ -31,34 +46,26 @@ import { RULES_KEY } from './common/key';
  *       console.log(this.props.bizCode, this.props.bizName, this.props.note);
  *     }
  *   }
- *  \/**
  *  new Node({
  *     bizCode: '你好',
  *     bizName: '世界',
  *   }).IRender();
- *   *\/
- *    * output:
- *    * Debugger attached.
- *    * DataDto.note: 参数告警
- *    * test-你好 test-世界 undefined
+ *   // output:
+ *   // Debugger attached.
+ *   // DataDto.note: 参数告警
+ *   // test-你好 test-世界 undefined
  *```
  */
-export function ValidateAndTransformComponentProps(ClassFto) {
+export function ValidateAndTransformComponentProps(ClassDto) {
   return (IFunction) =>
     class extends IFunction {
       constructor(...args: Parameters<typeof IFunction>) {
         const [componentProps, ...otherArgs] = args;
-        let newComponentProps = componentProps;
-        const rules = getClassExtendedMetadata(RULES_KEY, ClassFto);
-        if (rules) {
-          const schema = Joi.object(rules);
-          const result = schema.validate(componentProps);
-          if (result.error) {
-            return plainToClass(ClassFto, result.value);
-          } else {
-            newComponentProps = plainToClass(ClassFto, result.value);
-          }
-        }
+        const rules = getClassExtendedMetadata(RULES_KEY, ClassDto);
+        const newComponentProps = transformDataToClass(
+          ClassDto,
+          validateDataRules(rules, componentProps as JsonObject),
+        );
         super(...[newComponentProps, ...otherArgs]);
       }
     } as ReturnType<typeof IFunction>;
@@ -89,21 +96,13 @@ export function ValidateAndTransformComponentProps(ClassFto) {
  *   });
  *
  *  console.log(result.bizCode, result.bizCode, result.note);
- *   // console.log test-你好 test-你好 213
+ *  // console.log test-你好 test-你好 213
  * ```
  */
-export function validateInterfaceData(ClassFto) {
-  return (data: typeof ClassFto): typeof ClassFto => {
+export function validateInterfaceData<T>(ClassFto: { new (): T }) {
+  return (data: any): T => {
     const rules = getClassExtendedMetadata(RULES_KEY, ClassFto);
-    if (rules) {
-      const schema = Joi.object(rules);
-      const result = schema.validate(data);
-      if (result.error) {
-        throw result.error;
-      }
-      return plainToClass(ClassFto, result.value);
-    }
-    return plainToClass(ClassFto, data);
+    return transformDataToClass(ClassFto, validateDataRules(rules, data));
   };
 }
 
@@ -137,12 +136,11 @@ export function validateInterfaceData(ClassFto) {
  *      bizCode: '你好',
  *      bizName: '世界',
  *    }).IRender();
- *    \/**
- *     * output:
- *     * Debugger attached.
- *     * DataDto.note: 参数告警
- *     * test-你好 test-世界 undefined
- *    *\/
+ *
+ *    // output:
+ *    // Debugger attached.
+ *    // DataDto.note: 参数告警
+ *    // test-你好 test-世界 undefined
  * ```
  */
 export function validateComponentPropsHoc(dto) {
@@ -185,7 +183,7 @@ export function validateComponentPropsHoc(dto) {
  *   expect(result).toEqual(user);
  * ```
  */
-export function Validate(isTransform = true) {
+export function Validate() {
   return function (
     target,
     propertyKey: string | symbol,
@@ -194,25 +192,24 @@ export function Validate(isTransform = true) {
     const origin = descriptor.value;
     const paramTypes = getMethodParamTypes(target, propertyKey);
 
+    // eslint-disable-next-line no-param-reassign
     descriptor.value = function (...args: any[]) {
+      const funArgs: unknown[] = [];
       for (let i = 0; i < paramTypes.length; i++) {
-        const item = paramTypes[i];
-        const rules = getClassExtendedMetadata(RULES_KEY, item);
+        const currentType = paramTypes[i];
+        const currentArg = args[i];
+        const rules = getClassExtendedMetadata(RULES_KEY, currentType);
         if (rules) {
-          const schema = Joi.object(rules);
-          const result = schema.validate(args[i]);
-          if (result.error) {
-            throw result.error;
-          } else {
-            args[i] = result.value;
-          }
-          // passed
-          if (isTransform) {
-            args[i] = plainToClass(item, args[i]);
-          }
+          const newData = transformDataToClass(
+            currentType,
+            validateDataRules(rules, currentArg),
+          );
+          funArgs.push(newData);
+          continue;
         }
+        funArgs.push(currentArg);
       }
-      return origin.call(this, ...args);
+      return origin.call(this, ...funArgs);
     };
   };
 }
