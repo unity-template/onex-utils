@@ -1,10 +1,11 @@
-/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import 'reflect-metadata';
 
 export type DecoratorKey = string | symbol;
 export const INJECT_CLASS_KEY_PREFIX = 'INJECTION_CLASS_META_DATA';
 
-class IMap implements Pick<Map<any, any>, 'clear' | 'delete' | 'get' | 'has' | 'set' | 'forEach'> {
+class IMap
+implements
+    Pick<Map<any, any>, 'clear' | 'delete' | 'get' | 'has' | 'set' | 'forEach'> {
   private map: Map<any, any> = new Map();
 
   clear = () => {
@@ -27,7 +28,10 @@ class IMap implements Pick<Map<any, any>, 'clear' | 'delete' | 'get' | 'has' | '
     return this.map.set(key, value);
   };
 
-  forEach = (callbackfn: (value: any, key: any, map: Map<any, any>) => void, thisArg?: any) => {
+  forEach = (
+    callbackfn: (value: any, key: any, map: Map<any, any>) => void,
+    thisArg?: any,
+  ) => {
     this.map.forEach(callbackfn, thisArg);
   };
 }

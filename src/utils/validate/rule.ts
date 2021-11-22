@@ -1,13 +1,12 @@
-/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import * as Joi from 'joi';
+import { createJoiSchemaRules, isSchema, RuleOptions } from './common/schema';
+import { RULES_KEY } from './common/key';
 import {
   attachClassMetadata,
   getClassMetadata,
   getPropertyType,
   saveClassMetadata,
 } from './common/metadata';
-import { RULES_KEY } from './common/key';
-import { RuleOptions, createJoiSchemaRules, isSchema } from './common/schema';
 
 const initOptions: RuleOptions = {
   required: true,

@@ -1,4 +1,3 @@
-/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import { DecoratorManager } from './manager';
 import 'reflect-metadata';
 

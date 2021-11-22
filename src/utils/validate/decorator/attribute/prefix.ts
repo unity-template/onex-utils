@@ -1,4 +1,3 @@
-/* eslint-disable @iceworks/best-practices/recommend-polyfill */
 import { decorate } from '../../common/decorate';
 
 type options = [prefix: string | symbol];

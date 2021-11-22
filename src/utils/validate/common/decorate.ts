@@ -1,5 +1,3 @@
-/* eslint-disable @iceworks/best-practices/recommend-polyfill */
-/* eslint-disable no-prototype-builtins */
 export function isDescriptor(desc) {
   if (!desc || !desc.hasOwnProperty) {
     return false;
@@ -8,7 +6,7 @@ export function isDescriptor(desc) {
   const keys = ['value', 'initializer', 'get', 'set'];
 
   for (let i = 0, l = keys.length; i < l; i++) {
-    if (desc.hasOwnProperty(keys[i])) {
+    if (Object.prototype.hasOwnProperty.call(desc, keys[i])) {
       return true;
     }
   }
@@ -21,10 +19,7 @@ export function decorate(handleDescriptor, entryArgs) {
     return handleDescriptor(...entryArgs, []);
   } else {
     return function (...args) {
-      return handleDescriptor(
-        ...Array.prototype.slice.call(args),
-        entryArgs,
-      );
+      return handleDescriptor(...Array.prototype.slice.call(args), entryArgs);
     };
   }
 }

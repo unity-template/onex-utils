@@ -2,7 +2,6 @@ import Joi from 'joi';
 import { JsonObject } from 'type-fest';
 import { plainToClass } from 'class-transformer';
 import { RULES_KEY } from './common/key';
-import { type } from 'onex-utils';
 import {
   getClassExtendedMetadata,
   getMethodParamTypes,
