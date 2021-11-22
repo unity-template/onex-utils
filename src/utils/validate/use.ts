@@ -42,9 +42,10 @@ import {
  *```
  */
 export function ValidateAndTransformComponentProps<T>(ClassDto: { new (): T }) {
-  return (IFunction) =>
-    class extends IFunction {
-      constructor(...args: Parameters<typeof IFunction>) {
+  return function classDecorator<P extends { new (...args: any[]): {} }>(
+    constructor: P) {
+    return class extends constructor {
+      constructor(...args: any[]) {
         const [componentProps, ...otherArgs] = args;
         const rules = getClassExtendedMetadata(RULES_KEY, ClassDto);
         const { value } = validateAndTranslate({
@@ -52,9 +53,10 @@ export function ValidateAndTransformComponentProps<T>(ClassDto: { new (): T }) {
           value: componentProps as JsonObject,
           rules,
         });
-        super(...[...value, ...otherArgs]);
+        super(...[value, ...otherArgs]);
       }
-    } as ReturnType<typeof IFunction>;
+    };
+  };
 }
 
 /**
@@ -133,13 +135,12 @@ export function validateInterfaceData<T>(ClassDto: { new (): T }) {
  *    // test-你好 test-世界 undefined
  * ```
  */
-export function validateComponentPropsHoc(dto) {
-  return (Component) => {
-    return class extends Component {
-      constructor(props: typeof dto) {
-        super(validateInterfaceData(dto)(props));
-      }
-    };
+export function validateComponentPropsHoc<T extends { new (): any }>(dto: T) {
+  return <F extends (...args: any) => any>(FcComponent: F) => {
+    return ((...args) => {
+      args[0] = validateInterfaceData(dto)(args?.[0] ?? []);
+      return FcComponent(...args);
+    }) as F;
   };
 }
 
