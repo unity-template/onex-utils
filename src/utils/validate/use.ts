@@ -1,24 +1,10 @@
-import Joi from 'joi';
 import { JsonObject } from 'type-fest';
-import { plainToClass } from 'class-transformer';
 import { RULES_KEY } from './common/key';
+import { validateAndTranslate } from './common/translate';
 import {
   getClassExtendedMetadata,
   getMethodParamTypes,
 } from './common/metadata';
-
-function validateDataRules(rules: Joi.Schema, value: JsonObject) {
-  const schema = Joi.object(rules);
-  const result = schema.validate(value);
-  if (result.error) {
-    console.warn('数据校验：', result.error);
-  }
-  return result.value;
-}
-
-function transformDataToClass<T>(dto: { new (): T }, value: JsonObject) {
-  return plainToClass(dto, value) as T;
-}
 
 /**
  * 组件的装饰器使用方式
@@ -55,17 +41,18 @@ function transformDataToClass<T>(dto: { new (): T }, value: JsonObject) {
  *   // test-你好 test-世界 undefined
  *```
  */
-export function ValidateAndTransformComponentProps(ClassDto) {
+export function ValidateAndTransformComponentProps<T>(ClassDto: { new (): T }) {
   return (IFunction) =>
     class extends IFunction {
       constructor(...args: Parameters<typeof IFunction>) {
         const [componentProps, ...otherArgs] = args;
         const rules = getClassExtendedMetadata(RULES_KEY, ClassDto);
-        const newComponentProps = transformDataToClass(
-          ClassDto,
-          validateDataRules(rules, componentProps as JsonObject),
-        );
-        super(...[newComponentProps, ...otherArgs]);
+        const { value } = validateAndTranslate({
+          dto: ClassDto,
+          value: componentProps as JsonObject,
+          rules,
+        });
+        super(...[...value, ...otherArgs]);
       }
     } as ReturnType<typeof IFunction>;
 }
@@ -98,10 +85,14 @@ export function ValidateAndTransformComponentProps(ClassDto) {
  *  // console.log test-你好 test-你好 213
  * ```
  */
-export function validateInterfaceData<T>(ClassFto: { new (): T }) {
+export function validateInterfaceData<T>(ClassDto: { new (): T }) {
   return (data: any): T => {
-    const rules = getClassExtendedMetadata(RULES_KEY, ClassFto);
-    return transformDataToClass(ClassFto, validateDataRules(rules, data));
+    const rules = getClassExtendedMetadata(RULES_KEY, ClassDto);
+    return validateAndTranslate({
+      dto: ClassDto,
+      rules,
+      value: data,
+    }).value;
   };
 }
 
@@ -199,10 +190,11 @@ export function Validate() {
         const currentArg = args[i];
         const rules = getClassExtendedMetadata(RULES_KEY, currentType);
         if (rules) {
-          const newData = transformDataToClass(
-            currentType,
-            validateDataRules(rules, currentArg),
-          );
+          const { value: newData } = validateAndTranslate({
+            dto: currentType,
+            value: currentArg,
+            rules,
+          });
           funArgs.push(newData);
           continue;
         }

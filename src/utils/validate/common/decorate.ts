@@ -6,7 +6,8 @@ export function isDescriptor(desc) {
   const keys = ['value', 'initializer', 'get', 'set'];
 
   for (let i = 0, l = keys.length; i < l; i++) {
-    if (Object.prototype.hasOwnProperty.call(desc, keys[i])) {
+    const currentProperty = keys[i];
+    if (Object.prototype.hasOwnProperty.call(desc, currentProperty)) {
       return true;
     }
   }

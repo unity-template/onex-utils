@@ -68,7 +68,10 @@ export function getClassMetadata(decoratorNameKey: DecoratorKey, target) {
   return manager.getMetadata(decoratorNameKey, target);
 }
 
-function mergeMeta(target: any, src: any) {
+function mergeMeta(_target: any, _src: any) {
+  let target = _target;
+  let src = _src;
+
   if (!target) {
     target = src;
     src = null;

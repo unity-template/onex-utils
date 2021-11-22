@@ -7,10 +7,12 @@ export interface RuleOptions {
   max?: number;
 }
 
-export const createJoiSchemaRules = (alreadyRules: Joi.Schema, options: RuleOptions, isArray: boolean): Joi.Schema => {
-  const objectRule = joi
-    .object(alreadyRules)
-    .meta({ id: options.name });
+export const createJoiSchemaRules = (
+  alreadyRules: Joi.Schema,
+  options: RuleOptions,
+  isArray: boolean,
+): Joi.Schema => {
+  const objectRule = joi.object(alreadyRules).meta({ id: options.name });
   let arrayRule!: Joi.ArraySchema;
   if (isArray) {
     arrayRule = joi.array().items(objectRule);
@@ -32,8 +34,5 @@ export const createJoiSchemaRules = (alreadyRules: Joi.Schema, options: RuleOpti
 };
 
 export function isSchema(rule: joi.Schema | Function): rule is Joi.Schema {
-  if (joi.isSchema(rule)) {
-    return true;
-  }
-  return false;
+  return joi.isSchema(rule);
 }
