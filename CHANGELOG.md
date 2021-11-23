@@ -1,3 +1,14 @@
+<a name="0.0.47"></a>
+## [0.0.47](https://github.com/unity-template/utils/compare/v0.0.46...v0.0.47) (2021-11-23)
+
+
+### Features
+
+* 抽离validate rules规则 ([af24899](https://github.com/unity-template/utils/commit/af24899))
+* 优化validateData 提示 ([8805c93](https://github.com/unity-template/utils/commit/8805c93))
+
+
+
 <a name="0.0.46"></a>
 ## [0.0.46](https://github.com/unity-template/utils/compare/v0.0.45...v0.0.46) (2021-11-18)
 
