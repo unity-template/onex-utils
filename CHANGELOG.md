@@ -1,3 +1,13 @@
+<a name="0.0.48"></a>
+## [0.0.48](https://github.com/unity-template/utils/compare/v0.0.47...v0.0.48) (2021-11-23)
+
+
+### Features
+
+* 代码优化 ([11bed27](https://github.com/unity-template/utils/commit/11bed27))
+
+
+
 <a name="0.0.47"></a>
 ## [0.0.47](https://github.com/unity-template/utils/compare/v0.0.46...v0.0.47) (2021-11-23)
 
