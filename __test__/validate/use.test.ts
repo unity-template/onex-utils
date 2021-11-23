@@ -1,6 +1,12 @@
 import { validate } from '../../src/index';
 
-const { Rule, RuleType, validateInterfaceData, ValidateAndTransformComponentProps, validateComponentPropsHoc } = validate;
+const {
+  Rule,
+  RuleType,
+  validateInterfaceData,
+  ValidateAndTransformComponentProps,
+  validateComponentPropsHoc,
+} = validate;
 
 class Component<P> {
   props!: P;
@@ -8,6 +14,7 @@ class Component<P> {
     this.props = data;
   }
 }
+
 class ServiceDTO {
   @Rule(RuleType.string().required())
   bizCode: string;
@@ -21,11 +28,13 @@ class ServiceDTO {
 
 describe('validate interface Data', () => {
   test('should transform service data', () => {
-    expect(validateInterfaceData(ServiceDTO)({
+    const IValidate = validateInterfaceData(ServiceDTO);
+    const result = IValidate({
       bizCode: '你好',
-      bizName: '阿里',
+      bizName: '世界',
       note: '213',
-    }).note).toEqual(213);
+    });
+    expect(result.note).toEqual(213);
   });
 
   test('should validate and translate component props', () => {

@@ -1,3 +1,4 @@
+import { FilterFunction } from './type';
 import { JsonObject } from 'type-fest';
 import { RULES_KEY } from './common/key';
 import { validateAndTranslate } from './common/translate';
@@ -88,7 +89,7 @@ export function ValidateAndTransformComponentProps<T>(ClassDto: { new (): T }) {
  * ```
  */
 export function validateInterfaceData<T>(ClassDto: { new (): T }) {
-  return (data: any): T => {
+  return (data: FilterFunction<T>): T => {
     const rules = getClassExtendedMetadata(RULES_KEY, ClassDto);
     return validateAndTranslate({
       dto: ClassDto,
