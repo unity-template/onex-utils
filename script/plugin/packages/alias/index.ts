@@ -1,6 +1,5 @@
-import { Application, NavigationItem, ReflectionKind } from 'typedoc';
+import { Application, NavigationItem } from 'typedoc';
 import { PageEvent } from 'typedoc/dist/lib/output/events';
-import { func } from 'onex-utils';
 
 
 export const load = (that: Application) => {
@@ -37,6 +36,7 @@ function changeGroups(page: PageEvent) {
 function changeLayout(page: PageEvent) {
   if (page.navigation) {
     changeNavigationItem(page.navigation);
+    deleteCommonFile(page.navigation);
   }
 }
 
@@ -49,4 +49,15 @@ function changeNavigationItem(item: NavigationItem) {
       });
     }
   });
+}
+
+/**
+ * 针对生成的Export页面，删除三级以上的路径导出
+ */
+function deleteCommonFile(item: NavigationItem) {
+  if (item && item.children) {
+    item.children = item?.children?.filter((childItem) => {
+      return (childItem.title?.match(/\//g) || [])?.length < 2;
+    });
+  }
 }
