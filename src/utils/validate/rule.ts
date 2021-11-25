@@ -1,4 +1,4 @@
-import * as Joi from 'joi';
+import Joi from 'joi';
 import { createJoiSchemaRules, isSchema, RuleOptions } from './common/schema';
 import { RULES_KEY } from './common/key';
 import {
