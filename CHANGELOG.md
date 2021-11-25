@@ -1,3 +1,13 @@
+<a name="0.0.51"></a>
+## [0.0.51](https://github.com/unity-template/utils/compare/v0.0.50...v0.0.51) (2021-11-25)
+
+
+### Features
+
+* import导入语句修改 ([6efde55](https://github.com/unity-template/utils/commit/6efde55))
+
+
+
 <a name="0.0.50"></a>
 ## [0.0.50](https://github.com/unity-template/utils/compare/v0.0.49...v0.0.50) (2021-11-25)
 
