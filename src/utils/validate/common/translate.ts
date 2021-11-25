@@ -1,6 +1,6 @@
 import Joi from 'joi';
 import { JsonObject } from 'type-fest';
-import { plainToClass } from 'class-transformer';
+import { plainToInstance } from 'class-transformer';
 
 function validateDataRules(rules: Joi.Schema, value: JsonObject) {
   const schema = Joi.object(rules);
@@ -9,7 +9,7 @@ function validateDataRules(rules: Joi.Schema, value: JsonObject) {
 }
 
 function transformDataToClass<T>(dto: { new (): T }, value: JsonObject) {
-  return plainToClass(dto, value) as T;
+  return plainToInstance(dto, value) as T;
 }
 
 interface Option {
