@@ -1,3 +1,13 @@
+<a name="0.0.52"></a>
+## [0.0.52](https://github.com/unity-template/utils/compare/v0.0.51...v0.0.52) (2021-11-25)
+
+
+### Bug Fixes
+
+* 🐛 解决ReferenceError: self is not defined运行报错 ([08c9fde](https://github.com/unity-template/utils/commit/08c9fde))
+
+
+
 <a name="0.0.51"></a>
 ## [0.0.51](https://github.com/unity-template/utils/compare/v0.0.50...v0.0.51) (2021-11-25)
 
