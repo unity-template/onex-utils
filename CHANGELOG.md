@@ -1,3 +1,13 @@
+<a name="0.0.50"></a>
+## [0.0.50](https://github.com/unity-template/utils/compare/v0.0.49...v0.0.50) (2021-11-25)
+
+
+### Features
+
+* 🎸 添加getDeviceWidth工具函数 ([5590e20](https://github.com/unity-template/utils/commit/5590e20))
+
+
+
 <a name="0.0.49"></a>
 ## [0.0.49](https://github.com/unity-template/utils/compare/v0.0.48...v0.0.49) (2021-11-23)
 
