@@ -62,55 +62,71 @@
 				<a href="#onex-utils-middot-----" id="onex-utils-middot-----" style="color: inherit; text-decoration: none;">
 					<h1><a href="https://unity-template.github.io/onex-utils/index.html">onex-utils</a> &middot; <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/v/onex-utils.svg?style=flat" alt="npm version"></a> <a href="https://github.com/unity-template/onex-utils/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a> <a href="https://codecov.io/gh/unity-template/onex-utils"><img src="https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master" alt="codeCov"></a> <a href="https://www.travis-ci.org/github/unity-template/onex-utils"><img src="https://img.shields.io/travis/unity-template/onex-utils" alt="Travis (.org)"></a> <a href="https://www.npmjs.com/package/onex-utils"><img src="https://img.shields.io/npm/dt/onex-utils" alt="npm"></a></h1>
 				</a>
-				<p><a href="./README.md">简体中文</a> | English</p>
-				<p>Some business functions written in the process of precipitation business development and some implementation schemes are adopted to avoid code duplication between multiple warehouses in the process of business development, and to carry out long-term maintenance and iteration in this warehouse that has accumulated some capabilities during business development. Document address: <a href="https://unity-template.github.io/onex-utils/index.html">click me</a></p>
-				<a href="#1-project-command" id="1-project-command" style="color: inherit; text-decoration: none;">
-					<h3>1. Project command</h3>
+				<p>沉淀业务开发过程中的通用工具函数，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将通用工具沉淀的此仓库中进行长期维护和迭代，非<code>onex-utils</code>维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用文档地址：<a href="https://unity-template.github.io/onex-utils/index.html">https://unity-template.github.io/onex-utils/index.html</a></p>
+				<a href="#✨-特性" id="✨-特性" style="color: inherit; text-decoration: none;">
+					<h2>✨ 特性</h2>
 				</a>
 				<ul>
-					<li><code>npm run start</code> Project start command</li>
-					<li><code>npm run build</code> Project build command</li>
-					<li><code>npm run commit</code> Use this command to submit code</li>
-					<li><code>npm run lint</code> Check the css style sheet and ts code format. If there is a problem with the rules, please contact the project developer to change</li>
+					<li><strong>稳定可靠</strong>：工具沉淀自高流量业务代码中的业务工具函数</li>
+					<li><strong>按需加载</strong>：提供<code>babel</code>、<code>build-script</code>插件实现按需加载构建</li>
+					<li><strong>文档生成</strong>：定制<a href="https://github.com/TypeStrong/typedoc"><code>TypeDoc</code></a>支持<code>TypeScript interface</code> 转 <code>markdown</code> 文档生成</li>
+					<li><strong>持续集成</strong>：<code>Github Action</code> 持续集成和持续交付(静态扫描、安全扫描、<a href="https://jestjs.io/">自动测试</a>...)</li>
 				</ul>
-				<a href="#2-general-ability" id="2-general-ability" style="color: inherit; text-decoration: none;">
-					<h3>2. General ability</h3>
+				<a href="#🖥-兼容" id="🖥-兼容" style="color: inherit; text-decoration: none;">
+					<h2>🖥 兼容</h2>
 				</a>
-				<ul>
-					<li><a href="https://tsdoc.org/">Annotation specification</a></li>
-					<li><a href="https://github.com/TypeStrong/typedoc">Document generation</a></li>
-					<li><a href="https://jestjs.io/">Project test</a></li>
-					<li><a href="https://github.com/sindresorhus/type-fest">TS tool type</a></li>
-				</ul>
-				<a href="#3-how-to-use" id="3-how-to-use" style="color: inherit; text-decoration: none;">
-					<h3>3. How to use</h3>
+				<table>
+					<thead>
+						<tr>
+							<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge"></a> IE / Edge</th>
+							<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox"></a> Firefox</th>
+							<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome"></a> Chrome</th>
+							<th><a href="http://godban.github.io/browsers-support-badges/"><img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari"></a> Safari</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td>IE11, Edge</td>
+							<td>last 2 versions</td>
+							<td>last 2 versions</td>
+							<td>last 2 versions</td>
+						</tr>
+				</tbody></table>
+				<a href="#📦-安装" id="📦-安装" style="color: inherit; text-decoration: none;">
+					<h2>📦 安装</h2>
 				</a>
-				<p>⚠️ ‼️ Used in online business where non-<code>onex-utils</code> maintainers participate. To ensure stability, it is recommended to use the locked version</p>
-				<a href="#1-via-npm" id="1-via-npm" style="color: inherit; text-decoration: none;">
-					<h4>1) Via npm</h4>
-				</a>
-				<p>install:</p>
 				<pre><code class="language-shell"><span style="color: #24292E">$ npm install onex-utils --save</span>
 </code></pre>
-				<p>usage：</p>
-				<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { type } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+				<pre><code class="language-shell"><span style="color: #24292E">$ yarn add onex-utils --save</span>
+</code></pre>
+				<a href="#🔨-使用" id="🔨-使用" style="color: inherit; text-decoration: none;">
+					<h2>🔨 使用</h2>
+				</a>
+				<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { url } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
 
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;true&#039;</span><span style="color: #24292E">)); </span><span style="color: #6A737D">// true</span>
+<span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">url_params_key</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> url.</span><span style="color: #6F42C1">getUrlParams</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;key&#039;</span><span style="color: #24292E">);</span>
 </code></pre>
-				<a href="#2-via-cdn-·-" id="2-via-cdn-·-" style="color: inherit; text-decoration: none;">
-					<h4>2) Via CDN · <a href="https://www.jsdelivr.com/package/npm/onex-utils"><img src="https://data.jsdelivr.com/v1/package/npm/onex-utils/badge" alt=""></a></h4>
+				<a href="#⌨️-开发" id="⌨️-开发" style="color: inherit; text-decoration: none;">
+					<h2>⌨️ 开发</h2>
 				</a>
-				<p>install:</p>
-				<pre><code class="language-html"><span style="color: #24292E">&lt;</span><span style="color: #22863A">script</span><span style="color: #24292E"> </span><span style="color: #6F42C1">src</span><span style="color: #24292E">=</span><span style="color: #032F62">&quot;https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js&quot;</span><span style="color: #24292E">&gt;&lt;/</span><span style="color: #22863A">script</span><span style="color: #24292E">&gt;</span>
-</code></pre>
-				<p>usage:</p>
-				<pre><code class="language-ts"><span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(onexUtils.type.</span><span style="color: #6F42C1">isTrue</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;true&#039;</span><span style="color: #24292E">));</span>
-</code></pre>
-				<a href="#4-engineering-plugin" id="4-engineering-plugin" style="color: inherit; text-decoration: none;">
-					<h3>4. Engineering plugin</h3>
+				<ul>
+					<li><code>npm run build</code>: 项目构建命令</li>
+					<li><code>npm run test</code>: 项目运行单元测试</li>
+					<li><code>npm run commit</code>: 提交规范化commit</li>
+					<li><code>npm run lint</code>: 代码格式进行校验</li>
+					<li><code>npm version patch</code>: 发布正式包</li>
+				</ul>
+				<a href="#🤝-贡献" id="🤝-贡献" style="color: inherit; text-decoration: none;">
+					<h2>🤝 贡献</h2>
 				</a>
-				<a href="#1-babel-plugin-onex-utils-babel、webpack" id="1-babel-plugin-onex-utils-babel、webpack" style="color: inherit; text-decoration: none;">
-					<h4>1) babel-plugin-onex-utils (babel、webpack)</h4>
+				<ul>
+					<li><code>Github Issue</code>编写<code>features</code>或者<code>Bug</code></li>
+					<li><code>fork</code>仓库编写代码然后提交<code>Pull Request</code> </li>
+				</ul>
+				<a href="#🎯-插件" id="🎯-插件" style="color: inherit; text-decoration: none;">
+					<h2>🎯 插件</h2>
+				</a>
+				<a href="#babel-plugin-onex-utils-babel、webpack" id="babel-plugin-onex-utils-babel、webpack" style="color: inherit; text-decoration: none;">
+					<h4>babel-plugin-onex-utils (babel、webpack)</h4>
 				</a>
 				<details>
 					<summary>➡️ CLICK ME</summary>
@@ -124,7 +140,7 @@
 						<h4>Example</h4>
 					</a>
 					<p>Transforms</p>
-					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { capitalize, map } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> {capitalize, map} </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&quot;onex-utils&quot;</span><span style="color: #24292E">;</span>
 
 <span style="color: #6F42C1">map</span><span style="color: #24292E">([], capitalize);</span>
 </code></pre>
@@ -133,9 +149,13 @@
 
 <span style="color: #D73A49">var</span><span style="color: #24292E"> _map2 </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;onex-utils/build/utils/map&quot;</span><span style="color: #24292E">));</span>
 
-<span style="color: #D73A49">var</span><span style="color: #24292E"> _capitalize2 </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;onex-utils/build/utils/capitalize&quot;</span><span style="color: #24292E">));</span>
+<span style="color: #D73A49">var</span><span style="color: #24292E"> _capitalize2 </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;onex-utils/build/utils/capitalize&quot;</span><span style="color: #24292E">)</span>
+<span style="color: #24292E">);</span>
 
-<span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #E36209">obj</span><span style="color: #24292E">) { </span><span style="color: #D73A49">return</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">&amp;&amp;</span><span style="color: #24292E"> obj.__esModule </span><span style="color: #D73A49">?</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">:</span><span style="color: #24292E"> { </span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">: obj }; }</span>
+<span style="color: #D73A49">function</span><span style="color: #24292E"> </span><span style="color: #6F42C1">_interopRequireDefault</span><span style="color: #24292E">(</span><span style="color: #E36209">obj</span><span style="color: #24292E">) {</span>
+<span style="color: #24292E">  </span><span style="color: #D73A49">return</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">&amp;&amp;</span><span style="color: #24292E"> obj.__esModule </span><span style="color: #D73A49">?</span><span style="color: #24292E"> obj </span><span style="color: #D73A49">:</span><span style="color: #24292E"> {default: obj};</span>
+<span style="color: #24292E">}</span>
 
 <span style="color: #24292E">(</span><span style="color: #005CC5">0</span><span style="color: #24292E">, _map2[</span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">])([], _capitalize2[</span><span style="color: #032F62">&quot;default&quot;</span><span style="color: #24292E">]);</span>
 </code></pre>
@@ -145,14 +165,14 @@
 					<p>.babelrc</p>
 					<pre><code class="language-json"><span style="color: #24292E">{</span>
 <span style="color: #24292E">  </span><span style="color: #005CC5">&quot;plugins&quot;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&quot;onex-utils&quot;</span><span style="color: #24292E">],</span>
-<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;presets&quot;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&quot;@babel/env&quot;</span><span style="color: #24292E">, { </span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: { </span><span style="color: #005CC5">&quot;node&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E"> } }]]</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;presets&quot;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&quot;@babel/env&quot;</span><span style="color: #24292E">, {</span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: {</span><span style="color: #005CC5">&quot;node&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E">}}]]</span>
 <span style="color: #24292E">}</span>
 </code></pre>
 					<p>Babel API</p>
-					<pre><code class="language-ts"><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;babel-core&#039;</span><span style="color: #24292E">).</span><span style="color: #6F42C1">transform</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;code&#039;</span><span style="color: #24292E">, {</span>
-<span style="color: #24292E">  </span><span style="color: #032F62">&#039;plugins&#039;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">],</span>
-<span style="color: #24292E">  </span><span style="color: #032F62">&#039;presets&#039;</span><span style="color: #24292E">: [[</span><span style="color: #032F62">&#039;@babel/env&#039;</span><span style="color: #24292E">, { </span><span style="color: #032F62">&#039;targets&#039;</span><span style="color: #24292E">: { </span><span style="color: #032F62">&#039;node&#039;</span><span style="color: #24292E">: </span><span style="color: #005CC5">6</span><span style="color: #24292E"> } }]]</span>
-<span style="color: #24292E">})</span>
+					<pre><code class="language-ts"><span style="color: #005CC5">require</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;babel-core&quot;</span><span style="color: #24292E">).</span><span style="color: #6F42C1">transform</span><span style="color: #24292E">(</span><span style="color: #032F62">&quot;code&quot;</span><span style="color: #24292E">, {</span>
+<span style="color: #24292E">  plugins: [</span><span style="color: #032F62">&quot;onex-utils&quot;</span><span style="color: #24292E">],</span>
+<span style="color: #24292E">  presets: [[</span><span style="color: #032F62">&quot;@babel/env&quot;</span><span style="color: #24292E">, {targets: {node: </span><span style="color: #005CC5">6</span><span style="color: #24292E">}}]],</span>
+<span style="color: #24292E">});</span>
 </code></pre>
 					<p>webpack.config.js</p>
 					<pre><code class="language-ts"><span style="color: #032F62">&#039;module&#039;</span><span style="color: #24292E">: {</span>
@@ -168,40 +188,31 @@
 <span style="color: #24292E">}</span>
 </code></pre>
 				</details>
-				<a href="#2-build-plugin-onex-utils（build-scripts）" id="2-build-plugin-onex-utils（build-scripts）" style="color: inherit; text-decoration: none;">
-					<h4>2) build-plugin-onex-utils（build-scripts）</h4>
+				<a href="#build-plugin-onex-utils（build-scripts）" id="build-plugin-onex-utils（build-scripts）" style="color: inherit; text-decoration: none;">
+					<h4>build-plugin-onex-utils（build-scripts）</h4>
 				</a>
 				<details>
 					<summary>➡️ CLICK ME</summary>
 					<a href="#install-1" id="install-1" style="color: inherit; text-decoration: none;">
 						<h4>Install</h4>
 					</a>
-					<pre><code class="language-shell"><span style="color: #24292E">$ npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev </span>
+					<pre><code class="language-shell"><span style="color: #24292E">$ npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev</span>
 </code></pre>
-					<a href="#usageused-in-conjunction-with-rax" id="usageused-in-conjunction-with-rax" style="color: inherit; text-decoration: none;">
-						<h4>Usage(Used in conjunction with rax)</h4>
+					<a href="#usage（和-rax-结合使用）" id="usage（和-rax-结合使用）" style="color: inherit; text-decoration: none;">
+						<h4>Usage（和 rax 结合使用）</h4>
 					</a>
 					<p>build.json</p>
 					<pre><code class="language-json"><span style="color: #24292E">{</span>
 <span style="color: #24292E">  </span><span style="color: #005CC5">&quot;type&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;rax&quot;</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: [</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;web&quot;</span>
-<span style="color: #24292E">  ],</span>
-<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;plugins&quot;</span><span style="color: #24292E">: [</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;build-plugin-component&quot;</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;build-plugin-onex-utils&quot;</span>
-<span style="color: #24292E">  ]</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;targets&quot;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&quot;web&quot;</span><span style="color: #24292E">],</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;plugins&quot;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&quot;build-plugin-component&quot;</span><span style="color: #24292E">, </span><span style="color: #032F62">&quot;build-plugin-onex-utils&quot;</span><span style="color: #24292E">]</span>
 <span style="color: #24292E">}</span>
 </code></pre>
 					<p>package.json</p>
 					<pre><code class="language-json"><span style="color: #24292E">{</span>
 <span style="color: #24292E">  </span><span style="color: #005CC5">&quot;main&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;build/index.js&quot;</span><span style="color: #24292E">,</span>
 <span style="color: #24292E">  </span><span style="color: #005CC5">&quot;types&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;./lib&quot;</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;files&quot;</span><span style="color: #24292E">: [</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;dist&quot;</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;es&quot;</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">    </span><span style="color: #032F62">&quot;lib&quot;</span>
-<span style="color: #24292E">  ],</span>
+<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;files&quot;</span><span style="color: #24292E">: [</span><span style="color: #032F62">&quot;dist&quot;</span><span style="color: #24292E">, </span><span style="color: #032F62">&quot;es&quot;</span><span style="color: #24292E">, </span><span style="color: #032F62">&quot;lib&quot;</span><span style="color: #24292E">],</span>
 <span style="color: #24292E">  </span><span style="color: #005CC5">&quot;scripts&quot;</span><span style="color: #24292E">: {</span>
 <span style="color: #24292E">    </span><span style="color: #005CC5">&quot;build&quot;</span><span style="color: #24292E">: </span><span style="color: #032F62">&quot;build-scripts build&quot;</span>
 <span style="color: #24292E">  }</span>
@@ -209,35 +220,6 @@
 </code></pre>
 					<p>cli</p>
 					<pre><code class="language-shell"><span style="color: #24292E">$ npm run build</span>
-</code></pre>
-				</details>
-				<a href="#5-common-problem" id="5-common-problem" style="color: inherit; text-decoration: none;">
-					<h3>5. Common problem</h3>
-				</a>
-				<p><strong>1) The toolkit was introduced, causing undefined error</strong></p>
-				<details>
-					<summary>CLICK ME</summary>
-					<p><strong>code:</strong></p>
-					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> onexUtils </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-<span style="color: #24292E">console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(onexUtils.url);</span>
-</code></pre>
-					<p><strong>error:</strong></p>
-					<p><img src="https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png" alt=""></p>
-					<p><strong>Modification method：</strong></p>
-					<ol>
-						<li>If it is a JS project, import it through the import method of namescpae</li>
-					</ol>
-					<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> </span><span style="color: #005CC5">*</span><span style="color: #24292E"> </span><span style="color: #D73A49">as</span><span style="color: #24292E"> onexUtils </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
-</code></pre>
-					<ol>
-						<li>If it is a ts file, solve the build problem by configuring <code>tsconfig.json</code></li>
-					</ol>
-					<pre><code class="language-json"><span style="color: #24292E">{</span>
-<span style="color: #24292E">  </span><span style="color: #005CC5">&quot;compilerOptions&quot;</span><span style="color: #24292E">: {</span>
-<span style="color: #24292E">    </span><span style="color: #005CC5">&quot;allowSyntheticDefaultImports&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">true</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">    </span><span style="color: #005CC5">&quot;esModuleInterop&quot;</span><span style="color: #24292E">: </span><span style="color: #005CC5">true</span><span style="color: #24292E">,</span>
-<span style="color: #24292E">  }</span>
-<span style="color: #24292E">}</span>
 </code></pre>
 				</details>
 			</div>
