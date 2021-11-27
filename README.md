@@ -1,58 +1,53 @@
 # [onex-utils](https://unity-template.github.io/onex-utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/onex-utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/onex-utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/onex-utils)](https://www.travis-ci.org/github/unity-template/onex-utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
 
-沉淀业务开发过程中编写的一些业务函数和实现上采用的一些方案，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将一些能力沉淀的此仓库中进行长期维护和迭代。文档 ☞ ：[click me](https://unity-template.github.io/onex-utils/index.html)
+沉淀业务开发过程中的通用工具函数，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将通用工具沉淀的此仓库中进行长期维护和迭代 ⚠️ ‼️ 非`onex-utils`维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用文档地址：https://unity-template.github.io/onex-utils/index.html
 
-### 1. 使用方式
 
-⚠️ ‼️ 非`onex-utils`维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用
 
-#### 1) 通过 npm 方式
+## ✨ 特性
 
-安装：
+* **稳定可靠**：工具沉淀自高流量业务代码中的业务工具函数
+* **按需加载**：提供`babel`、`build-script`插件实现按需加载构建
+* **文档生成**：定制[`TypeDoc`](https://github.com/TypeStrong/typedoc)支持`TypeScript interface` 转 `markdown` 文档生成
+* **持续集成**：`Github Action` 持续集成和持续交付(静态扫描、安全扫描、[自动测试](https://jestjs.io/)...)
 
+## 🖥 兼容
+
+| [![IE / Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/) IE / Edge | [![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](http://godban.github.io/browsers-support-badges/) Firefox | [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](http://godban.github.io/browsers-support-badges/) Chrome | [![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)](http://godban.github.io/browsers-support-badges/) Safari  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| IE11, Edge                                                   | last 2 versions                                              | last 2 versions                                              | last 2 versions                                              | last 2 
+
+## 📦 安装
 ```shell
 $ npm install onex-utils --save
 ```
+```shell
+$ yarn add onex-utils --save
+```
 
-使用：
+## 🔨 使用
 
 ```ts
-import {type} from "onex-utils";
+import { url } from 'onex-utils';
 
-console.log(type.isTrue("true")); // true
+const url_params_key = url.getUrlParams('key');
 ```
 
-#### 2) 通过 CDN 方式 · [![](https://data.jsdelivr.com/v1/package/npm/onex-utils/badge)](https://www.jsdelivr.com/package/npm/onex-utils)
+## ⌨️ 开发
+- `npm run build`: 项目构建命令
+- `npm run test`: 项目运行单元测试
+- `npm run commit`: 提交规范化commit
+- `npm run lint`: 代码格式进行校验
+- `npm version patch`: 发布正式包
 
-安装：
+## 🤝 贡献
 
-```html
-<script src="https://cdn.jsdelivr.net/npm/onex-utils@latest/dist/index.umd.min.js"></script>
-```
+- `Github Issue`编写`features`或者`Bug`
+- `fork`仓库编写代码然后提交`Pull Request` 
 
-使用：
+## 🎯 插件
 
-```ts
-console.log(onexUtils.type.isTrue("true"));
-```
-
-### 2. 项目命令
-
-- `npm run start` 项目启动命令
-- `npm run build` 项目构建命令
-- `npm run commit` 统一使用这个命令提交代码
-- `npm run lint` 对 css 样式表和 ts 代码格式进行校验，如果对规则存在问题，请联系项目开发者提交
-
-### 3. 通用能力
-
-- [注释规范](https://tsdoc.org/)
-- [文档生成](https://github.com/TypeStrong/typedoc)
-- [测试能力](https://jestjs.io/)
-- [TS 工具类型](https://github.com/sindresorhus/type-fest)
-
-### 4. 配套插件
-
-#### 1) babel-plugin-onex-utils (babel、webpack)
+#### babel-plugin-onex-utils (babel、webpack)
 
 <details>
 <summary>➡️ CLICK ME</summary>
@@ -130,7 +125,7 @@ webpack.config.js
 
 </details>
 
-#### 2) build-plugin-onex-utils（build-scripts）
+#### build-plugin-onex-utils（build-scripts）
 
 <details>
 <summary>➡️ CLICK ME</summary>
@@ -175,41 +170,4 @@ $ npm run build
 </details>
 
 
-### 5. 常见问题
 
-**1) 引入工具包，导致 undefined 报错**
-
-<details>
-<summary>CLICK ME</summary>
-
-**源码：**
-
-```ts
-import onexUtils from "onex-utils";
-console.log(onexUtils.url);
-```
-
-**报错：**
-
-![](https://gw.alicdn.com/imgextra/i3/O1CN01lNHI3H22N3UvEahcN_!!6000000007107-2-tps-1448-382.png)
-
-**修改方式：**
-
-1. 如果是 JS 项目，通过 namescpae 的导入方式导入
-
-```ts
-import * as onexUtils from "onex-utils";
-```
-
-1. 如果是 ts 文件，通过配置`tsconfig.json`解决构建问题
-
-```json
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
-  }
-}
-```
-
-</details>

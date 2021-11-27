@@ -25,7 +25,7 @@
     "baseUrl": "."
   },
   "typedocOptions": {
-    "readme": "./README-en-GB.md",
+    "readme": "./README.md",
     "theme": "./script/theme/build",
     "highlightTheme": "github-light",
     "categorizeByGroup": true,
