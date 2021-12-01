@@ -50,7 +50,7 @@ const url_params_key = url.getUrlParams('key');
 #### babel-plugin-onex-utils (babel、webpack)
 
 <details>
-<summary>➡️ CLICK ME</summary>
+<summary>​查看详情</summary>
 
 #### Install
 
@@ -128,7 +128,7 @@ webpack.config.js
 #### build-plugin-onex-utils（build-scripts）
 
 <details>
-<summary>➡️ CLICK ME</summary>
+<summary>查看详情</summary>
 
 #### Install
 
