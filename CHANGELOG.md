@@ -1,3 +1,13 @@
+<a name="0.0.55"></a>
+## [0.0.55](https://github.com/unity-template/utils/compare/v0.0.54...v0.0.55) (2021-12-01)
+
+
+### Bug Fixes
+
+* 针对build-script构建需要修改对应命名 ([acf65d8](https://github.com/unity-template/utils/commit/acf65d8))
+
+
+
 <a name="0.0.54"></a>
 ## [0.0.54](https://github.com/unity-template/utils/compare/v0.0.53...v0.0.54) (2021-11-27)
 
