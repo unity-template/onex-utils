@@ -1,3 +1,13 @@
+<a name="0.0.57"></a>
+## [0.0.57](https://github.com/unity-template/utils/compare/v0.0.56...v0.0.57) (2021-12-01)
+
+
+### Features
+
+* 🎸 限制semantic version ([8d2e60c](https://github.com/unity-template/utils/commit/8d2e60c))
+
+
+
 <a name="0.0.56"></a>
 ## [0.0.56](https://github.com/unity-template/utils/compare/v0.0.55...v0.0.56) (2021-12-01)
 
