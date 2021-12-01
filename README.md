@@ -1,6 +1,38 @@
-# [onex-utils](https://unity-template.github.io/onex-utils/index.html) &middot; [![npm version](https://img.shields.io/npm/v/onex-utils.svg?style=flat)](https://www.npmjs.com/package/onex-utils) [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/unity-template/onex-utils/blob/master/LICENSE) [![codeCov](https://codecov.io/github/unity-template/onex-utils/coverage.svg?branch=master)](https://codecov.io/gh/unity-template/onex-utils) [![Travis (.org)](https://img.shields.io/travis/unity-template/onex-utils)](https://www.travis-ci.org/github/unity-template/onex-utils) [![npm](https://img.shields.io/npm/dt/onex-utils)](https://www.npmjs.com/package/onex-utils)
+<h1 align="center">onex-utils</h1>
+<div align="center">
+ </br>
+ <strong>
+   沉淀业务开发过程中的通用工具函数和通用方案，持续进行长期维护和迭代，推荐锁版本使用，欢迎fork和star
+ </strong>
+</div>
 
-沉淀业务开发过程中的通用工具函数，避免业务开发过程中多仓库之间的代码的复制粘贴，将业务开发过程中将通用工具沉淀的此仓库中进行长期维护和迭代，非`onex-utils`维护人员参与的线上业务中使用，为保证稳定性，推荐锁版本使用文档地址：https://unity-template.github.io/onex-utils/index.html
+</br>
+<div align="center">
+  <!-- build status -->
+  <a href="https://github.com/unity-template/onex-utils/actions/workflows/main.yml">
+    <img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/unity-template/onex-utils/onex-utils-CI?logo=github&style=flat-square">
+  </a>
+   <!-- Codecov -->
+  <a href="https://codecov.io/gh/unity-template/onex-utils">
+    <img alt="Codecov" src="https://img.shields.io/codecov/c/github/unity-template/onex-utils?logo=codecov&style=flat-square">
+  </a>
+
+  <!-- download -->
+  <a href="https://www.npmjs.com/package/onex-utils">
+    <img alt="npm" src="https://img.shields.io/npm/dt/onex-utils?style=flat-square&logo=npm">
+  </a>
+
+  <!-- license -->
+  <a href="https://github.com/unity-template/onex-utils/blob/master/LICENSE">
+    <img alt="GitHub" src="https://img.shields.io/github/license/unity-template/onex-utils?style=flat-square">
+  </a>
+
+  <!-- docs.rs docs -->
+  <a href="https://unity-template.github.io/onex-utils/index.html">
+    <img src="https://img.shields.io/badge/docs-latest-blue.svg?style=flat-square"/>
+  </a>
+
+</div>
 
 
 
@@ -11,11 +43,6 @@
 * **文档生成**：定制[`TypeDoc`](https://github.com/TypeStrong/typedoc)支持`TypeScript interface` 转 `markdown` 文档生成
 * **持续集成**：`Github Action` 持续集成和持续交付(静态扫描、安全扫描、[自动测试](https://jestjs.io/)...)
 
-## 🖥 兼容
-
-| [![IE / Edge](https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png)](http://godban.github.io/browsers-support-badges/) IE / Edge | [![Firefox](https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png)](http://godban.github.io/browsers-support-badges/) Firefox | [![Chrome](https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png)](http://godban.github.io/browsers-support-badges/) Chrome | [![Safari](https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png)](http://godban.github.io/browsers-support-badges/) Safari  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| IE11, Edge                                                   | last 2 versions                                              | last 2 versions                                              | last 2 versions                                              | last 2 
 
 ## 📦 安装
 ```shell
