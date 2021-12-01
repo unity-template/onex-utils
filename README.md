@@ -133,7 +133,7 @@ webpack.config.js
 #### Install
 
 ```shell
-$ npm install @alib/build-scripts build-plugin-utils build-plugin-component --save-dev
+$ npm install @alib/build-scripts build-plugin-onex-utils build-plugin-component --save-dev
 ```
 
 #### Usage（和 rax 结合使用）
