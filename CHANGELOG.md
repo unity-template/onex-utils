@@ -1,3 +1,14 @@
+<a name="0.0.59"></a>
+## [0.0.59](https://github.com/unity-template/utils/compare/v0.0.58...v0.0.59) (2021-12-02)
+
+
+### Features
+
+* 添加release命令 ([056f037](https://github.com/unity-template/utils/commit/056f037))
+* 修改release ci ([ccfc0c9](https://github.com/unity-template/utils/commit/ccfc0c9))
+
+
+
 <a name="0.0.58"></a>
 ## [0.0.58](https://github.com/unity-template/utils/compare/v0.0.57...v0.0.58) (2021-12-02)
 
