@@ -1,3 +1,13 @@
+<a name="0.0.58"></a>
+## [0.0.58](https://github.com/unity-template/utils/compare/v0.0.57...v0.0.58) (2021-12-02)
+
+
+### Features
+
+* 支持release ([2eae7b5](https://github.com/unity-template/utils/commit/2eae7b5))
+
+
+
 <a name="0.0.57"></a>
 ## [0.0.57](https://github.com/unity-template/utils/compare/v0.0.56...v0.0.57) (2021-12-01)
 
