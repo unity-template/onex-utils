@@ -70,6 +70,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
+      - name: Sync tags ⏳
+        uses: git fetch --tags --force
+
       - name: Release 
         uses: cycjimmy/semantic-release-action@v2
         env:
