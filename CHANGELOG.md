@@ -1,3 +1,13 @@
+<a name="0.0.62"></a>
+## [0.0.62](https://github.com/unity-template/utils/compare/v0.0.61...v0.0.62) (2021-12-03)
+
+
+### Features
+
+* release 优先进行sync ([bc0c0e5](https://github.com/unity-template/utils/commit/bc0c0e5))
+
+
+
 <a name="0.0.61"></a>
 ## [0.0.61](https://github.com/unity-template/utils/compare/v0.0.60...v0.0.61) (2021-12-03)
 
