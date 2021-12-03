@@ -1,3 +1,15 @@
+<a name="0.0.60"></a>
+## [0.0.60](https://github.com/unity-template/utils/compare/v0.0.59...v0.0.60) (2021-12-03)
+
+
+### Features
+
+* 删除console ([e967e48](https://github.com/unity-template/utils/commit/e967e48))
+* 优化ci流程 ([867f9c8](https://github.com/unity-template/utils/commit/867f9c8))
+* 优化release ([0f2cf92](https://github.com/unity-template/utils/commit/0f2cf92))
+
+
+
 <a name="0.0.59"></a>
 ## [0.0.59](https://github.com/unity-template/utils/compare/v0.0.58...v0.0.59) (2021-12-02)
 
