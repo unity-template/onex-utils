@@ -68,7 +68,7 @@ jobs:
     
     steps:
       - name: Checkout 🛎️
-        uses: actions/checkout@master
+        uses: actions/checkout@v2
 
       - name: Release 
         uses: cycjimmy/semantic-release-action@v2
