@@ -69,6 +69,8 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
+        with:
+          path: master
 
       - name: Sync tags ⏳
         run: git fetch --tags --force
