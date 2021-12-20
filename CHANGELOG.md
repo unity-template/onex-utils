@@ -1,3 +1,13 @@
+<a name="0.0.65"></a>
+## [0.0.65](https://github.com/unity-template/utils/compare/v0.0.64...v0.0.65) (2021-12-20)
+
+
+### Bug Fixes
+
+* onex-utils ssr渲染失败 ([fbbe862](https://github.com/unity-template/utils/commit/fbbe862))
+
+
+
 <a name="0.0.64"></a>
 ## [0.0.64](https://github.com/unity-template/utils/compare/v0.0.63...v0.0.64) (2021-12-20)
 
