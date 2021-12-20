@@ -10,7 +10,7 @@ import * as localStorage from './utils/localStorage';
 import * as time from './utils/time';
 import * as type from './utils/type';
 import * as url from './utils/url';
-import * as validate from './utils/validate';
+
 /**
  * onex-utils
  *
@@ -35,7 +35,6 @@ const utils = {
   dom,
   device,
   color,
-  validate,
 };
 
 export {
@@ -51,7 +50,6 @@ export {
   dom,
   device,
   color,
-  validate,
 };
 
 export default utils;
