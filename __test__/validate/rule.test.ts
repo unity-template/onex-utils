@@ -1,4 +1,4 @@
-import { validate } from '../../src/index';
+import * as validate from '../../src/utils/validate';
 
 const { Rule, RuleType, Validate } = validate;
 
