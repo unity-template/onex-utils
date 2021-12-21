@@ -37,6 +37,7 @@ function getElement(options: InsertOptions) {
     case ScriptType.css: {
       if (src) {
         elementName = 'link';
+        attributes.href = src;
       } else if (content) {
         elementName = 'style';
       }
