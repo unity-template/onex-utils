@@ -1,3 +1,13 @@
+<a name="0.0.73"></a>
+## [0.0.73](https://github.com/unity-template/utils/compare/v0.0.72...v0.0.73) (2021-12-23)
+
+
+### Features
+
+* 修改release tag 配置 ([d5b4271](https://github.com/unity-template/utils/commit/d5b4271))
+
+
+
 <a name="0.0.72"></a>
 ## [0.0.72](https://github.com/unity-template/utils/compare/v0.0.71...v0.0.72) (2021-12-23)
 
