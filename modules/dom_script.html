@@ -92,13 +92,13 @@
 					<h3>insert<wbr>Script</h3>
 					<div class="tsd-version"><span>0.0.38</span> provide</div>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">insert<wbr>Script<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InsertOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">insert<wbr>Script<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">InsertOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/d0123fd/src/utils/dom/script.ts#L25">src/utils/dom/script.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/c790d52/src/utils/dom/script.ts#L79">src/utils/dom/script.ts:79</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -108,10 +108,57 @@
 								<dl class="tsd-comment-tags">
 									<dt>example</dt>
 									<dd><p>插入css</p>
-										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom, url } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
 <span style="color: #24292E">dom.</span><span style="color: #6F42C1">insertScript</span><span style="color: #24292E">({</span>
 <span style="color: #24292E"> type: dom.ScriptType.css,</span>
 <span style="color: #24292E"> src: </span><span style="color: #032F62">&#039;https://test.css&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">}).</span><span style="color: #6F42C1">then</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span>
+<span style="color: #24292E"> console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;脚本加载完成&#039;</span><span style="color: #24292E">);</span>
+<span style="color: #24292E">})</span>
+</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>插入js</p>
+									</dd>
+									<dt>remarks</dt>
+									<dd><p>针对umd类型的script脚本，可以在then中通过window对象
+										获取其绑定的方法</p>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom, url } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+<span style="color: #24292E">dom.</span><span style="color: #6F42C1">insertScript</span><span style="color: #24292E">({</span>
+<span style="color: #24292E"> type: dom.ScriptType.javascript,</span>
+<span style="color: #24292E"> src: </span><span style="color: #032F62">&#039;https://test.js&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">}).</span><span style="color: #6F42C1">then</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span>
+<span style="color: #24292E"> console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;脚本加载完成，获取绑定的内容：&#039;</span><span style="color: #24292E">, window?._render_);</span>
+<span style="color: #24292E">})</span>
+</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>插入 css content</p>
+									</dd>
+									<dt>remarks</dt>
+									<dd><p>使用css变量修改全局变量</p>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+
+<span style="color: #24292E">dom.</span><span style="color: #6F42C1">insertScript</span><span style="color: #24292E">({</span>
+<span style="color: #24292E"> type: dom.ScriptType.javascript,</span>
+<span style="color: #24292E"> content: </span><span style="color: #032F62">&#039;:root {--main-bg-color: brown;}&quot;&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">}).</span><span style="color: #6F42C1">then</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span>
+<span style="color: #24292E"> console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;脚本加载完成&#039;</span><span style="color: #24292E">);</span>
+<span style="color: #24292E">})</span>
+</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><p>插入js content</p>
+									</dd>
+									<dt>remarks</dt>
+									<dd><p>将脚本内容通过script标签掺入HTML head标签中</p>
+										<pre><code class="language-ts"><span style="color: #D73A49">import</span><span style="color: #24292E"> { dom } </span><span style="color: #D73A49">from</span><span style="color: #24292E"> </span><span style="color: #032F62">&#039;onex-utils&#039;</span><span style="color: #24292E">;</span>
+
+<span style="color: #24292E">dom.</span><span style="color: #6F42C1">insertScript</span><span style="color: #24292E">({</span>
+<span style="color: #24292E"> type: dom.ScriptType.javascript,</span>
+<span style="color: #24292E"> content: </span><span style="color: #032F62">&#039;window.test=&quot;hello world&quot;&#039;</span><span style="color: #24292E">,</span>
+<span style="color: #24292E">}).</span><span style="color: #6F42C1">then</span><span style="color: #24292E">(() </span><span style="color: #D73A49">=&gt;</span><span style="color: #24292E"> {</span>
+<span style="color: #24292E"> console.</span><span style="color: #6F42C1">log</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;脚本加载完成，获取绑定的内容：&#039;</span><span style="color: #24292E">, window?.test);</span>
 <span style="color: #24292E">})</span>
 </code></pre>
 									</dd>
@@ -123,7 +170,7 @@
 									<h5>options: <span class="tsd-signature-type">InsertOptions</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
