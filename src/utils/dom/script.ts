@@ -16,6 +16,11 @@ interface InsertOptions {
   src?: string;
   content?: string;
   extOptions?: Record<string, string>;
+  /**
+   * 脚本超时等待时间，单位毫秒
+   * @defaultValue 3000
+   */
+  loadTimeout?: number;
 }
 
 /**
@@ -72,7 +77,7 @@ interface InsertOptions {
  * ```
  */
 export function insertScript(options: InsertOptions): Promise<void> {
-  const optionsHashId = ObjectHash(options);
+  const optionsHashId = ObjectHash({ ...options, loadTimeout: 0 });
 
   if (isScriptExist(options, optionsHashId)) {
     return SCRIPt_DOWNLOAD_TASK[optionsHashId] ?? Promise.resolve();
@@ -88,6 +93,7 @@ export function insertScript(options: InsertOptions): Promise<void> {
   const task =
     SCRIPt_DOWNLOAD_TASK[optionsHashId] ??
     (SCRIPt_DOWNLOAD_TASK[optionsHashId] = createDownloadTask(
+      options,
       currentScriptDom,
     ));
 
@@ -122,6 +128,9 @@ function createScriptElement(
     case ScriptType.javascript: {
       element = document.createElement('script') as HTMLScriptElement;
       element.setAttribute('type', ScriptType.javascript);
+      if (src) {
+        element.setAttribute('src', src);
+      }
       break;
     }
     default:
@@ -141,18 +150,29 @@ function createScriptElement(
   return element;
 }
 
-function createDownloadTask(dom: ScriptDomType): Promise<void> {
+function createDownloadTask(
+  options: InsertOptions,
+  dom: ScriptDomType,
+): Promise<void> {
+  const { src, content, loadTimeout } = options;
+
   return new Promise((resolve, reject) => {
     const head = document.getElementsByTagName('head')[0];
     if (!dom) reject(new Error('script dom not exist!'));
 
-    dom.addEventListener('load', () => {
+    if (src) {
+      dom.addEventListener('load', () => resolve(undefined));
+      dom.addEventListener('error', () =>
+        reject(new Error('script loader error')));
+    } else if (content) {
       resolve(undefined);
-    });
-
-    dom.addEventListener('error', () => {
+    } else {
       reject(new Error('script loader error'));
-    });
+    }
+
+    setTimeout(() => {
+      reject(new Error('script load timeout!'));
+    }, loadTimeout);
 
     head.appendChild(dom);
   });
@@ -177,12 +197,16 @@ function isScriptExist(option: InsertOptions, hashId: string) {
   );
 
   const isScriptUrlExist = src
-    ? labelName.reduce(
-      (prev, label) =>
-        prev ||
-          !!document.querySelector(`${label}[${labelEntries[label]}="${src}"]`),
-      false,
-    )
+    ? labelName
+      .filter((label) => labelEntries[label])
+      .reduce(
+        (prev, label) =>
+          prev ||
+            !!document.querySelector(
+              `${label}[${labelEntries[label]}="${src}"]`,
+            ),
+        false,
+      )
     : false;
 
   return isOnexUtilsExist && isScriptUrlExist;
