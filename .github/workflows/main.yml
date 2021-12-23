@@ -72,9 +72,6 @@ jobs:
         with:
           path: master
 
-      - name: Sync tags ⏳
-        run: git fetch --tags --force
-      
       # Drafts your next Release notes as Pull Requests are merged into "master"
       - name: release 🎉
         uses: release-drafter/release-drafter@v5
