@@ -1,3 +1,19 @@
+<a name="0.0.67"></a>
+## [0.0.67](https://github.com/unity-template/utils/compare/v0.0.66...v0.0.67) (2021-12-23)
+
+
+### Features
+
+* 添加script测试用例 ([df8908b](https://github.com/unity-template/utils/commit/df8908b))
+* 添加update_release_draft脚本 ([4bc09f8](https://github.com/unity-template/utils/commit/4bc09f8))
+* 添加update_release_draft脚本 ([64570d6](https://github.com/unity-template/utils/commit/64570d6))
+* 新增超时函数 ([7f98f4d](https://github.com/unity-template/utils/commit/7f98f4d))
+* 修改template ([656cee4](https://github.com/unity-template/utils/commit/656cee4))
+* 优化 dom script的实现 ([d64d0ee](https://github.com/unity-template/utils/commit/d64d0ee))
+* 支持 ([e06a0dc](https://github.com/unity-template/utils/commit/e06a0dc))
+
+
+
 <a name="0.0.66"></a>
 ## [0.0.66](https://github.com/unity-template/utils/compare/v0.0.65...v0.0.66) (2021-12-21)
 
