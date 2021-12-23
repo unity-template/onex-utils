@@ -70,18 +70,22 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2
 
-      - name: Get Version
+      - name: Get Package Version
         uses: nyaa8/package-version@v1
-      
-      - name: Test
-        run: |
-          echo ${{ env.PACKAGE_VERSION }}
+
+      - name: Get tag Version
+        id: tag
+        uses: dawidd6/action-get-tag@v1
+        with:
+          strip_v: false
 
       # Drafts your next Release notes as Pull Requests are merged into "master"
       - name: release 🎉
         uses: release-drafter/release-drafter@v5
         with:
-          tag: ${{ env.PACKAGE_VERSION }}
+          name: ${{ env.PACKAGE_VERSION }}
+          tag: ${{ steps.get-current-tag.outputs.tag }}
+          version: ${{ env.PACKAGE_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
