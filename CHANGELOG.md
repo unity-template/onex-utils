@@ -1,3 +1,13 @@
+<a name="0.0.68"></a>
+## [0.0.68](https://github.com/unity-template/utils/compare/v0.0.67...v0.0.68) (2021-12-23)
+
+
+### Features
+
+* 修改构建脚本 ([c54b6e3](https://github.com/unity-template/utils/commit/c54b6e3))
+
+
+
 <a name="0.0.67"></a>
 ## [0.0.67](https://github.com/unity-template/utils/compare/v0.0.66...v0.0.67) (2021-12-23)
 
