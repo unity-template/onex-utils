@@ -83,8 +83,6 @@ jobs:
       - name: release 🎉
         uses: release-drafter/release-drafter@v5
         with:
-          name: ${{ env.PACKAGE_VERSION }}
-          tag: ${{ steps.get-current-tag.outputs.tag }}
           version: ${{ env.PACKAGE_VERSION }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
