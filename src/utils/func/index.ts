@@ -4,3 +4,4 @@ export * from './flag';
 export * from './curry';
 export * from './uuid';
 export * from './object.hash';
+export * from './lbs';
