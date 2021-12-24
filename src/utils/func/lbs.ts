@@ -98,6 +98,10 @@ export enum Shape {
 /**
  * 获取LBS两点之间的距离
  *
+ * @remarks 单位对应关系
+ * 通常使用x对应纬度
+ * 通常使用y对应经度
+ *
  * @param lat1 - 纬度
  * @param lng1 - 经度
  * @param lat2 - 纬度
