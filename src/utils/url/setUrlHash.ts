@@ -20,17 +20,17 @@ import { getUrlHash } from './getUrlHash';
  * ```
  */
 export const setUrlHash = (key: string, value?: string) => {
-  const params = getUrlHash();
-  if (value) {
-    params[key] = value;
-  } else if (params?.[key] && !value) {
-    delete params[key];
-  }
-  if (params) {
-    window.location.hash = Object.keys(params)
-      .map((paramKey) => {
-        return `${key}=${encodeURIComponent(params[paramKey])}`;
-      })
-      .join('&');
-  }
+    const params = getUrlHash();
+    if (value) {
+        params[key] = value;
+    } else if (params?.[key] && !value) {
+        delete params[key];
+    }
+    if (params) {
+        window.location.hash = Object.keys(params)
+            .map((paramKey) => {
+                return `${key}=${encodeURIComponent(params[paramKey])}`;
+            })
+            .join('&');
+    }
 };

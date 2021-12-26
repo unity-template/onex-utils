@@ -3,13 +3,13 @@ import { JsonObject } from 'type-fest';
 import { plainToClass } from 'class-transformer';
 
 function validateDataRules(rules: Joi.Schema, value: JsonObject) {
-  const schema = Joi.object(rules);
-  const result = schema.validate(value);
-  return result;
+    const schema = Joi.object(rules);
+    const result = schema.validate(value);
+    return result;
 }
 
 function transformDataToClass<T>(dto: { new (): T }, value: JsonObject) {
-  return plainToClass(dto, value) as T;
+    return plainToClass(dto, value) as T;
 }
 
 interface Option {
@@ -19,9 +19,9 @@ interface Option {
 }
 
 export function validateAndTranslate(options: Option) {
-  // 针对类型进行校验
-  const result = validateDataRules(options.rules, options.value);
-  // 针对类型进行转化
-  result.value = transformDataToClass(options.dto, result.value);
-  return result;
+    // 针对类型进行校验
+    const result = validateDataRules(options.rules, options.value);
+    // 针对类型进行转化
+    result.value = transformDataToClass(options.dto, result.value);
+    return result;
 }

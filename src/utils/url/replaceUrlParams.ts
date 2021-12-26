@@ -38,55 +38,57 @@ interface ReplaceParamsOptions {
  * @returns with query prefix url
  */
 export function replaceUrlParams(
-  newParams: Record<string, any>,
-  options?: ReplaceParamsOptions,
+    newParams: Record<string, any>,
+    options?: ReplaceParamsOptions,
 ) {
-  const currentUrl = options?.url ?? window?.location?.href;
-  if (!currentUrl) return '';
+    const currentUrl = options?.url ?? window?.location?.href;
+    if (!currentUrl) return '';
 
-  const {
-    host,
-    hash: currentHash,
-    search: currentSearch,
-  } = getUrlHashAndSearch(currentUrl);
+    const {
+        host,
+        hash: currentHash,
+        search: currentSearch,
+    } = getUrlHashAndSearch(currentUrl);
 
-  try {
-    const params = {
-      ...(qs.parse(currentSearch, { ignoreQueryPrefix: true }) || {}),
-      ...newParams,
-    };
-    const search = qs.stringify(params, { addQueryPrefix: true });
-    return `${host}${search}${currentHash}`;
-  } catch (error) {
-    return '';
-  }
+    try {
+        const params = {
+            ...(qs.parse(currentSearch, { ignoreQueryPrefix: true }) || {}),
+            ...newParams,
+        };
+        const search = qs.stringify(params, { addQueryPrefix: true });
+        return `${host}${search}${currentHash}`;
+    } catch (error) {
+        return '';
+    }
 }
 
-function getUrlHashAndSearch(url: string): {
+function getUrlHashAndSearch(
+    url: string,
+): {
   hash: string;
   search: string;
   host: string;
 } {
-  // eslint-disable-next-line no-useless-escape
-  const [host, ...paramsArr] = url.split(/(\?|\#)/g);
-  let standardParamsArr = paramsArr;
+    // eslint-disable-next-line no-useless-escape
+    const [host, ...paramsArr] = url.split(/(\?|\#)/g);
+    let standardParamsArr = paramsArr;
 
-  // 需要遵循先 search 后 hash
-  if (paramsArr.length === 4) {
-    if (paramsArr[0] === '#') {
-      standardParamsArr = [paramsArr.shift(), paramsArr.join('')].filter(
-        (i) => i,
-      ) as string[];
+    // 需要遵循先 search 后 hash
+    if (paramsArr.length === 4) {
+        if (paramsArr[0] === '#') {
+            standardParamsArr = [paramsArr.shift(), paramsArr.join('')].filter(
+                (i) => i,
+            ) as string[];
+        }
     }
-  }
 
-  const params = new Map(chunk(standardParamsArr, 2));
-  const hash = params.get('#') as string;
-  const search = params.get('?') as string;
+    const params = new Map(chunk(standardParamsArr, 2));
+    const hash = params.get('#') as string;
+    const search = params.get('?') as string;
 
-  return {
-    host,
-    hash: hash ? `#${hash}` : '',
-    search: search ? `?${search}` : '',
-  };
+    return {
+        host,
+        hash: hash ? `#${hash}` : '',
+        search: search ? `?${search}` : '',
+    };
 }

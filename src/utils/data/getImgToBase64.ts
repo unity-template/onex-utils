@@ -65,60 +65,60 @@ export interface ImgOptions {
  * @returns - data base64
  */
 export const getImgToBase64 = (
-  url: string,
-  options?: ImgOptions,
+    url: string,
+    options?: ImgOptions,
 ): Promise<string> => {
-  if (options && options?.type === ImgType.APNG) return getImgBase64ByFetch(url);
+    if (options && options?.type === ImgType.APNG) return getImgBase64ByFetch(url);
 
-  return getImgBase64ByCanvas(url, options);
+    return getImgBase64ByCanvas(url, options);
 };
 
 async function getImgBase64ByCanvas(
-  url: string,
-  options?: ImgOptions,
+    url: string,
+    options?: ImgOptions,
 ): Promise<string> {
-  const { type = ImgType.PNG, quality = 1 } = options || {};
-  let canvas: HTMLCanvasElement | null = document.createElement('canvas');
-  const ctx = canvas.getContext('2d');
-  const img = new Image();
-  img.crossOrigin = 'Anonymous';
+    const { type = ImgType.PNG, quality = 1 } = options || {};
+    let canvas: HTMLCanvasElement | null = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.crossOrigin = 'Anonymous';
 
-  return await new Promise((resolve, reject) => {
-    img.onload = function () {
-      if (!canvas) return;
-      canvas.height = img.height;
-      canvas.width = img.width;
+    return await new Promise((resolve, reject) => {
+        img.onload = function () {
+            if (!canvas) return;
+            canvas.height = img.height;
+            canvas.width = img.width;
       ctx?.drawImage(img, 0, 0);
       const dataURL = canvas.toDataURL(type, quality);
       resolve(dataURL);
       canvas = null;
-    };
-    img.onerror = (err) => {
-      reject(err);
-    };
-    img.src = url;
-  });
+        };
+        img.onerror = (err) => {
+            reject(err);
+        };
+        img.src = url;
+    });
 }
 
 async function getImgBase64ByFetch(url: string) {
-  const ImgBlob = await fetch(url).then((response) => response.blob());
-  return transformBlob2Base64(ImgBlob);
+    const ImgBlob = await fetch(url).then((response) => response.blob());
+    return transformBlob2Base64(ImgBlob);
 }
 
 function transformBlob2Base64(content: Blob): Promise<string> {
-  return new Promise((resolve, reject) => {
-    const IFileReader = new FileReader();
-    IFileReader.onload = (e) => {
-      const result = e?.target?.result;
-      if (typeof result !== 'string') {
-        reject(new Error('Conversion of dataUrl error'));
-      } else {
-        resolve(result);
-      }
-    };
-    IFileReader.onerror = (error) => {
-      reject(error);
-    };
-    IFileReader.readAsDataURL(content);
-  });
+    return new Promise((resolve, reject) => {
+        const IFileReader = new FileReader();
+        IFileReader.onload = (e) => {
+            const result = e?.target?.result;
+            if (typeof result !== 'string') {
+                reject(new Error('Conversion of dataUrl error'));
+            } else {
+                resolve(result);
+            }
+        };
+        IFileReader.onerror = (error) => {
+            reject(error);
+        };
+        IFileReader.readAsDataURL(content);
+    });
 }

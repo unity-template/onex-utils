@@ -31,51 +31,51 @@ interface OsVersion {
  * ```
  */
 export function getOsVersion(): OsVersion {
-  const ios = isIos();
-  const android = isAndroid();
-  let version = 'unknown';
+    const ios = isIos();
+    const android = isAndroid();
+    let version = 'unknown';
 
-  if (ios) {
-    version = getIosVersion() ?? version;
-  }
+    if (ios) {
+        version = getIosVersion() ?? version;
+    }
 
-  if (android) {
-    version = getAndroidVersion() ?? version;
-  }
+    if (android) {
+        version = getAndroidVersion() ?? version;
+    }
 
-  return {
-    isIos: ios,
-    isAndroid: android,
-    version,
-  };
+    return {
+        isIos: ios,
+        isAndroid: android,
+        version,
+    };
 }
 
 /**
  * 获取安卓手机版本
  */
 export function getAndroidVersion(
-  ua: string = getSystemUa(),
+    ua: string = getSystemUa(),
 ): string | undefined {
-  return ua.match(/android (.*?);/)?.[1];
+    return ua.match(/android (.*?);/)?.[1];
 }
 
 /**
  * 获取IOS版本
  */
 export function getIosVersion(ua: string = getSystemUa()): string | undefined {
-  return ua.match(/cpu iphone os (.*?) like mac os/)?.[1]?.replace(/_/g, '.');
+    return ua.match(/cpu iphone os (.*?) like mac os/)?.[1]?.replace(/_/g, '.');
 }
 
 /**
  * 判断是否是：IOS系统
  */
 export const isIos = (ua: string = getSystemUa()) => {
-  return !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/i) && !!ua.match(/iphone/i);
+    return !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/i) && !!ua.match(/iphone/i);
 };
 
 /**
  * 判断是否是：安卓系统
  */
 export const isAndroid = (ua: string = getSystemUa()) => {
-  return ua.indexOf('android') > -1 || ua.indexOf('adr') > -1;
+    return ua.indexOf('android') > -1 || ua.indexOf('adr') > -1;
 };

@@ -26,19 +26,19 @@
 export function getUrlHash(): { [key: string]: string } | {};
 export function getUrlHash(currentKey: string): string | undefined;
 export function getUrlHash(currentKey?: string) {
-  const params: { [key: string]: string } = {};
-  const IHashGroup = window.location.hash.substr(1).split('&');
+    const params: { [key: string]: string } = {};
+    const IHashGroup = window.location.hash.substr(1).split('&');
 
-  IHashGroup.forEach((param) => {
-    const [key, value] = param.split('=');
+    IHashGroup.forEach((param) => {
+        const [key, value] = param.split('=');
 
-    if (key) {
-      const existingValue = params[key];
-      if (!existingValue) {
-        params[key] = decodeURIComponent(value);
-      }
-    }
-  });
+        if (key) {
+            const existingValue = params[key];
+            if (!existingValue) {
+                params[key] = decodeURIComponent(value);
+            }
+        }
+    });
 
-  return currentKey ? (params[currentKey] as string | undefined) : params;
+    return currentKey ? (params[currentKey] as string | undefined) : params;
 }

@@ -16,10 +16,10 @@
  * @returns the current url parameter value with the key
  */
 export const getUrlParam = (key: string): string | null => {
-  const currentSearchValue = window?.location?.search?.substr(1);
-  if (!currentSearchValue) return null;
+    const currentSearchValue = window?.location?.search?.substr(1);
+    if (!currentSearchValue) return null;
 
-  const paramReg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
-  const r = currentSearchValue.match(paramReg);
-  return r ? decodeURIComponent(r[2]) : null;
+    const paramReg = new RegExp(`(^|&)${key}=([^&]*)(&|$)`, 'i');
+    const r = currentSearchValue.match(paramReg);
+    return r ? decodeURIComponent(r[2]) : null;
 };

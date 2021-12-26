@@ -11,8 +11,8 @@ type FilterDtoFunction<P> = {
  * 过滤 DTO 中的 never 属性
  */
 type FilterDtoNever<T extends {}> = Pick<
-T,
-{ [K in keyof T]: T[K] extends never ? never : K }[keyof T]
+  T,
+  { [K in keyof T]: T[K] extends never ? never : K }[keyof T]
 >;
 
 /**

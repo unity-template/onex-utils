@@ -9,14 +9,14 @@
  *
  */
 export function clean(name?: string) {
-  if (!window?.localStorage?.clear || !window?.localStorage?.removeItem) {
-    return true;
-  }
+    if (!window?.localStorage?.clear || !window?.localStorage?.removeItem) {
+        return true;
+    }
 
-  if (name) {
-    window.localStorage.removeItem(name);
-    return true;
-  }
+    if (name) {
+        window.localStorage.removeItem(name);
+        return true;
+    }
   window?.localStorage?.clear();
   return true;
 }

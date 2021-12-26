@@ -86,7 +86,7 @@
     "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-proposal-decorators": "^7.12.1",
     "@babel/plugin-transform-strict-mode": "^7.12.1",
-    "@iceworks/spec": "^1.0.0",
+    "@iceworks/spec": "^1.5.0",
     "@microsoft/tsdoc": "^0.12.24",
     "@types/babel-core": "^6.25.6",
     "@types/fs-extra": "^9.0.4",

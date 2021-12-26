@@ -4,17 +4,17 @@ import chunk from 'lodash.chunk';
 export type RgbColor = FixedLengthArray<number, 3>;
 
 function getIntHexColor(color: string): number {
-  let IColor = color.replace('#', '');
+    let IColor = color.replace('#', '');
 
-  if (IColor.length === 3) {
-    IColor = IColor.replace(/([\da-f])/gi, '$1$1');
-  }
+    if (IColor.length === 3) {
+        IColor = IColor.replace(/([\da-f])/gi, '$1$1');
+    }
 
-  if (IColor.length === 6) {
-    return parseInt(IColor, 16);
-  }
+    if (IColor.length === 6) {
+        return parseInt(IColor, 16);
+    }
 
-  throw new Error(`${color} -> ${IColor} 是个非法颜色`);
+    throw new Error(`${color} -> ${IColor} 是个非法颜色`);
 }
 
 /**
@@ -42,10 +42,10 @@ function getIntHexColor(color: string): number {
  * @returns rgb {@link RgbColor}
  */
 export function transformHexColorToRgb(hexColor: number | string): RgbColor {
-  const IColor =
+    const IColor =
     typeof hexColor === 'string' ? getIntHexColor(hexColor) : hexColor;
-  const IColorString = IColor.toString(16);
-  return chunk(IColorString.split(''), 2)
-    .map((singleColor) => singleColor.join(''))
-    .map((singleColor) => parseInt(singleColor, 16));
+    const IColorString = IColor.toString(16);
+    return chunk(IColorString.split(''), 2)
+        .map((singleColor) => singleColor.join(''))
+        .map((singleColor) => parseInt(singleColor, 16));
 }

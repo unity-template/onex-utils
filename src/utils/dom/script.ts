@@ -77,137 +77,137 @@ interface InsertOptions {
  * ```
  */
 export function insertScript(options: InsertOptions): Promise<void> {
-  const optionsHashId = ObjectHash({ ...options, loadTimeout: 0 });
+    const optionsHashId = ObjectHash({ ...options, loadTimeout: 0 });
 
-  if (isScriptExist(options, optionsHashId)) {
-    return SCRIPt_DOWNLOAD_TASK[optionsHashId] ?? Promise.resolve();
-  }
+    if (isScriptExist(options, optionsHashId)) {
+        return SCRIPt_DOWNLOAD_TASK[optionsHashId] ?? Promise.resolve();
+    }
 
-  const currentScriptDom =
+    const currentScriptDom =
     SCRIPT_DOM_LIST[optionsHashId] ??
     (SCRIPT_DOM_LIST[optionsHashId] = createScriptElement(
-      options,
-      optionsHashId,
+        options,
+        optionsHashId,
     ));
 
-  const task =
+    const task =
     SCRIPt_DOWNLOAD_TASK[optionsHashId] ??
     (SCRIPt_DOWNLOAD_TASK[optionsHashId] = createDownloadTask(
-      options,
-      currentScriptDom,
+        options,
+        currentScriptDom,
     ));
 
-  return task;
+    return task;
 }
 
 function createScriptElement(
-  options: InsertOptions,
-  configHashId: string,
+    options: InsertOptions,
+    configHashId: string,
 ): ScriptDomType {
-  const { type, src, content } = options;
-  const attributes: Record<string, string> = {
-    ...(options.extOptions || {}),
-    [SCRIPT_OPTION_ID]: configHashId,
-  };
-  let element!: HTMLScriptElement | HTMLStyleElement | HTMLLinkElement;
+    const { type, src, content } = options;
+    const attributes: Record<string, string> = {
+        ...(options.extOptions || {}),
+        [SCRIPT_OPTION_ID]: configHashId,
+    };
+    let element!: HTMLScriptElement | HTMLStyleElement | HTMLLinkElement;
 
-  switch (type) {
+    switch (type) {
     case ScriptType.css: {
-      if (src) {
-        element = document.createElement('link') as HTMLLinkElement;
-        element.setAttribute('href', src);
-        element.setAttribute('type', ScriptType.css);
-        element.setAttribute('rel', 'stylesheet');
-      } else if (content) {
-        element = document.createElement('style') as HTMLStyleElement;
-        element.setAttribute('type', ScriptType.css);
-        element.setAttribute('rel', 'stylesheet');
-      }
-      break;
+        if (src) {
+            element = document.createElement('link') as HTMLLinkElement;
+            element.setAttribute('href', src);
+            element.setAttribute('type', ScriptType.css);
+            element.setAttribute('rel', 'stylesheet');
+        } else if (content) {
+            element = document.createElement('style') as HTMLStyleElement;
+            element.setAttribute('type', ScriptType.css);
+            element.setAttribute('rel', 'stylesheet');
+        }
+        break;
     }
     case ScriptType.javascript: {
-      element = document.createElement('script') as HTMLScriptElement;
-      element.setAttribute('type', ScriptType.javascript);
-      if (src) {
-        element.setAttribute('src', src);
-      }
-      break;
+        element = document.createElement('script') as HTMLScriptElement;
+        element.setAttribute('type', ScriptType.javascript);
+        if (src) {
+            element.setAttribute('src', src);
+        }
+        break;
     }
     default:
-      break;
-  }
+        break;
+    }
 
-  if (content && element) {
-    element.innerHTML = content;
-  }
+    if (content && element) {
+        element.innerHTML = content;
+    }
 
-  if (element) {
-    Object.keys(attributes).forEach((key) => {
-      element.setAttribute(key, attributes[key]);
-    });
-  }
+    if (element) {
+        Object.keys(attributes).forEach((key) => {
+            element.setAttribute(key, attributes[key]);
+        });
+    }
 
-  return element;
+    return element;
 }
 
 function createDownloadTask(
-  options: InsertOptions,
-  dom: ScriptDomType,
+    options: InsertOptions,
+    dom: ScriptDomType,
 ): Promise<void> {
-  const { src, content, loadTimeout } = options;
+    const { src, content, loadTimeout } = options;
 
-  return new Promise((resolve, reject) => {
-    const head = document.getElementsByTagName('head')[0];
-    if (!dom) reject(new Error('script dom not exist!'));
+    return new Promise((resolve, reject) => {
+        const head = document.getElementsByTagName('head')[0];
+        if (!dom) reject(new Error('script dom not exist!'));
 
-    if (src) {
-      dom.addEventListener('load', () => resolve(undefined));
-      dom.addEventListener('error', () =>
-        reject(new Error('script loader error')));
-    } else if (content) {
-      resolve(undefined);
-    } else {
-      reject(new Error('script loader error'));
-    }
+        if (src) {
+            dom.addEventListener('load', () => resolve(undefined));
+            dom.addEventListener('error', () =>
+                reject(new Error('script loader error')));
+        } else if (content) {
+            resolve(undefined);
+        } else {
+            reject(new Error('script loader error'));
+        }
 
-    setTimeout(() => {
-      reject(new Error('script load timeout!'));
-    }, loadTimeout);
+        setTimeout(() => {
+            reject(new Error('script load timeout!'));
+        }, loadTimeout);
 
-    head.appendChild(dom);
-  });
+        head.appendChild(dom);
+    });
 }
 
 function isScriptExist(option: InsertOptions, hashId: string) {
-  const { src } = option;
-  const labelEntries = Object.fromEntries([
-    ['link', 'href'],
-    ['script', 'src'],
-    ['style', ''],
-  ]);
-  const labelName = Object.keys(labelEntries);
+    const { src } = option;
+    const labelEntries = Object.fromEntries([
+        ['link', 'href'],
+        ['script', 'src'],
+        ['style', ''],
+    ]);
+    const labelName = Object.keys(labelEntries);
 
-  const isOnexUtilsExist = labelName.reduce(
-    (prev, label) =>
-      prev ||
-      !!document.head.querySelector(
-        `${label}[${SCRIPT_OPTION_ID}="${hashId}"]`,
-      ),
-    false,
-  );
-
-  const isScriptUrlExist = src
-    ? labelName
-      .filter((label) => labelEntries[label])
-      .reduce(
+    const isOnexUtilsExist = labelName.reduce(
         (prev, label) =>
-          prev ||
-            !!document.querySelector(
-              `${label}[${labelEntries[label]}="${src}"]`,
-            ),
+            prev ||
+      !!document.head.querySelector(
+          `${label}[${SCRIPT_OPTION_ID}="${hashId}"]`,
+      ),
         false,
-      )
-    : false;
+    );
 
-  return isOnexUtilsExist && isScriptUrlExist;
+    const isScriptUrlExist = src
+        ? labelName
+            .filter((label) => labelEntries[label])
+            .reduce(
+                (prev, label) =>
+                    prev ||
+            !!document.querySelector(
+                `${label}[${labelEntries[label]}="${src}"]`,
+            ),
+                false,
+            )
+        : false;
+
+    return isOnexUtilsExist && isScriptUrlExist;
 }

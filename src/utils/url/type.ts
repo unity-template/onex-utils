@@ -9,8 +9,8 @@ import axios, { AxiosResponse } from 'axios';
  *
  */
 export function type(url: string): UrlType {
-  const urlType = new UrlType(url);
-  return urlType;
+    const urlType = new UrlType(url);
+    return urlType;
 }
 
 enum ContentType {
@@ -32,51 +32,51 @@ class UrlType {
   contentType: Promise<string>;
 
   constructor(url: string) {
-    this.url = url;
-    this.contentType = this.getUrlResponseContentType();
+      this.url = url;
+      this.contentType = this.getUrlResponseContentType();
   }
 
   @isUrl
   async isPng() {
-    const contentType = await this.contentType;
-    return contentType === ContentType.png;
+      const contentType = await this.contentType;
+      return contentType === ContentType.png;
   }
 
   @isUrl
   async isJpeg() {
-    const contentType = await this.contentType;
-    return contentType === ContentType.jpeg;
+      const contentType = await this.contentType;
+      return contentType === ContentType.jpeg;
   }
 
   @isUrl
   async isGif() {
-    const contentType = await this.contentType;
-    return contentType === ContentType.gif;
+      const contentType = await this.contentType;
+      return contentType === ContentType.gif;
   }
 
   @isUrl
   async isJpg() {
-    const contentType = await this.contentType;
-    return contentType === ContentType.jpg;
+      const contentType = await this.contentType;
+      return contentType === ContentType.jpg;
   }
 
   @isUrl
   async isImage() {
-    const imgReg = /^image\//;
-    const contentType = await this.contentType;
-    return imgReg.test(contentType);
+      const imgReg = /^image\//;
+      const contentType = await this.contentType;
+      return imgReg.test(contentType);
   }
 
   @isUrl
   async isJson() {
-    const contentType = await this.contentType;
-    return contentType.includes(ContentType.json);
+      const contentType = await this.contentType;
+      return contentType.includes(ContentType.json);
   }
 
   @isUrl
   async isCss() {
-    const contentType = await this.contentType;
-    return contentType.includes(ContentType.css);
+      const contentType = await this.contentType;
+      return contentType.includes(ContentType.css);
   }
 
   /**
@@ -85,50 +85,50 @@ class UrlType {
    */
   @isUrl
   async isJs() {
-    const contentType = await this.contentType;
-    return contentType.includes(ContentType.javascript);
+      const contentType = await this.contentType;
+      return contentType.includes(ContentType.javascript);
   }
 
   private async getUrlResponseContentType(): Promise<string> {
-    try {
-      let res: AxiosResponse<any>;
       try {
-        res = await axios.head(this.url);
-      } catch (e) {
-        res = await axios.get(this.url);
+          let res: AxiosResponse<any>;
+          try {
+              res = await axios.head(this.url);
+          } catch (e) {
+              res = await axios.get(this.url);
+          }
+          if (res && res.status >= 200 && res.status < 300) {
+              const { headers } = res;
+              const contentType = headers?.['content-type'];
+              return contentType;
+          }
+          return '';
+      } catch (error) {
+          console.log('err', error);
+          return '';
       }
-      if (res && res.status >= 200 && res.status < 300) {
-        const { headers } = res;
-        const contentType = headers?.['content-type'];
-        return contentType;
-      }
-      return '';
-    } catch (error) {
-      console.log('err', error);
-      return '';
-    }
   }
 }
 
 function isUrl(target: UrlType, _: string, descriptor: PropertyDescriptor) {
-  const oldValue = descriptor.value;
-  const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
-  const localhostDomainRE = /^localhost[\\:?\d]*(?:[^\\:?\d]\S*)?$/;
-  const nonLocalhostDomainRE = /^[^\s\\.]+\.\S{2,}$/;
+    const oldValue = descriptor.value;
+    const protocolAndDomainRE = /^(?:\w+:)?\/\/(\S+)$/;
+    const localhostDomainRE = /^localhost[\\:?\d]*(?:[^\\:?\d]\S*)?$/;
+    const nonLocalhostDomainRE = /^[^\s\\.]+\.\S{2,}$/;
 
-  return Object.assign({}, descriptor, {
-    async value() {
-      if (!this.url) return false;
-      const [url, domain] = this.url.match(protocolAndDomainRE) || [];
+    return Object.assign({}, descriptor, {
+        async value() {
+            if (!this.url) return false;
+            const [url, domain] = this.url.match(protocolAndDomainRE) || [];
 
-      if (!url || !domain) {
-        return false;
-      }
+            if (!url || !domain) {
+                return false;
+            }
 
-      if (localhostDomainRE.test(domain) || nonLocalhostDomainRE.test(domain)) {
-        return oldValue.bind(this)();
-      }
-      return false;
-    },
-  });
+            if (localhostDomainRE.test(domain) || nonLocalhostDomainRE.test(domain)) {
+                return oldValue.bind(this)();
+            }
+            return false;
+        },
+    });
 }

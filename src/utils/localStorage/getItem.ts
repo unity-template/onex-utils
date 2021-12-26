@@ -5,5 +5,5 @@
  * 获取localStorage中的数据
  */
 export function getItem(name: string) {
-  return window?.localStorage?.getItem(name);
+    return window?.localStorage?.getItem(name);
 }

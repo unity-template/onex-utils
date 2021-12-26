@@ -5,6 +5,7 @@ lib/
 es/
 types/
 .tea
+script/
 
 # ignore mix js or css
 **/*.min.js
@@ -30,3 +31,6 @@ gen
 
 #miniapp
 miniapp/**/*.axml
+
+coverage
+script

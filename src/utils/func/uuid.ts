@@ -23,5 +23,5 @@ interface GenUUID {
  * ```
  */
 export const uuid: GenUUID = () => {
-  return uuidV4();
+    return uuidV4();
 };

@@ -7,16 +7,16 @@
  * @throws {@link ProgressEvent}
  */
 export const blobToDataURL = (
-  blob: Blob | File,
+    blob: Blob | File,
 ): Promise<string | ArrayBuffer> => {
-  return new Promise((success, fail) => {
-    const reader = new FileReader();
-    reader.readAsDataURL(blob);
-    reader.onload = () => {
-      success(reader.result ?? '');
-    };
-    reader.onerror = (err) => {
-      fail(err);
-    };
-  });
+    return new Promise((success, fail) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(blob);
+        reader.onload = () => {
+            success(reader.result ?? '');
+        };
+        reader.onerror = (err) => {
+            fail(err);
+        };
+    });
 };
