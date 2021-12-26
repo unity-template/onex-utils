@@ -30,46 +30,46 @@ import dayjs from 'dayjs';
  * @returns dayjs instance
  */
 export function createDayjs(
-  time?: string | number | Date,
+    time?: string | number | Date,
 ): dayjs.Dayjs | undefined {
-  let dayjsInstance!: dayjs.Dayjs;
-  let currentTime: string | number | Date | undefined = time;
+    let dayjsInstance!: dayjs.Dayjs;
+    let currentTime: string | number | Date | undefined = time;
 
-  if (!currentTime) {
-    dayjsInstance = dayjs();
-  }
+    if (!currentTime) {
+        dayjsInstance = dayjs();
+    }
 
-  if (currentTime instanceof Date) {
-    dayjsInstance = dayjs(currentTime);
-  }
+    if (currentTime instanceof Date) {
+        dayjsInstance = dayjs(currentTime);
+    }
 
-  currentTime += '';
+    currentTime += '';
 
-  if (typeof currentTime === 'string') {
+    if (typeof currentTime === 'string') {
     // 时间戳13位
-    if (/^\d{13}$/.test(currentTime)) {
-      dayjsInstance = dayjs(parseInt(currentTime, 10));
+        if (/^\d{13}$/.test(currentTime)) {
+            dayjsInstance = dayjs(parseInt(currentTime, 10));
+        }
+
+        // 时间戳10位
+        if (/^\d{10}$/.test(currentTime)) {
+            dayjsInstance = dayjs(parseInt(`${currentTime}000`, 10));
+        }
+
+        // 兼容unix类型时间戳
+        if (/^\d{10}.\d+/.test(currentTime)) {
+            dayjsInstance = dayjs.unix(Number(currentTime));
+        }
+
+        // 传入字符进行实例化
+        if (/-|:|：/.test(currentTime)) {
+            dayjsInstance = dayjs(currentTime);
+        }
     }
 
-    // 时间戳10位
-    if (/^\d{10}$/.test(currentTime)) {
-      dayjsInstance = dayjs(parseInt(`${currentTime}000`, 10));
+    if (dayjsInstance && dayjsInstance.isValid()) {
+        return dayjsInstance;
     }
 
-    // 兼容unix类型时间戳
-    if (/^\d{10}.\d+/.test(currentTime)) {
-      dayjsInstance = dayjs.unix(Number(currentTime));
-    }
-
-    // 传入字符进行实例化
-    if (/-|:|：/.test(currentTime)) {
-      dayjsInstance = dayjs(currentTime);
-    }
-  }
-
-  if (dayjsInstance && dayjsInstance.isValid()) {
-    return dayjsInstance;
-  }
-
-  return undefined;
+    return undefined;
 }

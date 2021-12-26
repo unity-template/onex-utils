@@ -46,23 +46,23 @@ interface ColorType {
  * @returns 对应的所有颜色类型{@link ColorType}
  */
 export const format = (color: RgbColor, opacity?: number): ColorType => {
-  const [rColor, gColor, bColor] = color;
-  const getSingleHexColor = (singleColor: number) => {
-    const hexColor = singleColor.toString(16).padStart(2, '0');
-    return hexColor;
-  };
-  return {
-    rgb: color,
-    rgbColor: `rgb(${rColor}, ${gColor}, ${bColor})`,
-    rgbaColor: `rgba(${rColor}, ${gColor}, ${bColor}, ${opacity ?? 1})`,
-    intHex: parseInt(
-      `0x${getSingleHexColor(rColor)}${getSingleHexColor(
-        gColor,
-      )}${getSingleHexColor(bColor)}`,
-      16,
-    ),
-    stringHex: `#${getSingleHexColor(rColor)}${getSingleHexColor(
-      gColor,
-    )}${getSingleHexColor(bColor)}`,
-  };
+    const [rColor, gColor, bColor] = color;
+    const getSingleHexColor = (singleColor: number) => {
+        const hexColor = singleColor.toString(16).padStart(2, '0');
+        return hexColor;
+    };
+    return {
+        rgb: color,
+        rgbColor: `rgb(${rColor}, ${gColor}, ${bColor})`,
+        rgbaColor: `rgba(${rColor}, ${gColor}, ${bColor}, ${opacity ?? 1})`,
+        intHex: parseInt(
+            `0x${getSingleHexColor(rColor)}${getSingleHexColor(
+                gColor,
+            )}${getSingleHexColor(bColor)}`,
+            16,
+        ),
+        stringHex: `#${getSingleHexColor(rColor)}${getSingleHexColor(
+            gColor,
+        )}${getSingleHexColor(bColor)}`,
+    };
 };

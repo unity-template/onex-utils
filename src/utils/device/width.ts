@@ -27,8 +27,8 @@ import { isIos } from './version';
  * ```
  */
 export function getDeviceWidth() {
-  if (isIos()) {
-    return document.body.clientWidth;
-  }
-  return window.devicePixelRatio * window.screen.width;
+    if (isIos()) {
+        return document.body.clientWidth;
+    }
+    return window.devicePixelRatio * window.screen.width;
 }

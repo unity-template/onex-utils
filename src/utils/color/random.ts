@@ -11,6 +11,6 @@ import { RgbColor } from './hex2Rgb';
  * @returns color rgb {@link RgbColor}
  */
 export function random(): RgbColor {
-  const randomSingleColor = () => Math.round(Math.random() * 255);
-  return [randomSingleColor(), randomSingleColor(), randomSingleColor()];
+    const randomSingleColor = () => Math.round(Math.random() * 255);
+    return [randomSingleColor(), randomSingleColor(), randomSingleColor()];
 }

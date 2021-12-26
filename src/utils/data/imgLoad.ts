@@ -72,50 +72,54 @@ export interface ImgLoadOptions {
  * @returns 预加载成功或者失败，是个Promise值
  */
 export const imgLoad = (list: string[], options?: ImgLoadOptions) => {
-  const IImgList = uniq<string>(list);
-  const { progress } = options || {};
+    const IImgList = uniq<string>(list);
+    const { progress } = options || {};
 
-  const all = IImgList.length;
-  let loaded = 0;
+    const all = IImgList.length;
+    let loaded = 0;
 
-  const reportProcess = (status: LoadingStatus) => {
-    progress && progress({
-      unUniqLen: list.length,
-      all,
-      loaded,
-      loading: all - loaded,
-      progress: Number((loaded / all).toFixed(2)),
-      status,
-    });
-  };
+    const reportProcess = (status: LoadingStatus) => {
+        progress &&
+      progress({
+          unUniqLen: list.length,
+          all,
+          loaded,
+          loading: all - loaded,
+          progress: Number((loaded / all).toFixed(2)),
+          status,
+      });
+    };
 
-  const onImgLoaded = () => {
-    loaded += 1;
-    reportProcess(all === loaded ? LoadingStatus.loaded : LoadingStatus.loading);
-  };
+    const onImgLoaded = () => {
+        loaded += 1;
+        reportProcess(
+            all === loaded ? LoadingStatus.loaded : LoadingStatus.loading,
+        );
+    };
 
-  const onImgError = () => {
-    reportProcess(LoadingStatus.error);
-  };
+    const onImgError = () => {
+        reportProcess(LoadingStatus.error);
+    };
 
+    const loadingQueue = IImgList.map(
+        (imgUrl): Promise<void> => {
+            return new Promise((resolve, reject) => {
+                const img = new Image();
+                img.crossOrigin = 'Anonymous';
 
-  const loadingQueue = IImgList.map((imgUrl): Promise<void> => {
-    return new Promise((resolve, reject) => {
-      const img = new Image();
-      img.crossOrigin = 'Anonymous';
+                img.onload = () => {
+                    onImgLoaded();
+                    resolve();
+                };
 
-      img.onload = () => {
-        onImgLoaded();
-        resolve();
-      };
+                img.onerror = () => {
+                    onImgError();
+                    reject();
+                };
+                img.src = imgUrl;
+            });
+        },
+    );
 
-      img.onerror = () => {
-        onImgError();
-        reject();
-      };
-      img.src = imgUrl;
-    });
-  });
-
-  return Promise.all(loadingQueue);
+    return Promise.all(loadingQueue);
 };

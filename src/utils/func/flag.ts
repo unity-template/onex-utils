@@ -48,13 +48,13 @@
  * @returns 枚举 flags 集合
  */
 export function getEnumFlags<T extends number>(flags: T): T[] {
-  const result: T[] = [];
-  for (let i = 1; i <= flags; i *= 2) {
-    if (flags & i) {
-      result.push(i as T);
+    const result: T[] = [];
+    for (let i = 1; i <= flags; i *= 2) {
+        if (flags & i) {
+            result.push(i as T);
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 /**
@@ -73,7 +73,7 @@ export function getEnumFlags<T extends number>(flags: T): T[] {
  * @returns 移除指定remove之后的flag
  */
 export function removeFlag<T extends number>(flag: T, remove: T & {}): T {
-  return ((flag ^ remove) & flag) as T;
+    return ((flag ^ remove) & flag) as T;
 }
 
 /**
@@ -93,7 +93,7 @@ export function removeFlag<T extends number>(flag: T, remove: T & {}): T {
  * @returns 是否包含所有的
  */
 export function hasAllFlags(flags: number, check: number): boolean {
-  return (flags & check) === check;
+    return (flags & check) === check;
 }
 
 /**
@@ -113,5 +113,5 @@ export function hasAllFlags(flags: number, check: number): boolean {
  * @returns 是否包含任意一个
  */
 export function hasAnyFlag(flags: number, check: number): boolean {
-  return (flags & check) !== 0;
+    return (flags & check) !== 0;
 }

@@ -2,7 +2,7 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 
 function isIos() {
-  return /iphone/gi.test(window?.navigator?.userAgent);
+    return /iphone/gi.test(window?.navigator?.userAgent);
 }
 
 /**
@@ -20,25 +20,25 @@ function isIos() {
  *
  */
 export function isIphoneXSeries() {
-  if (!isIos()) {
-    return false;
-  }
+    if (!isIos()) {
+        return false;
+    }
 
-  const width = window?.screen?.width ?? 0;
-  const height = window?.screen?.height ?? 0;
+    const width = window?.screen?.width ?? 0;
+    const height = window?.screen?.height ?? 0;
 
-  if (width && height) {
-    return (
-      (width === 360 && height === 780) ||
+    if (width && height) {
+        return (
+            (width === 360 && height === 780) ||
       (width === 375 && height === 812) ||
       (width === 414 && height === 896) ||
       (width === 390 && height === 844) ||
       (width === 428 && height === 926) ||
       (width === 360 && height === 780)
-    );
-  }
+        );
+    }
 
-  return false;
+    return false;
 }
 
 /**
@@ -48,10 +48,10 @@ export function isIphoneXSeries() {
  * 支持安卓和IOS
  */
 export function getNavBarHeight() {
-  if (isIos()) {
-    return 80;
-  }
-  return 96;
+    if (isIos()) {
+        return 80;
+    }
+    return 96;
 }
 
 /**
@@ -61,10 +61,10 @@ export function getNavBarHeight() {
  * 支持安卓和IOS
  */
 export function getStatusBarHeight() {
-  if (isIos()) {
-    return isIphoneXSeries() ? 48 * 2 : 24 * 2;
-  }
-  return 0;
+    if (isIos()) {
+        return isIphoneXSeries() ? 48 * 2 : 24 * 2;
+    }
+    return 0;
 }
 
 /**
@@ -74,8 +74,8 @@ export function getStatusBarHeight() {
  * 支持安卓和IOS
  */
 export function getBottomBarHeight() {
-  if (!isIphoneXSeries()) {
-    return 0;
-  }
-  return 68;
+    if (!isIphoneXSeries()) {
+        return 0;
+    }
+    return 68;
 }

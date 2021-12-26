@@ -24,9 +24,9 @@ export enum TimeStampType {
  * ```
  */
 export function getTimeStamp(type: TimeStampType = TimeStampType.millisecond) {
-  const timeStamp = new Date().valueOf();
-  if (type === TimeStampType.second) {
-    return Math.round(timeStamp / 1000);
-  }
-  return timeStamp;
+    const timeStamp = new Date().valueOf();
+    if (type === TimeStampType.second) {
+        return Math.round(timeStamp / 1000);
+    }
+    return timeStamp;
 }

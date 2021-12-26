@@ -8,31 +8,31 @@ export interface RuleOptions {
 }
 
 export const createJoiSchemaRules = (
-  alreadyRules: Joi.Schema,
-  options: RuleOptions,
-  isArray: boolean,
+    alreadyRules: Joi.Schema,
+    options: RuleOptions,
+    isArray: boolean,
 ): Joi.Schema => {
-  const objectRule = joi.object(alreadyRules).meta({ id: options.name });
-  let arrayRule!: Joi.ArraySchema;
-  if (isArray) {
-    arrayRule = joi.array().items(objectRule);
-    if (options.min) {
-      arrayRule = arrayRule.min(options.min);
-    }
-    if (options.max) {
-      arrayRule = arrayRule.max(options.max);
-    }
-  }
-  if (options.required) {
+    const objectRule = joi.object(alreadyRules).meta({ id: options.name });
+    let arrayRule!: Joi.ArraySchema;
     if (isArray) {
-      arrayRule.required();
-    } else {
-      objectRule.required();
+        arrayRule = joi.array().items(objectRule);
+        if (options.min) {
+            arrayRule = arrayRule.min(options.min);
+        }
+        if (options.max) {
+            arrayRule = arrayRule.max(options.max);
+        }
     }
-  }
-  return isArray ? arrayRule : objectRule;
+    if (options.required) {
+        if (isArray) {
+            arrayRule.required();
+        } else {
+            objectRule.required();
+        }
+    }
+    return isArray ? arrayRule : objectRule;
 };
 
 export function isSchema(rule: joi.Schema | Function): rule is Joi.Schema {
-  return joi.isSchema(rule);
+    return joi.isSchema(rule);
 }

@@ -40,17 +40,17 @@
  * @returns  函数调用 ReturnType\<typeof func\> 结果
  */
 export function timeout<P extends (...args: any[]) => Promise<any>>(
-  func: P,
-  timestamp: number) {
-  return (...args: Parameters<P>) => {
-    const timeout_promise = new Promise((_, reject) => {
-      setTimeout(() => {
-        /**
+    func: P,
+    timestamp: number) {
+    return (...args: Parameters<P>) => {
+        const timeout_promise = new Promise((_, reject) => {
+            setTimeout(() => {
+                /**
          * 不自定义类型是因为ES5中不支持
          */
-        reject(new Error('function call timeout'));
-      }, timestamp);
-    });
-    return Promise.race([timeout_promise, func(...args)]) as ReturnType<P>;
-  };
+                reject(new Error('function call timeout'));
+            }, timestamp);
+        });
+        return Promise.race([timeout_promise, func(...args)]) as ReturnType<P>;
+    };
 }

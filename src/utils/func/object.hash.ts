@@ -20,5 +20,5 @@ import { JsonValue } from 'type-fest';
  * ```
  */
 export const hash = (data: JsonValue): string => {
-  return ObjectHash(data);
+    return ObjectHash(data);
 };

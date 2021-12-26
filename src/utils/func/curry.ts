@@ -28,19 +28,19 @@
  * @returns 柯里化之后的函数
  */
 export function curry(func, ...preArgs) {
-  // eslint-disable-next-line @typescript-eslint/no-this-alias
-  const ISelf = this;
-  let allArgs = preArgs || [];
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const ISelf = this;
+    let allArgs = preArgs || [];
 
-  return function (...args) {
-    allArgs = [...allArgs, ...(args || [])];
+    return function (...args) {
+        allArgs = [...allArgs, ...(args || [])];
 
-    if ((args || []).length) {
-      return curry.apply(ISelf, [func, ...allArgs]);
-    } else {
-      return func.apply(ISelf, allArgs);
-    }
-  };
+        if ((args || []).length) {
+            return curry.apply(ISelf, [func, ...allArgs]);
+        } else {
+            return func.apply(ISelf, allArgs);
+        }
+    };
 }
 
 /**
@@ -61,9 +61,9 @@ export function curry(func, ...preArgs) {
  * ```
  */
 export function unCurry(func) {
-  return function (that, ...args) {
-    return func.apply(that, args);
-  };
+    return function (that, ...args) {
+        return func.apply(that, args);
+    };
 }
 
 /**
@@ -96,17 +96,17 @@ export function unCurry(func) {
  * @returns 柯里化之后的函数
  */
 export function curryRight(func, ...afterPreArgs) {
-  // eslint-disable-next-line @typescript-eslint/no-this-alias
-  const ISelf = this;
-  let allArgs = afterPreArgs || [];
+    // eslint-disable-next-line @typescript-eslint/no-this-alias
+    const ISelf = this;
+    let allArgs = afterPreArgs || [];
 
-  return function (...args) {
-    allArgs = [...(args || []), ...allArgs];
+    return function (...args) {
+        allArgs = [...(args || []), ...allArgs];
 
-    if ((args || []).length) {
-      return curryRight.apply(ISelf, [func, ...allArgs]);
-    } else {
-      return func.apply(ISelf, allArgs);
-    }
-  };
+        if ((args || []).length) {
+            return curryRight.apply(ISelf, [func, ...allArgs]);
+        } else {
+            return func.apply(ISelf, allArgs);
+        }
+    };
 }

@@ -5,152 +5,155 @@ export const INJECT_CLASS_KEY_PREFIX = 'INJECTION_CLASS_META_DATA';
 
 class IMap
 implements
-    Pick<Map<any, any>, 'clear' | 'delete' | 'get' | 'has' | 'set' | 'forEach'> {
+    Pick<
+      Map<any, any>,
+      'clear' | 'delete' | 'get' | 'has' | 'set' | 'forEach'
+    > {
   private map: Map<any, any> = new Map();
 
   clear = () => {
-    this.map.clear();
+      this.map.clear();
   };
 
   delete = (key: any) => {
-    return this.map.delete(key);
+      return this.map.delete(key);
   };
 
   get = (key: any) => {
-    return this.map.get(key);
+      return this.map.get(key);
   };
 
   has = (key: any) => {
-    return this.map.has(key);
+      return this.map.has(key);
   };
 
   set = (key: any, value: any) => {
-    return this.map.set(key, value);
+      return this.map.set(key, value);
   };
 
   forEach = (
-    callbackfn: (value: any, key: any, map: Map<any, any>) => void,
-    thisArg?: any,
+      callbackfn: (value: any, key: any, map: Map<any, any>) => void,
+      thisArg?: any,
   ) => {
-    this.map.forEach(callbackfn, thisArg);
+      this.map.forEach(callbackfn, thisArg);
   };
 }
 
 export class DecoratorManager extends IMap {
-  static getDecoratorClassKey(decoratorNameKey: DecoratorKey) {
-    return `${decoratorNameKey.toString()}_CLS`;
-  }
-
-  static removeDecoratorClassKeySuffix(decoratorNameKey: DecoratorKey) {
-    return decoratorNameKey.toString().replace('_CLS', '');
-  }
-
-  static getDecoratorMethodKey(decoratorNameKey: DecoratorKey) {
-    return `${decoratorNameKey.toString()}_METHOD`;
-  }
-
-  static getDecoratorClsExtendedKey(decoratorNameKey: DecoratorKey) {
-    return `${decoratorNameKey.toString()}_EXT`;
-  }
-
-  static getDecoratorClsMethodPrefix(decoratorNameKey: DecoratorKey) {
-    return `${decoratorNameKey.toString()}_CLS_METHOD`;
-  }
-
-  static getDecoratorClsMethodKey(
-    decoratorNameKey: DecoratorKey,
-    methodKey: DecoratorKey,
-  ) {
-    return `${DecoratorManager.getDecoratorClsMethodPrefix(
-      decoratorNameKey,
-    )}:${methodKey.toString()}`;
-  }
-
-  static getDecoratorMethod(
-    decoratorNameKey: DecoratorKey,
-    methodKey: DecoratorKey,
-  ) {
-    return `${DecoratorManager.getDecoratorMethodKey(
-      decoratorNameKey,
-    )}_${methodKey.toString()}`;
-  }
-
-  static saveMetadata(
-    metaKey: string,
-    _target: any,
-    dataKey: string,
-    data: any,
-  ) {
-    let target = _target;
-    if (typeof target === 'object' && target.constructor) {
-      target = target.constructor;
+    static getDecoratorClassKey(decoratorNameKey: DecoratorKey) {
+        return `${decoratorNameKey.toString()}_CLS`;
     }
 
-    let m: Map<string, any>;
-    if (Reflect.hasOwnMetadata(metaKey, target)) {
-      m = Reflect.getMetadata(metaKey, target);
-    } else {
-      m = new Map<string, any>();
+    static removeDecoratorClassKeySuffix(decoratorNameKey: DecoratorKey) {
+        return decoratorNameKey.toString().replace('_CLS', '');
     }
 
-    m.set(dataKey, data);
-    Reflect.defineMetadata(metaKey, m, target);
-  }
+    static getDecoratorMethodKey(decoratorNameKey: DecoratorKey) {
+        return `${decoratorNameKey.toString()}_METHOD`;
+    }
 
-  static attachMetadata(
-    metaKey: string,
-    _target: any,
-    dataKey: string,
-    data: any,
-    groupBy?: string,
-  ) {
+    static getDecoratorClsExtendedKey(decoratorNameKey: DecoratorKey) {
+        return `${decoratorNameKey.toString()}_EXT`;
+    }
+
+    static getDecoratorClsMethodPrefix(decoratorNameKey: DecoratorKey) {
+        return `${decoratorNameKey.toString()}_CLS_METHOD`;
+    }
+
+    static getDecoratorClsMethodKey(
+        decoratorNameKey: DecoratorKey,
+        methodKey: DecoratorKey,
+    ) {
+        return `${DecoratorManager.getDecoratorClsMethodPrefix(
+            decoratorNameKey,
+        )}:${methodKey.toString()}`;
+    }
+
+    static getDecoratorMethod(
+        decoratorNameKey: DecoratorKey,
+        methodKey: DecoratorKey,
+    ) {
+        return `${DecoratorManager.getDecoratorMethodKey(
+            decoratorNameKey,
+        )}_${methodKey.toString()}`;
+    }
+
+    static saveMetadata(
+        metaKey: string,
+        _target: any,
+        dataKey: string,
+        data: any,
+    ) {
+        let target = _target;
+        if (typeof target === 'object' && target.constructor) {
+            target = target.constructor;
+        }
+
+        let m: Map<string, any>;
+        if (Reflect.hasOwnMetadata(metaKey, target)) {
+            m = Reflect.getMetadata(metaKey, target);
+        } else {
+            m = new Map<string, any>();
+        }
+
+        m.set(dataKey, data);
+        Reflect.defineMetadata(metaKey, m, target);
+    }
+
+    static attachMetadata(
+        metaKey: string,
+        _target: any,
+        dataKey: string,
+        data: any,
+        groupBy?: string,
+    ) {
     // filter Object.create(null)
-    let target = _target;
-    if (typeof target === 'object' && target.constructor) {
-      target = target.constructor;
+        let target = _target;
+        if (typeof target === 'object' && target.constructor) {
+            target = target.constructor;
+        }
+
+        let m: Map<string, any>;
+        if (Reflect.hasOwnMetadata(metaKey, target)) {
+            m = Reflect.getMetadata(metaKey, target);
+        } else {
+            m = new Map<string, any>();
+        }
+
+        if (!m.has(dataKey)) {
+            if (groupBy) {
+                m.set(dataKey, {});
+            } else {
+                m.set(dataKey, []);
+            }
+        }
+        if (groupBy) {
+            m.get(dataKey)[groupBy] = data;
+        } else {
+            m.get(dataKey).push(data);
+        }
+        Reflect.defineMetadata(metaKey, m, target);
     }
 
-    let m: Map<string, any>;
-    if (Reflect.hasOwnMetadata(metaKey, target)) {
-      m = Reflect.getMetadata(metaKey, target);
-    } else {
-      m = new Map<string, any>();
-    }
-
-    if (!m.has(dataKey)) {
-      if (groupBy) {
-        m.set(dataKey, {});
-      } else {
-        m.set(dataKey, []);
-      }
-    }
-    if (groupBy) {
-      m.get(dataKey)[groupBy] = data;
-    } else {
-      m.get(dataKey).push(data);
-    }
-    Reflect.defineMetadata(metaKey, m, target);
-  }
-
-  static getMetadata(metaKey: string, _target: any, dataKey?: string) {
+    static getMetadata(metaKey: string, _target: any, dataKey?: string) {
     // filter Object.create(null)
-    let target = _target;
-    if (typeof target === 'object' && target.constructor) {
-      target = target.constructor;
-    }
+        let target = _target;
+        if (typeof target === 'object' && target.constructor) {
+            target = target.constructor;
+        }
 
-    let m: Map<string, any>;
-    if (!Reflect.hasOwnMetadata(metaKey, target)) {
-      m = new Map<string, any>();
-      Reflect.defineMetadata(metaKey, m, target);
-    } else {
-      m = Reflect.getMetadata(metaKey, target);
+        let m: Map<string, any>;
+        if (!Reflect.hasOwnMetadata(metaKey, target)) {
+            m = new Map<string, any>();
+            Reflect.defineMetadata(metaKey, m, target);
+        } else {
+            m = Reflect.getMetadata(metaKey, target);
+        }
+        if (!dataKey) {
+            return m;
+        }
+        return m.get(dataKey);
     }
-    if (!dataKey) {
-      return m;
-    }
-    return m.get(dataKey);
-  }
 
   /**
    * the key for meta data store in class
@@ -167,166 +170,166 @@ export class DecoratorManager extends IMap {
   injectMethodKeyPrefix = 'INJECTION_METHOD_META_DATA';
 
   saveModule(key, module) {
-    if (!this.has(key)) {
-      this.set(key, new Set());
-    }
+      if (!this.has(key)) {
+          this.set(key, new Set());
+      }
     this.get(key)?.add(module);
   }
 
   resetModule(key) {
-    this.set(key, new Set());
+      this.set(key, new Set());
   }
 
   listModule(key) {
-    return Array.from(this.get(key) || []);
+      return Array.from(this.get(key) || []);
   }
 
   saveMetadata(decoratorNameKey: DecoratorKey, data, target, propertyName?) {
-    if (propertyName) {
-      const dataKey = DecoratorManager.getDecoratorMethod(
-        decoratorNameKey,
-        propertyName,
-      );
-      DecoratorManager.saveMetadata(
-        this.injectMethodKeyPrefix,
-        target,
-        dataKey,
-        data,
-      );
-    } else {
-      const dataKey = DecoratorManager.getDecoratorClassKey(decoratorNameKey);
-      DecoratorManager.saveMetadata(
-        this.injectClassKeyPrefix,
-        target,
-        dataKey,
-        data,
-      );
-    }
+      if (propertyName) {
+          const dataKey = DecoratorManager.getDecoratorMethod(
+              decoratorNameKey,
+              propertyName,
+          );
+          DecoratorManager.saveMetadata(
+              this.injectMethodKeyPrefix,
+              target,
+              dataKey,
+              data,
+          );
+      } else {
+          const dataKey = DecoratorManager.getDecoratorClassKey(decoratorNameKey);
+          DecoratorManager.saveMetadata(
+              this.injectClassKeyPrefix,
+              target,
+              dataKey,
+              data,
+          );
+      }
   }
 
   attachMetadata(
-    decoratorNameKey: DecoratorKey,
-    data,
-    target,
-    propertyName?: string,
-    groupBy?: string,
+      decoratorNameKey: DecoratorKey,
+      data,
+      target,
+      propertyName?: string,
+      groupBy?: string,
   ) {
-    if (propertyName) {
-      const dataKey = DecoratorManager.getDecoratorMethod(
-        decoratorNameKey,
-        propertyName,
-      );
-      DecoratorManager.attachMetadata(
-        this.injectMethodKeyPrefix,
-        target,
-        dataKey,
-        data,
-        groupBy,
-      );
-    } else {
-      const dataKey = DecoratorManager.getDecoratorClassKey(decoratorNameKey);
-      DecoratorManager.attachMetadata(
-        this.injectClassKeyPrefix,
-        target,
-        dataKey,
-        data,
-        groupBy,
-      );
-    }
+      if (propertyName) {
+          const dataKey = DecoratorManager.getDecoratorMethod(
+              decoratorNameKey,
+              propertyName,
+          );
+          DecoratorManager.attachMetadata(
+              this.injectMethodKeyPrefix,
+              target,
+              dataKey,
+              data,
+              groupBy,
+          );
+      } else {
+          const dataKey = DecoratorManager.getDecoratorClassKey(decoratorNameKey);
+          DecoratorManager.attachMetadata(
+              this.injectClassKeyPrefix,
+              target,
+              dataKey,
+              data,
+              groupBy,
+          );
+      }
   }
 
   getMetadata(decoratorNameKey: DecoratorKey, target, propertyName?) {
-    if (propertyName) {
-      const dataKey = DecoratorManager.getDecoratorMethod(
-        decoratorNameKey,
-        propertyName,
-      );
-      return DecoratorManager.getMetadata(
-        this.injectMethodKeyPrefix,
-        target,
-        dataKey,
-      );
-    } else {
-      const dataKey = `${DecoratorManager.getDecoratorClassKey(
-        decoratorNameKey,
-      )}`;
-      return DecoratorManager.getMetadata(
-        this.injectClassKeyPrefix,
-        target,
-        dataKey,
-      );
-    }
+      if (propertyName) {
+          const dataKey = DecoratorManager.getDecoratorMethod(
+              decoratorNameKey,
+              propertyName,
+          );
+          return DecoratorManager.getMetadata(
+              this.injectMethodKeyPrefix,
+              target,
+              dataKey,
+          );
+      } else {
+          const dataKey = `${DecoratorManager.getDecoratorClassKey(
+              decoratorNameKey,
+          )}`;
+          return DecoratorManager.getMetadata(
+              this.injectClassKeyPrefix,
+              target,
+              dataKey,
+          );
+      }
   }
 
   savePropertyDataToClass(
-    decoratorNameKey: DecoratorKey,
-    data,
-    target,
-    propertyName,
-  ) {
-    const dataKey = DecoratorManager.getDecoratorClsMethodKey(
-      decoratorNameKey,
-      propertyName,
-    );
-    DecoratorManager.saveMetadata(
-      this.injectClassMethodKeyPrefix,
-      target,
-      dataKey,
+      decoratorNameKey: DecoratorKey,
       data,
-    );
+      target,
+      propertyName,
+  ) {
+      const dataKey = DecoratorManager.getDecoratorClsMethodKey(
+          decoratorNameKey,
+          propertyName,
+      );
+      DecoratorManager.saveMetadata(
+          this.injectClassMethodKeyPrefix,
+          target,
+          dataKey,
+          data,
+      );
   }
 
   attachPropertyDataToClass(
-    decoratorNameKey: DecoratorKey,
-    data,
-    target,
-    propertyName,
-    groupBy?: string,
-  ) {
-    const dataKey = DecoratorManager.getDecoratorClsMethodKey(
-      decoratorNameKey,
-      propertyName,
-    );
-    DecoratorManager.attachMetadata(
-      this.injectClassMethodKeyPrefix,
-      target,
-      dataKey,
+      decoratorNameKey: DecoratorKey,
       data,
-      groupBy,
-    );
+      target,
+      propertyName,
+      groupBy?: string,
+  ) {
+      const dataKey = DecoratorManager.getDecoratorClsMethodKey(
+          decoratorNameKey,
+          propertyName,
+      );
+      DecoratorManager.attachMetadata(
+          this.injectClassMethodKeyPrefix,
+          target,
+          dataKey,
+          data,
+          groupBy,
+      );
   }
 
   getPropertyDataFromClass(
-    decoratorNameKey: DecoratorKey,
-    target,
-    propertyName,
-  ) {
-    const dataKey = DecoratorManager.getDecoratorClsMethodKey(
-      decoratorNameKey,
-      propertyName,
-    );
-    return DecoratorManager.getMetadata(
-      this.injectClassMethodKeyPrefix,
+      decoratorNameKey: DecoratorKey,
       target,
-      dataKey,
-    );
+      propertyName,
+  ) {
+      const dataKey = DecoratorManager.getDecoratorClsMethodKey(
+          decoratorNameKey,
+          propertyName,
+      );
+      return DecoratorManager.getMetadata(
+          this.injectClassMethodKeyPrefix,
+          target,
+          dataKey,
+      );
   }
 
   listPropertyDataFromClass(decoratorNameKey: DecoratorKey, target) {
-    const originMap = DecoratorManager.getMetadata(
-      this.injectClassMethodKeyPrefix,
-      target,
-    );
-    const res: any[] = [];
-    for (const [key, value] of originMap) {
-      if (
-        key.indexOf(
-          DecoratorManager.getDecoratorClsMethodPrefix(decoratorNameKey),
-        ) !== -1
-      ) {
-        res.push(value);
+      const originMap = DecoratorManager.getMetadata(
+          this.injectClassMethodKeyPrefix,
+          target,
+      );
+      const res: any[] = [];
+      for (const [key, value] of originMap) {
+          if (
+              key.indexOf(
+                  DecoratorManager.getDecoratorClsMethodPrefix(decoratorNameKey),
+              ) !== -1
+          ) {
+              res.push(value);
+          }
       }
-    }
-    return res;
+      return res;
   }
 }

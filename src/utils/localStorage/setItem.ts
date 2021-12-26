@@ -6,7 +6,7 @@
  *
  */
 export function setItem(name: string, value: string): boolean {
-  if (!window?.localStorage?.setItem) return false;
+    if (!window?.localStorage?.setItem) return false;
   window?.localStorage?.setItem(name, value);
   return true;
 }
