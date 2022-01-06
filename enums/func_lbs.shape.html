@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>url/type | onex-utils</title>
+	<title>Shape | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
@@ -56,10 +56,13 @@
 					<a href="../modules.html">onex-utils</a>
 				</li>
 				<li>
-					<a href="url_type.html">url/type</a>
+					<a href="../modules/func_lbs.html">func/lbs</a>
+				</li>
+				<li>
+					<a href="func_lbs.shape.html">Shape</a>
 				</li>
 			</ul>
-			<h1>Module url/type</h1>
+			<h1>Enumeration Shape</h1>
 		</div>
 	</div>
 </header>
@@ -71,50 +74,38 @@
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
 						<section class="tsd-index-section ">
-							<h3>Functions</h3>
+							<h3>Enumeration members</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-function tsd-parent-kind-module"><a href="url_type.html#type" class="tsd-kind-icon">type</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="func_lbs.shape.html#flatter" class="tsd-kind-icon">Flatter</a></li>
+								<li class="tsd-kind-enum-member tsd-parent-kind-enum"><a href="func_lbs.shape.html#greatcircle" class="tsd-kind-icon">Great<wbr>Circle</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Functions</h2>
-				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
-					<a name="type" class="tsd-anchor"></a>
-					<h3>type</h3>
-					<div class="tsd-version"><span>0.0.35</span> provide</div>
-					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
-						<li class="tsd-signature tsd-kind-icon">type<span class="tsd-signature-symbol">(</span>url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">UrlType</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/4041b32/src/utils/url/type.ts#L11">src/utils/url/type.ts:11</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>判断链接对应的资源类型，会有一定的资源损耗</p>
-								</div>
-								<dl class="tsd-comment-tags">
-									<dt>remarks</dt>
-									<dd><p>会模拟请求链接对应的资源的，然后根据请求头的content-type判断对应资源的类型
-										需要注意浏览器中使用注意同源策略，可能有些链接的请求直接被浏览器拦截</p>
-									</dd>
-								</dl>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>url: <span class="tsd-signature-type">string</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">UrlType</span></h4>
-						</li>
-					</ul>
+				<h2>Enumeration members</h2>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="flatter" class="tsd-anchor"></a>
+					<h3>Flatter</h3>
+					<div class="tsd-version"><span>1.0.0</span> provide</div>
+					<div class="tsd-signature tsd-kind-icon">Flatter<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;Flatter&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/4041b32/src/utils/func/lbs.ts#L95">src/utils/func/lbs.ts:95</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-enum-member tsd-parent-kind-enum">
+					<a name="greatcircle" class="tsd-anchor"></a>
+					<h3>Great<wbr>Circle</h3>
+					<div class="tsd-version"><span>1.0.0</span> provide</div>
+					<div class="tsd-signature tsd-kind-icon">Great<wbr>Circle<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol"> = &quot;GreatCircle&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/4041b32/src/utils/func/lbs.ts#L94">src/utils/func/lbs.ts:94</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
@@ -125,14 +116,35 @@
 						<a href="../modules.html">Exports</a>
 					</li>
 					<li class="current tsd-kind-module">
-						<a href="url_type.html">url/type</a>
+						<a href="../modules/func_lbs.html">func/lbs</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-enum tsd-parent-kind-module">
+						<a href="func_lbs.shape.html" class="tsd-kind-icon">Shape</a>
+						<ul>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="func_lbs.shape.html#flatter" class="tsd-kind-icon">Flatter</a>
+							</li>
+							<li class=" tsd-kind-enum-member tsd-parent-kind-enum">
+								<a href="func_lbs.shape.html#greatcircle" class="tsd-kind-icon">Great<wbr>Circle</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-function tsd-parent-kind-module">
-						<a href="url_type.html#type" class="tsd-kind-icon">type</a>
+						<a href="../modules/func_lbs.html#getdistance" class="tsd-kind-icon">get<wbr>Distance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/func_lbs.html#getflattercircledistance" class="tsd-kind-icon">get<wbr>Flatter<wbr>Circle<wbr>Distance</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="../modules/func_lbs.html#getgreatcirclelbsdistance" class="tsd-kind-icon">get<wbr>Great<wbr>Circle<wbr>Lbs<wbr>Distance</a>
 					</li>
 				</ul>
 			</nav>
