@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/unity-template/utils/compare/v0.0.74...v1.0.0) (2022-01-06)
+
+
+### Features
+
+* 地理位置：根据LBS定位计算距离（getDistance） Fixes [#45](https://github.com/unity-template/utils/issues/45) ([56bfff0](https://github.com/unity-template/utils/commit/56bfff0))
+
+
+
 <a name="0.0.74"></a>
 ## [0.0.74](https://github.com/unity-template/utils/compare/v0.0.73...v0.0.74) (2021-12-23)
 
