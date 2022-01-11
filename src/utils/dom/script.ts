@@ -1,10 +1,10 @@
 import ObjectHash from 'object-hash';
 
-const SCRIPt_DOWNLOAD_TASK: Record<string, Promise<void>> = {};
+type ScriptDomType = HTMLScriptElement | HTMLStyleElement | HTMLLinkElement;
+
+const SCRIPT_DOWNLOAD_TASK: Record<string, Promise<void>> = {};
 const SCRIPT_DOM_LIST: Record<string, ScriptDomType> = {};
 const SCRIPT_OPTION_ID = 'data-configHashId';
-
-type ScriptDomType = HTMLScriptElement | HTMLStyleElement | HTMLLinkElement;
 
 export enum ScriptType {
   javascript = 'text/javascript',
@@ -21,6 +21,11 @@ interface InsertOptions {
    * @defaultValue 3000
    */
   loadTimeout?: number;
+  /**
+   * 指定脚本插入的容器
+   * @defaultValue 页面的head元素
+   */
+  containerNode?: Element;
 }
 
 /**
@@ -77,10 +82,14 @@ interface InsertOptions {
  * ```
  */
 export function insertScript(options: InsertOptions): Promise<void> {
-    const optionsHashId = ObjectHash({ ...options, loadTimeout: 0 });
+    const optionsHashId = ObjectHash({
+        ...options,
+        loadTimeout: 0,
+        containerNode: undefined,
+    });
 
     if (isScriptExist(options, optionsHashId)) {
-        return SCRIPt_DOWNLOAD_TASK[optionsHashId] ?? Promise.resolve();
+        return SCRIPT_DOWNLOAD_TASK[optionsHashId] ?? Promise.resolve();
     }
 
     const currentScriptDom =
@@ -91,8 +100,8 @@ export function insertScript(options: InsertOptions): Promise<void> {
     ));
 
     const task =
-    SCRIPt_DOWNLOAD_TASK[optionsHashId] ??
-    (SCRIPt_DOWNLOAD_TASK[optionsHashId] = createDownloadTask(
+    SCRIPT_DOWNLOAD_TASK[optionsHashId] ??
+    (SCRIPT_DOWNLOAD_TASK[optionsHashId] = createDownloadTask(
         options,
         currentScriptDom,
     ));
@@ -109,27 +118,27 @@ function createScriptElement(
         ...(options.extOptions || {}),
         [SCRIPT_OPTION_ID]: configHashId,
     };
-    let element!: HTMLScriptElement | HTMLStyleElement | HTMLLinkElement;
+    let element!: ScriptDomType;
 
     switch (type) {
     case ScriptType.css: {
         if (src) {
             element = document.createElement('link') as HTMLLinkElement;
-            element.setAttribute('href', src);
-            element.setAttribute('type', ScriptType.css);
-            element.setAttribute('rel', 'stylesheet');
+            attributes['href'] = src;
+            attributes['type'] = ScriptType.css;
+            attributes['rel'] = 'stylesheet';
         } else if (content) {
             element = document.createElement('style') as HTMLStyleElement;
-            element.setAttribute('type', ScriptType.css);
-            element.setAttribute('rel', 'stylesheet');
+            attributes['type'] = ScriptType.css;
+            attributes['rel'] = 'stylesheet';
         }
         break;
     }
     case ScriptType.javascript: {
         element = document.createElement('script') as HTMLScriptElement;
-        element.setAttribute('type', ScriptType.javascript);
+        attributes['type'] = ScriptType.javascript;
         if (src) {
-            element.setAttribute('src', src);
+            attributes['src'] = src;
         }
         break;
     }
@@ -142,8 +151,8 @@ function createScriptElement(
     }
 
     if (element) {
-        Object.keys(attributes).forEach((key) => {
-            element.setAttribute(key, attributes[key]);
+        Object.entries(attributes).forEach(([key, value]) => {
+            element.setAttribute(key, value);
         });
     }
 
@@ -154,16 +163,15 @@ function createDownloadTask(
     options: InsertOptions,
     dom: ScriptDomType,
 ): Promise<void> {
-    const { src, content, loadTimeout } = options;
+    const { src, content, loadTimeout, containerNode = document.head } = options;
 
     return new Promise((resolve, reject) => {
-        const head = document.getElementsByTagName('head')[0];
+        const container = containerNode;
         if (!dom) reject(new Error('script dom not exist!'));
 
         if (src) {
             dom.addEventListener('load', () => resolve(undefined));
-            dom.addEventListener('error', () =>
-                reject(new Error('script loader error')));
+            dom.addEventListener('error', (err) => reject(err));
         } else if (content) {
             resolve(undefined);
         } else {
@@ -174,12 +182,12 @@ function createDownloadTask(
             reject(new Error('script load timeout!'));
         }, loadTimeout);
 
-        head.appendChild(dom);
+        container.appendChild(dom);
     });
 }
 
 function isScriptExist(option: InsertOptions, hashId: string) {
-    const { src } = option;
+    const { src, containerNode = document.head } = option;
     const labelEntries = Object.fromEntries([
         ['link', 'href'],
         ['script', 'src'],
@@ -187,25 +195,19 @@ function isScriptExist(option: InsertOptions, hashId: string) {
     ]);
     const labelName = Object.keys(labelEntries);
 
-    const isOnexUtilsExist = labelName.reduce(
-        (prev, label) =>
-            prev ||
-      !!document.head.querySelector(
-          `${label}[${SCRIPT_OPTION_ID}="${hashId}"]`,
-      ),
-        false,
+    const isOnexUtilsExist = labelName.some(
+        (label) =>
+            !!containerNode.querySelector(`${label}[${SCRIPT_OPTION_ID}="${hashId}"]`),
     );
 
     const isScriptUrlExist = src
         ? labelName
             .filter((label) => labelEntries[label])
-            .reduce(
-                (prev, label) =>
-                    prev ||
-            !!document.querySelector(
-                `${label}[${labelEntries[label]}="${src}"]`,
-            ),
-                false,
+            .some(
+                (label) =>
+                    !!document.querySelector(
+                        `${label}[${labelEntries[label]}="${src}"]`,
+                    ),
             )
         : false;
 

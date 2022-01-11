@@ -5,6 +5,7 @@ const { insertScript, ScriptType } = dom;
 describe('insert script', () => {
     afterEach(() => {
         document.head.innerHTML = '';
+        document.body.innerHTML = '';
     });
 
     it('should insert css content dom', async () => {
@@ -59,5 +60,16 @@ describe('insert script', () => {
         });
         await Promise.all([insertDom(), insertDom()]);
         expect(document.getElementsByTagName('link').length).toEqual(1);
+    });
+
+    it('should insert only one js dom when assign containerNode', async () => {
+        const insertDom = () => insertScript({
+            type: ScriptType.javascript,
+            src: 'https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.core.min.js',
+            loadTimeout: 10000,
+            containerNode: document.body,
+        });
+        await Promise.all([insertDom(), insertDom()]);
+        expect(document.body.getElementsByTagName('script').length).toEqual(1);
     });
 });
