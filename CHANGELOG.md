@@ -1,3 +1,13 @@
+<a name="1.0.1"></a>
+## [1.0.1](https://github.com/unity-template/utils/compare/v1.0.0...v1.0.1) (2022-01-17)
+
+
+### Features
+
+* dom 中 insertScript 重构 Fixes [#50](https://github.com/unity-template/utils/issues/50) ([a948c8a](https://github.com/unity-template/utils/commit/a948c8a))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/unity-template/utils/compare/v0.0.74...v1.0.0) (2022-01-06)
 
