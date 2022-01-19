@@ -188,11 +188,11 @@ function createDownloadTask(
 
 function isScriptExist(option: InsertOptions, hashId: string) {
     const { src, containerNode = document.head } = option;
-    const labelEntries = Object.fromEntries([
-        ['link', 'href'],
-        ['script', 'src'],
-        ['style', ''],
-    ]);
+    const labelEntries = {
+        link: 'href',
+        script: 'src',
+        style: '',
+    };
     const labelName = Object.keys(labelEntries);
 
     const isOnexUtilsExist = labelName.some(
