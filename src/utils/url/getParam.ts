@@ -8,8 +8,8 @@
  * @example
  * ```ts
  * import { url } from 'onex-utils';
- * const { getUrlParams } = url;
- * console.log(getUrlParams('key'));
+ * const { getUrlParam } = url;
+ * console.log(getUrlParam('key'));
  * ```
  *
  * @param key - The current url parameter name
