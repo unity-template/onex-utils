@@ -57,7 +57,7 @@ $ yarn add onex-utils --save
 ```ts
 import { url } from 'onex-utils';
 
-const url_params_key = url.getUrlParams('key');
+const url_params_key = url.getUrlParam('key');
 ```
 
 ## ⌨️ 开发
