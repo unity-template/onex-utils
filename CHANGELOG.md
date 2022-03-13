@@ -1,3 +1,19 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/unity-template/utils/compare/v1.0.1...v1.0.2) (2022-03-13)
+
+
+### Bug Fixes
+
+* 🐛 避免使用Object.fromEntries方法 ([31199d8](https://github.com/unity-template/utils/commit/31199d8)), closes [#52](https://github.com/unity-template/utils/issues/52)
+* 🐛 example 文档修改 ([2985339](https://github.com/unity-template/utils/commit/2985339))
+
+
+### Features
+
+* type中添加对象、数组、数字、boolean等基础数据类型判断方法 ([e1a8e18](https://github.com/unity-template/utils/commit/e1a8e18)), closes [#56](https://github.com/unity-template/utils/issues/56)
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/unity-template/utils/compare/v1.0.0...v1.0.1) (2022-01-17)
 
