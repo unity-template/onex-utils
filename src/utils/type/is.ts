@@ -134,7 +134,7 @@ const IsBoolean = {
    * ```
    */
     false(value: any): value is boolean {
-        return this.bool(value) && Boolean(Number(value)) === false;
+        return this.bool(value) && !Number(value);
     },
 
     /**
@@ -155,7 +155,7 @@ const IsBoolean = {
    * ```
    */
     true(value: any): value is boolean {
-        return this.bool(value) && Boolean(Number(value)) === true;
+        return this.bool(value) && Boolean(Number(value));
     },
 };
 
