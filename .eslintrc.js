@@ -1,5 +1,4 @@
 const { getESLintConfig } = require('@iceworks/spec');
-const { off } = require('process');
 
 module.exports = getESLintConfig('rax-ts', {
   plugins: [
