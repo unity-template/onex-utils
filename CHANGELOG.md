@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/unity-template/utils/compare/v1.0.3...v1.0.4) (2022-04-19)
+
+
+### Features
+
+* 依赖typedoc移到devDependencies中 ([6805e7a](https://github.com/unity-template/utils/commit/6805e7a)), closes [#62](https://github.com/unity-template/utils/issues/62)
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/unity-template/utils/compare/v1.0.2...v1.0.3) (2022-03-23)
 
