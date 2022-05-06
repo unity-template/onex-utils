@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>TairReadError | onex-utils</title>
+	<title>TppInvokeError | onex-utils</title>
 	<meta name="description" content="Documentation for onex-utils">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/x-icon" href="assets/images/icon.ico" />
@@ -56,13 +56,13 @@
 					<a href="../modules.html">onex-utils</a>
 				</li>
 				<li>
-					<a href="../modules/error_entities_tair.html">error/entities/tair</a>
+					<a href="../modules/error_tpp.html">error/tpp</a>
 				</li>
 				<li>
-					<a href="error_entities_tair.tairreaderror.html">TairReadError</a>
+					<a href="error_tpp.tppinvokeerror.html">TppInvokeError</a>
 				</li>
 			</ul>
-			<h1>Class TairReadError</h1>
+			<h1>Class TppInvokeError</h1>
 		</div>
 	</div>
 </header>
@@ -72,14 +72,15 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Node FaaS Tair 读取异常</p>
+						<p>Node FaaS Tpp 调用失败</p>
 					</div>
 					<dl class="tsd-comment-tags">
 						<dt>example</dt>
 						<dd><p>创建异常</p>
-							<pre><code class="language-ts"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">error</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">TairReadError</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;tair读取失败&#039;</span><span style="color: #24292E">, {</span>
+							<pre><code class="language-ts"><span style="color: #D73A49">const</span><span style="color: #24292E"> </span><span style="color: #005CC5">error</span><span style="color: #24292E"> </span><span style="color: #D73A49">=</span><span style="color: #24292E"> </span><span style="color: #D73A49">new</span><span style="color: #24292E"> </span><span style="color: #6F42C1">TppInvokeError</span><span style="color: #24292E">(</span><span style="color: #032F62">&#039;Tpp调用失败&#039;</span><span style="color: #24292E">, {</span>
 <span style="color: #24292E">  data: {</span>
-<span style="color: #24292E">    keys: [</span><span style="color: #032F62">&#039;item-123&#039;</span><span style="color: #24292E">, </span><span style="color: #032F62">&#039;item-456&#039;</span><span style="color: #24292E">], </span><span style="color: #6A737D">// key list</span>
+<span style="color: #24292E">    params: tppParams, </span><span style="color: #6A737D">// tpp 入参</span>
+<span style="color: #24292E">    tppUrl, </span><span style="color: #6A737D">// tpp 地址</span>
 <span style="color: #24292E">    response, </span><span style="color: #6A737D">// 返回结果</span>
 <span style="color: #24292E">  },</span>
 <span style="color: #24292E">  cause, </span><span style="color: #6A737D">// 原始异常</span>
@@ -93,7 +94,7 @@
 						<dd><p>异常附加信息</p>
 						</dd>
 						<dt>returns</dt>
-						<dd><p>TairReadError instance</p>
+						<dd><p>TppInvokeError instance</p>
 						</dd>
 					</dl>
 				</div>
@@ -102,10 +103,10 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="error_entities_industryerror.industryerror.html" class="tsd-signature-type" data-tsd-kind="Class">IndustryError</a>
+						<a href="error_industryerror.industryerror.html" class="tsd-signature-type" data-tsd-kind="Class">IndustryError</a>
 						<ul class="tsd-hierarchy">
 							<li>
-								<span class="target">TairReadError</span>
+								<span class="target">TppInvokeError</span>
 							</li>
 						</ul>
 					</li>
@@ -118,25 +119,25 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="error_entities_tair.tairreaderror.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="error_tpp.tppinvokeerror.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="error_entities_tair.tairreaderror.html#cause" class="tsd-kind-icon">cause</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_entities_tair.tairreaderror.html#message" class="tsd-kind-icon">message</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_entities_tair.tairreaderror.html#name" class="tsd-kind-icon">name</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_entities_tair.tairreaderror.html#stack" class="tsd-kind-icon">stack</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="error_entities_tair.tairreaderror.html#description" class="tsd-kind-icon">description</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_entities_tair.tairreaderror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_entities_tair.tairreaderror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="error_tpp.tppinvokeerror.html#cause" class="tsd-kind-icon">cause</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_tpp.tppinvokeerror.html#message" class="tsd-kind-icon">message</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_tpp.tppinvokeerror.html#name" class="tsd-kind-icon">name</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external"><a href="error_tpp.tppinvokeerror.html#stack" class="tsd-kind-icon">stack</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static"><a href="error_tpp.tppinvokeerror.html#description" class="tsd-kind-icon">description</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_tpp.tppinvokeerror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_tpp.tppinvokeerror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited tsd-is-external">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_entities_tair.tairreaderror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external"><a href="error_tpp.tppinvokeerror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a></li>
 							</ul>
 						</section>
 					</div>
@@ -149,14 +150,14 @@
 					<h3>constructor</h3>
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Tair<wbr>Read<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TairReadErrorOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="error_entities_tair.tairreaderror.html" class="tsd-signature-type" data-tsd-kind="Class">TairReadError</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Tpp<wbr>Invoke<wbr>Error<span class="tsd-signature-symbol">(</span>message<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">TppErrorOptions</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="error_tpp.tppinvokeerror.html" class="tsd-signature-type" data-tsd-kind="Class">TppInvokeError</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#constructor">constructor</a></p>
+								<p>Overrides <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/5fb3150/src/utils/error/entities/tair.ts#L28">src/utils/error/entities/tair.ts:28</a></li>
+									<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/9b7439f/src/utils/error/tpp.ts#L30">src/utils/error/tpp.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -165,10 +166,10 @@
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> message: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">TairReadErrorOptions</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> options: <span class="tsd-signature-type">TppErrorOptions</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="error_entities_tair.tairreaderror.html" class="tsd-signature-type" data-tsd-kind="Class">TairReadError</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="error_tpp.tppinvokeerror.html" class="tsd-signature-type" data-tsd-kind="Class">TppInvokeError</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -181,9 +182,9 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">cause<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Error</span><span class="tsd-signature-symbol"> = ...</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#cause">cause</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#cause">cause</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/5fb3150/src/utils/error/entities/IndustryError.ts#L40">src/utils/error/entities/IndustryError.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/9b7439f/src/utils/error/IndustryError.ts#L40">src/utils/error/IndustryError.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -193,7 +194,7 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">message<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#message">message</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#message">message</a></p>
 						<ul>
 							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:974</li>
 						</ul>
@@ -205,7 +206,7 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#name">name</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#name">name</a></p>
 						<ul>
 							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:973</li>
 						</ul>
@@ -217,7 +218,7 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">stack<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#stack">stack</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#stack">stack</a></p>
 						<ul>
 							<li>Defined in node_modules/typescript/lib/lib.es5.d.ts:975</li>
 						</ul>
@@ -227,11 +228,11 @@
 					<a name="description" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> description</h3>
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
-					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;Tair读取异常&#x27;</span></div>
+					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &#x27;TPP调用失败&#x27;</span></div>
 					<aside class="tsd-sources">
-						<p>Overrides <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#description">description</a></p>
+						<p>Overrides <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#description">description</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/5fb3150/src/utils/error/entities/tair.ts#L28">src/utils/error/entities/tair.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/unity-template/onex-utils/blob/9b7439f/src/utils/error/tpp.ts#L30">src/utils/error/tpp.ts:30</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -241,7 +242,7 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">prepare<wbr>Stack<wbr>Trace<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Error</span>, stackTraces<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">CallSite</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#preparestacktrace">prepareStackTrace</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#preparestacktrace">prepareStackTrace</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/node/globals.d.ts:11</li>
 						</ul>
@@ -287,7 +288,7 @@
 					<div class="tsd-version"><span>1.0.5</span> provide</div>
 					<div class="tsd-signature tsd-kind-icon">stack<wbr>Trace<wbr>Limit<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#stacktracelimit">stackTraceLimit</a></p>
+						<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#stacktracelimit">stackTraceLimit</a></p>
 						<ul>
 							<li>Defined in node_modules/@types/node/globals.d.ts:13</li>
 						</ul>
@@ -306,7 +307,7 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="error_entities_industryerror.industryerror.html">IndustryError</a>.<a href="error_entities_industryerror.industryerror.html#capturestacktrace">captureStackTrace</a></p>
+								<p>Inherited from <a href="error_industryerror.industryerror.html">IndustryError</a>.<a href="error_industryerror.industryerror.html#capturestacktrace">captureStackTrace</a></p>
 								<ul>
 									<li>Defined in node_modules/@types/node/globals.d.ts:4</li>
 								</ul>
@@ -337,6 +338,9 @@
 					<li class=" ">
 						<a href="../modules.html">Exports</a>
 					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/error_tpp.html">error/tpp</a>
+					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
@@ -344,39 +348,42 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="error_entities_tair.tairreaderror.html" class="tsd-kind-icon">Tair<wbr>Read<wbr>Error</a>
+						<a href="error_tpp.tppinvokeerror.html" class="tsd-kind-icon">Tpp<wbr>Invoke<wbr>Error</a>
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-								<a href="error_entities_tair.tairreaderror.html#constructor" class="tsd-kind-icon">constructor</a>
+								<a href="error_tpp.tppinvokeerror.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
-								<a href="error_entities_tair.tairreaderror.html#cause" class="tsd-kind-icon">cause</a>
+								<a href="error_tpp.tppinvokeerror.html#cause" class="tsd-kind-icon">cause</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#message" class="tsd-kind-icon">message</a>
+								<a href="error_tpp.tppinvokeerror.html#message" class="tsd-kind-icon">message</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#name" class="tsd-kind-icon">name</a>
+								<a href="error_tpp.tppinvokeerror.html#name" class="tsd-kind-icon">name</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#stack" class="tsd-kind-icon">stack</a>
+								<a href="error_tpp.tppinvokeerror.html#stack" class="tsd-kind-icon">stack</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-overwrite tsd-is-static">
-								<a href="error_entities_tair.tairreaderror.html#description" class="tsd-kind-icon">description</a>
+								<a href="error_tpp.tppinvokeerror.html#description" class="tsd-kind-icon">description</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a>
+								<a href="error_tpp.tppinvokeerror.html#preparestacktrace" class="tsd-kind-icon">prepare<wbr>Stack<wbr>Trace</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a>
+								<a href="error_tpp.tppinvokeerror.html#stacktracelimit" class="tsd-kind-icon">stack<wbr>Trace<wbr>Limit</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-static tsd-is-external">
-								<a href="error_entities_tair.tairreaderror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a>
+								<a href="error_tpp.tppinvokeerror.html#capturestacktrace" class="tsd-kind-icon">capture<wbr>Stack<wbr>Trace</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-class tsd-parent-kind-module">
+						<a href="error_tpp.tppresulterror.html" class="tsd-kind-icon">Tpp<wbr>Result<wbr>Error</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
