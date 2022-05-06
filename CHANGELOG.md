@@ -1,3 +1,13 @@
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/unity-template/utils/compare/v1.0.4...v1.0.5) (2022-05-06)
+
+
+### Features
+
+* add error ([a8d2dc5](https://github.com/unity-template/utils/commit/a8d2dc5))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/unity-template/utils/compare/v1.0.3...v1.0.4) (2022-04-19)
 
