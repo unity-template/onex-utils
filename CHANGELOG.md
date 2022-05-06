@@ -1,3 +1,13 @@
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/unity-template/utils/compare/v1.0.5...v1.0.6) (2022-05-06)
+
+
+### Features
+
+* 调整文件暴露方式 ([05107b4](https://github.com/unity-template/utils/commit/05107b4))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/unity-template/utils/compare/v1.0.4...v1.0.5) (2022-05-06)
 
