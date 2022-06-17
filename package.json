@@ -90,6 +90,7 @@
     "@types/babel-core": "^6.25.6",
     "@types/fs-extra": "^9.0.4",
     "@types/jest": "^26.0.14",
+    "@types/lodash": "^4.14.182",
     "@types/lodash.debounce": "^4.0.6",
     "@types/lodash.defaults": "^4.2.6",
     "@types/lodash.last": "^3.0.6",
