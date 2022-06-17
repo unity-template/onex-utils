@@ -1,3 +1,13 @@
+<a name="1.0.7"></a>
+## [1.0.7](https://github.com/unity-template/utils/compare/v1.0.6...v1.0.7) (2022-06-17)
+
+
+### Features
+
+* 添加lodash声明 ([0772f8a](https://github.com/unity-template/utils/commit/0772f8a))
+
+
+
 <a name="1.0.6"></a>
 ## [1.0.6](https://github.com/unity-template/utils/compare/v1.0.5...v1.0.6) (2022-05-06)
 
