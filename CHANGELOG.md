@@ -1,3 +1,13 @@
+<a name="1.0.10"></a>
+## [1.0.10](https://github.com/unity-template/utils/compare/v1.0.9...v1.0.10) (2022-06-30)
+
+
+### Features
+
+* jest测试文件调整 ([bc4b895](https://github.com/unity-template/utils/commit/bc4b895))
+
+
+
 <a name="1.0.9"></a>
 ## [1.0.9](https://github.com/unity-template/utils/compare/v1.0.8...v1.0.9) (2022-06-30)
 
