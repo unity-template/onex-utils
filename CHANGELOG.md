@@ -1,3 +1,13 @@
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/unity-template/utils/compare/v1.0.7...v1.0.8) (2022-06-30)
+
+
+### Features
+
+* 添加文档链接 ([6c9306f](https://github.com/unity-template/utils/commit/6c9306f))
+
+
+
 <a name="1.0.7"></a>
 ## [1.0.7](https://github.com/unity-template/utils/compare/v1.0.6...v1.0.7) (2022-06-17)
 
