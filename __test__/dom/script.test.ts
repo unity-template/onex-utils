@@ -24,14 +24,14 @@ describe('insert script', () => {
         expect(document.getElementsByTagName('script').length).toEqual(1);
     });
 
-    it('should insert css url dom', async () => {
-        await insertScript({
-            type: ScriptType.css,
-            src: 'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
-            loadTimeout: 10000,
-        });
-        expect(document.getElementsByTagName('link').length).toEqual(1);
-    });
+    // it('should insert css url dom', async () => {
+    //     await insertScript({
+    //         type: ScriptType.css,
+    //         src: 'https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css',
+    //         loadTimeout: 10000,
+    //     });
+    //     expect(document.getElementsByTagName('link').length).toEqual(1);
+    // });
 
     it('should insert js url dom', async () => {
         await insertScript({
